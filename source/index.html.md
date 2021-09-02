@@ -138,27 +138,21 @@ WebSocket是HTML5一种新的协议（Protocol）。它实现了客户端与服�
 
 **REST API**
 
-**`https://api.huobi.pro`**  
+**`https://api.huobi.sg`**  
 
-**`https://api-aws.huobi.pro`**  
+**REST Feed（行情，不包含MBP增量行情）**
+
+**`https://api.huobi.sg/market`**  
 
 **Websocket Feed（行情，不包含MBP增量行情）**
 
-**`wss://api.huobi.pro/ws`**  
+**`wss://api.huobi.sg/ws`**  
 
-**`wss://api-aws.huobi.pro/ws`**  
-
-**Websocket Feed（行情，仅MBP增量行情）**
-
-**`wss://api.huobi.pro/feed`**  
-
-**`wss://api-aws.huobi.pro/feed`** 
 
 **Websocket Feed（资产和订单）**
 
-wss://api.huobi.pro/ws/v2
-
-**`wss://api-aws.huobi.pro/ws/v2`**     
+**`wss://api.huobi.sg/ws/v2`**
+ 
 
 <aside class="notice">
 请使用中国大陆以外的 IP 访问火币 API。
