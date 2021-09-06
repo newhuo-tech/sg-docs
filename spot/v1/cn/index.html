@@ -331,7 +331,7 @@
                     <a href="#q4-websocket" class="toc-h2 toc-link" data-title="Q4：为什么WebSocket总是断开连接？">Q4：为什么WebSocket总是断开连接？</a>
                   </li>
                   <li>
-                    <a href="#q5-api-huobi-pro-api-aws-huobi-pro" class="toc-h2 toc-link" data-title="Q5：api.huobi.pro 与 api-aws.huobi.pro有什么区别？">Q5：api.huobi.pro 与 api-aws.huobi.pro有什么区别？</a>
+                    <a href="#q5-api-huobi-sg" class="toc-h2 toc-link" data-title="Q5：api.huobi.sg">Q5：api.huobi.sg</a>
                   </li>
                   <li>
                     <a href="#q6" class="toc-h2 toc-link" data-title="Q6：为什么签名认证总返回失败？">Q6：为什么签名认证总返回失败？</a>
@@ -726,9 +726,7 @@ table th {
 
 <p>私有接口可用于交易管理和账户管理。每个私有请求必须使用您的API Key进行签名验证。</p>
 <h2 id='urls'>接入URLs</h2>
-<p>您可以自行比较使用api.huobi.pro和api-aws.huobi.pro两个域名的延迟情况，选择延迟低的进行使用。     </p>
-
-<p>其中，api-aws.huobi.pro域名对使用aws云服务的用户做了一定的链路延迟优化。  </p>
+<p>您可以使用api.huobi.sg</p>
 
 <p><strong>REST API</strong></p>
 
@@ -764,7 +762,7 @@ table th {
 <p>一个合法的请求由以下几部分组成：</p>
 
 <ul>
-<li>方法请求地址：即访问服务器地址 api.huobi.pro，比如 api.huobi.pro/v1/order/orders。</li>
+<li>方法请求地址：即访问服务器地址 api.huobi.sg，比如 api.huobi.sg/v1/order/orders。</li>
 <li>API 访问Id（AccessKeyId）：您申请的 API Key 中的 Access Key。</li>
 <li>签名方法（SignatureMethod）：用户计算签名的基于哈希的协议，此处使用 HmacSHA256。</li>
 <li>签名版本（SignatureVersion）：签名协议的版本，此处使用2。</li>
@@ -782,7 +780,7 @@ table th {
 
 <p>查询某订单详情时完整的请求URL</p>
 
-<p><code>https://api.huobi.pro/v1/order/orders?</code></p>
+<p><code>https://api.huobi.sg/v1/order/orders?</code></p>
 
 <p><code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx</code></p>
 
@@ -803,7 +801,7 @@ table th {
 
 <p>例如：
 <code>
-api.huobi.pro\n
+api.huobi.sg\n
 </code></p>
 
 <p><strong>3. 访问方法的路径，后面添加换行符 “\n”</strong></p>
@@ -860,7 +858,7 @@ api.huobi.pro\n
 
 <p><code>GET\n</code></p>
 
-<p><code>api.huobi.pro\n</code></p>
+<p><code>api.huobi.sg\n</code></p>
 
 <p><code>/v1/order/orders\n</code></p>
 
@@ -886,7 +884,7 @@ api.huobi.pro\n
 
 <p>最终，发送到服务器的 API 请求应该为</p>
 
-<p><code>https://api.huobi.pro/v1/order/orders?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;order-id=1234567890&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=2&amp;Timestamp=2017-05-11T15%3A19%3A30&amp;Signature=4F65x5A2bLyMWVQj3Aqp%2BB4w%2BivaA7n5Oi2SuYtCJ9o%3D</code></p>
+<p><code>https://api.huobi.sg/v1/order/orders?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;order-id=1234567890&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=2&amp;Timestamp=2017-05-11T15%3A19%3A30&amp;Signature=4F65x5A2bLyMWVQj3Aqp%2BB4w%2BivaA7n5Oi2SuYtCJ9o%3D</code></p>
 
 <p>对于WebSocket接口：</p>
 
@@ -1081,7 +1079,7 @@ api.huobi.pro\n
 <ul>
 <li>不建议在中国大陆境内使用临时域名以及代理的方式访问Huobi API，此类方式访问API连接的稳定性很难保证。</li>
 <li>建议使用日本AWS云服务器进行访问。</li>
-<li>官方域名api.huobi.pro, api-aws.huobi.pro，若您使用了AWS云服务，建议使用api-aws.huobi.pro域名，该域名为AWS用户做了链路上的优化，链路延迟相对更低。</li>
+<li>官方域名api.huobi.sg</li>
 </ul>
 
 <p><strong>新限频规则</strong></p>
@@ -1184,7 +1182,7 @@ api.huobi.pro\n
 
 <ol>
 <li>客户端服务器如在中国大陆境内，连接的稳定性很难保证，建议使用日本AWS云服务器进行访问。 </li>
-<li>域名建议使用api.huobi.pro或api-aws.huobi.pro，其他不建议使用。</li>
+<li>域名建议使用api.huobi.sg，其他不建议使用。</li>
 </ol>
 <h3 id='q4-websocket'>Q4：为什么WebSocket总是断开连接？</h3>
 <p>常见原因有：</p>
@@ -1195,8 +1193,8 @@ api.huobi.pro\n
 <li>网络原因造成连接断开。</li>
 <li>建议用户做好WebSocket连接断连重连机制，在确保心跳（Ping/Pong）消息正确回复后若连接意外断开，程序能够自动进行重新连接。</li>
 </ol>
-<h3 id='q5-api-huobi-pro-api-aws-huobi-pro'>Q5：api.huobi.pro 与 api-aws.huobi.pro有什么区别？</h3>
-<p>api-aws.huobi.pro域名对使用aws云服务的用户做了链路延迟优化，请求时延更低。</p>
+<h3 id='q5-api-huobi-sg'>Q5：api.huobi.sg</h3>
+<p>官网域名</p>
 <h3 id='q6'>Q6：为什么签名认证总返回失败？</h3>
 <p>请检查如下可能的原因：</p>
 
@@ -1245,7 +1243,7 @@ api.huobi.pro\n
 
 <p>如果您使用了代理，代理可能会改变请求Host，可以尝试去掉代理；</p>
 
-<p>或者，您使用的网络连接库可能会把端口包含在Host内，可以尝试在签名用到的Host中包含端口，如“api.huobi.pro:443&quot;</p>
+<p>或者，您使用的网络连接库可能会把端口包含在Host内，可以尝试在签名用到的Host中包含端口，如“api.huobi.sg:443&quot;</p>
 
 <p>9、Access Key 与 Secret Key中是否存在隐藏特殊字符，影响签名</p>
 
@@ -1315,13 +1313,13 @@ api.huobi.pro\n
 
 <p><code>1. 问题简要说明：签名错误</code><br>
 <code>2. UID：123456</code><br>
-<code>3. 完整的URL请求：GET https://api.huobi.pro/v1/account/accounts?&amp;SignatureVersion=2&amp;SignatureMethod=HmacSHA256&amp;Timestamp=2019-11-06T03%3A25%3A39&amp;AccessKeyId=rfhxxxxx-950000847-boooooo3-432c0&amp;Signature=HhJwApXKpaLPewiYLczwfLkoTPnFPHgyF61iq0iTFF8%3D</code><br>
+<code>3. 完整的URL请求：GET https://api.huobi.sg/v1/account/accounts?&amp;SignatureVersion=2&amp;SignatureMethod=HmacSHA256&amp;Timestamp=2019-11-06T03%3A25%3A39&amp;AccessKeyId=rfhxxxxx-950000847-boooooo3-432c0&amp;Signature=HhJwApXKpaLPewiYLczwfLkoTPnFPHgyF61iq0iTFF8%3D</code><br>
 <code>4. 完整的JSON格式的参数：无</code><br>
 <code>5. 完整的JSON格式的返回：{&quot;status&quot;:&quot;error&quot;,&quot;err-code&quot;:&quot;api-signature-not-valid&quot;,&quot;err-msg&quot;:&quot;Signature not valid: Incorrect Access key [Access key错误]&quot;,&quot;data&quot;:null}</code><br>
 <code>6. 问题出现频率：每次都会出现</code><br>
 <code>7. 签名前字符串</code><br>
 <code>GET\n</code><br>
-<code>api.huobi.pro\n</code><br>
+<code>api.huobi.sg\n</code><br>
 <code>/v1/account/accounts\n</code><br>
 <code>AccessKeyId=rfhxxxxx-950000847-boooooo3-432c0&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=2&amp;Timestamp=2019-11-06T03%3A26%3A13</code>   </p>
 
@@ -1653,7 +1651,7 @@ api.huobi.pro\n
 <p>此节点返回当前最新市场状态。<br>
 状态枚举值包括: 1 - 正常（可下单可撤单），2 - 挂起（不可下单不可撤单），3 - 仅撤单（不可下单可撤单）。<br>
 挂起原因枚举值包括: 2 - 紧急维护，3 - 计划维护。<br></p>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.pro/v2/market-status"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.sg/v2/market-status"</span>
 </code></pre><h3 id='http-2'>HTTP 请求</h3>
 <ul>
 <li>GET <code>/v2/market-status</code></li>
@@ -1731,7 +1729,7 @@ api.huobi.pro\n
 </tbody></table>
 <h2 id='0e505d18dc'>获取所有交易对</h2>
 <p>此接口返回所有火币全球站支持的交易对。</p>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.pro/v1/common/symbols"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.sg/v1/common/symbols"</span>
 </code></pre><h3 id='http-3'>HTTP 请求</h3>
 <ul>
 <li>GET <code>/v1/common/symbols</code></li>
@@ -1884,7 +1882,7 @@ api.huobi.pro\n
 </tbody></table>
 <h2 id='7393cc8596'>获取所有币种</h2>
 <p>此接口返回所有火币全球站支持的币种。</p>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.pro/v1/common/currencys"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.sg/v1/common/currencys"</span>
 </code></pre><h3 id='http-4'>HTTP 请求</h3>
 <ul>
 <li>GET <code>/v1/common/currencys</code></li>
@@ -1904,7 +1902,7 @@ api.huobi.pro\n
 <ul>
 <li>GET <code>/v2/reference/currencies</code></li>
 </ul>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.pro/v2/reference/currencies?currency=usdt"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.sg/v2/reference/currencies?currency=usdt"</span>
 </code></pre><h3 id='1f9ac54b15-5'>请求参数</h3>
 <table><thead>
 <tr>
@@ -2161,7 +2159,7 @@ api.huobi.pro\n
 </tbody></table>
 <h2 id='67361e2961'>获取当前系统时间戳</h2>
 <p>此接口返回当前的系统时间戳，即从 <strong>UTC</strong> 1970年1月1日0时0分0秒0毫秒到现在的总<strong>毫秒</strong>数。</p>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.pro/v1/common/timestamp"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.sg/v1/common/timestamp"</span>
 </code></pre><h3 id='http-6'>HTTP 请求</h3>
 <ul>
 <li>GET <code>/v1/common/timestamp</code></li>
@@ -2183,7 +2181,7 @@ api.huobi.pro\n
 <aside class="notice">当前 REST API 不支持自定义时间区间，如需要历史固定时间范围的数据，请参考 Websocket API 中的 K 线接口。</aside>
 
 <aside class="notice">获取 hb10 净值时， symbol 请填写 “hb10”。</aside>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.pro/market/history/kline?period=1day&amp;size=200&amp;symbol=btcusdt"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.sg/market/history/kline?period=1day&amp;size=200&amp;symbol=btcusdt"</span>
 </code></pre><h3 id='http-7'>HTTP 请求</h3>
 <ul>
 <li>GET <code>/market/history/kline</code></li>
@@ -2280,7 +2278,7 @@ api.huobi.pro\n
 </tbody></table>
 <h2 id='ticker'>聚合行情（Ticker）</h2>
 <p>此接口获取ticker信息同时提供最近24小时的交易聚合信息。</p>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.pro/market/detail/merged?symbol=ethusdt"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.sg/market/detail/merged?symbol=ethusdt"</span>
 </code></pre><h3 id='http-8'>HTTP 请求</h3>
 <ul>
 <li>GET <code>/market/detail/merged</code></li>
@@ -2371,7 +2369,7 @@ api.huobi.pro\n
 </tbody></table>
 <h2 id='tickers'>所有交易对的最新 Tickers</h2>
 <p>获得所有交易对的 tickers。</p>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.pro/market/tickers"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.sg/market/tickers"</span>
 </code></pre>
 <aside class="notice">此接口返回所有交易对的 ticker，因此数据量较大。</aside>
 <h3 id='http-9'>HTTP 请求</h3>
@@ -2458,7 +2456,7 @@ api.huobi.pro\n
 </tbody></table>
 <h2 id='0f7bd4961a'>市场深度数据</h2>
 <p>此接口返回指定交易对的当前市场深度数据。</p>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.pro/market/depth?symbol=btcusdt&amp;type=step2"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.sg/market/depth?symbol=btcusdt&amp;type=step2"</span>
 </code></pre><h3 id='http-10'>HTTP 请求</h3>
 <ul>
 <li>GET <code>/market/depth</code></li>
@@ -2577,7 +2575,7 @@ api.huobi.pro\n
 </tbody></table>
 <h2 id='a7fb7754d7'>最近市场成交记录</h2>
 <p>此接口返回指定交易对最新的一个交易记录。</p>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.pro/market/trade?symbol=ethusdt"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.sg/market/trade?symbol=ethusdt"</span>
 </code></pre><h3 id='http-11'>HTTP 请求</h3>
 <ul>
 <li>GET <code>/market/trade</code></li>
@@ -2648,7 +2646,7 @@ api.huobi.pro\n
 </tbody></table>
 <h2 id='5583b4ac64'>获得近期交易记录</h2>
 <p>此接口返回指定交易对近期的所有交易记录。</p>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.pro/market/history/trade?symbol=ethusdt&amp;size=2"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.sg/market/history/trade?symbol=ethusdt&amp;size=2"</span>
 </code></pre><h3 id='http-12'>HTTP 请求</h3>
 <ul>
 <li>GET <code>/market/history/trade</code></li>
@@ -2728,7 +2726,7 @@ api.huobi.pro\n
 <p>此接口返回最近24小时的行情数据汇总。</p>
 
 <aside class="notice">此接口返回的成交量、成交金额为24小时滚动数据（平移窗口大小24小时），有可能会出现后一个窗口内的累计成交量、累计成交额小于前一窗口的情况。</aside>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.pro/market/detail?symbol=ethusdt"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.sg/market/detail?symbol=ethusdt"</span>
 </code></pre><h3 id='http-13'>HTTP 请求</h3>
 <ul>
 <li>GET <code>/market/detail</code></li>
@@ -2814,7 +2812,7 @@ api.huobi.pro\n
 </tbody></table>
 <h2 id='etp'>获取杠杆ETP实时净值</h2>
 <p>此接口返回杠杆ETP的最新净值。</p>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.pro/market/etp?symbol=btc3lusdt"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.sg/market/etp?symbol=btc3lusdt"</span>
 </code></pre><h3 id='http-14'>HTTP 请求</h3>
 <ul>
 <li>GET <code>/market/etp</code></li>
@@ -6177,7 +6175,7 @@ Response:</p>
 <p>Api用户查询交易对费率，一次限制最多查10个交易对，子用户的费率和母用户保持一致</p>
 
 <p>API Key 权限：读取</p>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.pro/v2/reference/transact-fee-rate?symbols=btcusdt,ethusdt,ltcusdt"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.sg/v2/reference/transact-fee-rate?symbols=btcusdt,ethusdt,ltcusdt"</span>
 </code></pre><h3 id='http-35'>HTTP 请求</h3>
 <ul>
 <li>GET <code>/v2/reference/transact-fee-rate</code></li>
@@ -6518,15 +6516,11 @@ Response:</p>
 <h1 id='websocket'>Websocket行情数据</h1><h2 id='5ea2e0cde2-7'>简介</h2><h3 id='url'>接入URL</h3>
 <p><strong>Global站行情请求地址（除MBP增量推送及MBP全量REQ以外Websocket行情频道）</strong></p>
 
-<p><strong><code>wss://api.huobi.pro/ws</code></strong>  </p>
-
-<p><strong><code>wss://api-aws.huobi.pro/ws</code></strong>  </p>
+<p><strong><code>wss://api.huobi.sg/ws</code></strong>  </p>
 
 <p><strong>MBP增量推送及MBP全量REQ请求地址</strong></p>
 
-<p><strong><code>wss://api.huobi.pro/feed</code></strong>  </p>
-
-<p><strong><code>wss://api-aws.huobi.pro/feed</code></strong> </p>
+<p><strong><code>wss://api.huobi.sg/feed</code></strong>  </p>
 <h3 id='7ee1785123'>数据压缩</h3>
 <p>WebSocket 行情接口返回的所有数据都进行了 GZIP 压缩，需要 client 在收到数据之后解压。</p>
 <h3 id='1853724646'>心跳消息</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"ping"</span><span class="p">:</span><span class="w"> </span><span class="mi">1492420473027</span><span class="p">}</span><span class="w"> 
@@ -6957,9 +6951,7 @@ Response:</p>
 
 <p><strong>MBP增量推送及MBP全量REQ请求地址</strong></p>
 
-<p><strong><code>wss://api.huobi.pro/feed</code></strong>  </p>
-
-<p><strong><code>wss://api-aws.huobi.pro/feed</code></strong> </p>
+<p><strong><code>wss://api.huobi.sg/feed</code></strong>  </p>
 
 <p>建议下游数据处理方式：<br>
 1）    订阅增量数据并开始缓存；<br>
@@ -7404,11 +7396,7 @@ Response:</p>
 </span></code></pre><h1 id='websocket-2'>Websocket资产及订单</h1><h2 id='5ea2e0cde2-8'>简介</h2><h3 id='url-2'>接入URL</h3>
 <p><strong>Websocket资产及订单</strong></p>
 
-<p><strong><code>wss://api.huobi.pro/ws/v2</code></strong>  </p>
-
-<p><strong><code>wss://api-aws.huobi.pro/ws/v2</code></strong>   </p>
-
-<p>注：api-aws.huobi.pro域名对使用aws云服务的用户做了一定的链路延迟优化。  </p>
+<p><strong><code>wss://api.huobi.sg/ws/v2</code></strong>  </p>
 
 <p>请使用中国大陆以外的服务器访问火币 API。</p>
 <h3 id='7ee1785123-2'>数据压缩</h3>
@@ -7529,7 +7517,7 @@ Response:</p>
 <p>Rest接口签名步骤,您可以点击 <a href='https://huobiapi.github.io/docs/spot/v1/cn/#c64cd15fdc'>这里</a> 获取。</p>
 
 <p>签名前最后生成的字符串如下：</p>
-<pre class="highlight plaintext"><code>GET\napi.huobi.pro\n/ws/v2\naccessKey=0664b695-rfhfg2mkl3-abbf6c5d-49810&amp;signatureMethod=HmacSHA256&amp;signatureVersion=2.1&amp;timestamp=2019-12-05T11%3A53%3A03
+<pre class="highlight plaintext"><code>GET\napi.huobi.sg\n/ws/v2\naccessKey=0664b695-rfhfg2mkl3-abbf6c5d-49810&amp;signatureMethod=HmacSHA256&amp;signatureVersion=2.1&amp;timestamp=2019-12-05T11%3A53%3A03
 </code></pre>
 <p>注：JSON请求中的数据不需要URL编码。</p>
 <h3 id='65cd7614bc-2'>订阅主题</h3>
