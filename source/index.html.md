@@ -12,7 +12,7 @@ search: true
 
 ---
 
-# 更新日志 123
+# 更新日志
 
 <style>
 table {
