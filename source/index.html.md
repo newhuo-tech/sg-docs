@@ -98,7 +98,7 @@ table th {
 
 **其它代码示例**
 
-[https://github.com/huobiapi?tab=repositories](https://github.com/huobiapi?tab=repositories)
+[https://github.com/huobi-sg?tab=repositories](https://github.com/huobi-sg?tab=repositories)
 
 ## 测试环境（已停止）
 
