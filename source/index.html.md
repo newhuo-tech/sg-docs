@@ -5,7 +5,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - json
 
 toc_footers:
-  - <a href='https://www.hbg.com/zh-cn/apikey/'>创建 API Key </a>
+  - <a href="https://www.hbg.com/zh-cn/apikey/"> 创建 API Key </a>
 includes:
 
 search: true
