@@ -140,9 +140,7 @@ WebSocket是HTML5一种新的协议（Protocol）。它实现了客户端与服�
 
 **`https://api.huobi.sg`**  
 
-**REST Feed（行情，不包含MBP增量行情）**
-
-**`https://api.huobi.sg/market`**  
+ 
 
 **Websocket Feed（行情，不包含MBP增量行情）**
 
