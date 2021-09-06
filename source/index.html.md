@@ -6,7 +6,8 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 toc_footers:
   - <a href="https://www.huobi.sg/zh-cn/user/api/"> 创建 API Key </a>
-  - <a href="https://fed-sg-web.huobiapps.com/zh-cn/user/api/"> 创建 API Key （上线后删除）</a>
+  <br>
+  <a href="https://fed-sg-web.huobiapps.com/zh-cn/user/api/"> 创建 API Key （上线后删除）</a>
 includes:
 
 search: true
