@@ -188,7 +188,7 @@ The second part is detail for each API. Each API category is listed in one secti
 
 Before you use API, you need to login the website to create API Key with proper permissions. The API key is shared for all instruments in Huobi including spot, futures, swap, options.
 
-You can manage your API Keys <a href='https://www.hbg.com/zh-cn/apikey/'>here</a>.
+You can manage your API Keys <a href='https://www.hbg.com/zh-en/apikey/'>here</a>.
 
 Every user can create at most 20 API Keys, each can be applied with either permission below:
 
@@ -214,11 +214,11 @@ The API Key can bind maximum 20 IP addresses (either host IP or network IP), we 
 
 **SDK (Suggested)**
 
-[Java](https://github.com/huobiapi/huobi_Java) | [Python3](https://github.com/huobiapi/huobi_Python) | [C++](https://github.com/huobiapi/huobi_Cpp) | [C#](https://github.com/HuobiRDCenter/huobi_CSharp) | [Go](https://github.com/huobirdcenter/huobi_golang)
+[Java](https://github.com/huobi-sg/huobi_Java) | [Python3](https://github.com/huobi-sg/huobi_Python) | [C++](https://github.com/huobi-sg/huobi_Cpp) | [C#](https://github.com/HuobiRDCenter/huobi_CSharp) | [Go](https://github.com/huobirdcenter/huobi_golang)
 
 **Other Demos**
 
-[https://github.com/huobiapi?tab=repositories](https://github.com/huobiapi?tab=repositories)
+[https://github.com/huobi-sg?tab=repositories](https://github.com/huobi-sg?tab=repositories)
 
 ## Testnet (Stopped)
 
@@ -257,27 +257,27 @@ In general, the domain <u>api-aws.huobi.pro</u> is optimized for AWS client, the
 
 **REST API**
 
-**`https://api.huobi.pro`**  
+**`https://api.huobi.sg`**  
 
-**`https://api-aws.huobi.pro`**  
+**`https://api-aws.huobi.sg`**  
 
 **Websocket Feed (market data except MBP incremental)**
 
-**`wss://api.huobi.pro/ws`**  
+**`wss://api.huobi.sg/ws`**  
 
-**`wss://api-aws.huobi.pro/ws`**  
+**`wss://api-aws.huobi.sg/ws`**  
 
 **Websocket Feed (market data only MBP incremental)**
 
-**`wss://api.huobi.pro/feed`**  
+**`wss://api.huobi.sg/feed`**  
 
-**`wss://api-aws.huobi.pro/feed`**  
+**`wss://api-aws.huobi.sg/feed`**  
 
 **Websocket Feed (account and order)**
 
-**`wss://api.huobi.pro/ws/v2`**  
+**`wss://api.huobi.sg/ws/v2`**  
 
-**`wss://api-aws.huobi.pro/ws/v2`**     
+**`wss://api-aws.huobi.sg/ws/v2`**     
 
 <aside class="notice">
 Please initiate API calls with non-China IP.
@@ -315,7 +315,7 @@ The signature may be different if the request text is different, therefore the r
 
 This is a full URL to query one order:
 
-`https://api.huobi.pro/v1/order/orders?`
+`https://api.huobi.sg/v1/order/orders?`
 
 `AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx`
 
@@ -335,7 +335,7 @@ This is a full URL to query one order:
 
 Example:
 `
-api.huobi.pro\n
+api.huobi.sg\n
 `
 
 **3. The path, append line break “\n”**
@@ -395,7 +395,7 @@ Then above parameter should be ordered like below:
 
 `GET\n`
 
-`api.huobi.pro\n`
+`api.huobi.sg\n`
 
 `/v1/order/orders\n`
 
@@ -418,7 +418,7 @@ For Rest interface:
 
 Finally, the request sent to API should be:
 
-`https://api.huobi.pro/v1/order/orders?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&order-id=1234567890&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T15%3A19%3A30&Signature=4F65x5A2bLyMWVQj3Aqp%2BB4w%2BivaA7n5Oi2SuYtCJ9o%3D`
+`https://api.huobi.sg/v1/order/orders?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&order-id=1234567890&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T15%3A19%3A30&Signature=4F65x5A2bLyMWVQj3Aqp%2BB4w%2BivaA7n5Oi2SuYtCJ9o%3D`
 
 
 
@@ -718,9 +718,9 @@ Please check below possible reasons:
 3. The connection is broken due to network issue.
 4. It is suggested to implement WebSocket re-connect mechanism. If Ping/Pong works well but the connection is broken, the application should be able to re-connect automatically.
 
-### Q5：What is the difference between <u>api.huobi.pro</u> and <u>api-aws.huobi.pro</u>?
+### Q5：What is the difference between <u>api.huobi.sg</u> and <u>api-aws.huobi.sg</u>?
 
-The host <u>api-aws.huobi.pro</u> is optimized for AWS client, the latency is lower.
+The host <u>api-aws.huobi.sg</u> is optimized for AWS client, the latency is lower.
 
 ### Q6：Why the signature authentication always fail?
 
@@ -845,13 +845,13 @@ Below is an example：
 
 `1. Problem description: API authentication error`  
 `2. UID：123456`  
-`3. Raw URL request: https://api.huobi.pro/v1/account/accounts?&SignatureVersion=2&SignatureMethod=HmacSHA256&Timestamp=2019-11-06T03%3A25%3A39&AccessKeyId=rfhxxxxx-950000847-boooooo3-432c0&Signature=HhJwApXKpaLPewiYLczwfLkoTPnFPHgyF61iq0iTFF8%3D`  
+`3. Raw URL request: https://api.huobi.sg/v1/account/accounts?&SignatureVersion=2&SignatureMethod=HmacSHA256&Timestamp=2019-11-06T03%3A25%3A39&AccessKeyId=rfhxxxxx-950000847-boooooo3-432c0&Signature=HhJwApXKpaLPewiYLczwfLkoTPnFPHgyF61iq0iTFF8%3D`  
 `4. Raw JSON request: N/A`  
 `5. Raw JSON response：{"status":"error","err-code":"api-signature-not-valid","err-msg":"Signature not valid: Incorrect Access key [Access key错误]","data":null}`  
 `6. Problem time and frequency: It occurs every time`  
 `7. Pre-signed text:`  
 `GET\n`  
-`api.huobi.pro\n`  
+`api.huobi.sg\n`  
 `/v1/account/accounts\n`    
 `AccessKeyId=rfhxxxxx-950000847-boooooo3-432c0&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2019-11-06T03%3A26%3A13`
 
@@ -1067,7 +1067,7 @@ The enum values of market status includes: 1 - normal (order submission & cancel
 Halt reason includes: 2 - emergency maintenance，3 - schedule maintenance.<br>
 
 ```shell
-curl "https://api.huobi.pro/v2/market-status"
+curl "https://api.huobi.sg/v2/market-status"
 ```
 
 
@@ -1109,7 +1109,7 @@ None.
 This endpoint returns all Huobi's supported tradable symbols.
 
 ```shell
-curl "https://api.huobi.pro/v1/common/symbols"
+curl "https://api.huobi.sg/v1/common/symbols"
 ```
 
 ### HTTP Request
@@ -1189,7 +1189,7 @@ No parameter is needed for this endpoint.
 This endpoint returns all Huobi's supported tradable currencies.
 
 ```shell
-curl "https://api.huobi.pro/v1/common/currencys"
+curl "https://api.huobi.sg/v1/common/currencys"
 ```
 
 ### HTTP Request
@@ -1219,10 +1219,10 @@ API user could query static reference information for each currency, as well as 
 
 ### HTTP Request
 
-`GET https://api.huobi.pro/v2/reference/currencies`
+`GET https://api.huobi.sg/v2/reference/currencies`
 
 ```shell
-curl "https://api.huobi.pro/v2/reference/currencies?currency=usdt"
+curl "https://api.huobi.sg/v2/reference/currencies?currency=usdt"
 ```
 
 ### Request Parameters
@@ -1356,7 +1356,7 @@ curl "https://api.huobi.pro/v2/reference/currencies?currency=usdt"
 This endpoint returns the current timestamp, i.e. the number of **milliseconds** that have elapsed since 00:00:00 **UTC** on 1 January 1970. 
 
 ```shell
-curl "https://api.huobi.pro/v1/common/timestamp"
+curl "https://api.huobi.sg/v1/common/timestamp"
 ```
 
 ### HTTP Request
@@ -1391,10 +1391,10 @@ This endpoint retrieves all klines in a specific range.
 
 ### HTTP Request
 
-`GET https://api.huobi.pro/market/history/kline`
+`GET https://api.huobi.sg/market/history/kline`
 
 ```shell
-curl "https://api.huobi.pro/market/history/kline?period=1day&size=200&symbol=btcusdt"
+curl "https://api.huobi.sg/market/history/kline?period=1day&size=200&symbol=btcusdt"
 ```
 
 ### Query Parameters
@@ -1444,10 +1444,10 @@ This endpoint retrieves the latest ticker with some important 24h aggregated mar
 
 ### HTTP Request
 
-`GET https://api.huobi.pro/market/detail/merged`
+`GET https://api.huobi.sg/market/detail/merged`
 
 ```shell
-curl "https://api.huobi.pro/market/detail/merged?symbol=ethusdt"
+curl "https://api.huobi.sg/market/detail/merged?symbol=ethusdt"
 ```
 
 ### Request Parameters
@@ -1496,10 +1496,10 @@ This endpoint retrieves the latest tickers for all supported pairs.
 <aside class="notice">The returned data object can contain large amount of tickers.</aside>
 ### HTTP Request
 
-`GET https://api.huobi.pro/market/tickers`
+`GET https://api.huobi.sg/market/tickers`
 
 ```shell
-curl "https://api.huobi.pro/market/tickers"
+curl "https://api.huobi.sg/market/tickers"
 ```
 
 ### Request Parameters
@@ -1566,10 +1566,10 @@ This endpoint retrieves the current order book of a specific pair.
 
 ### HTTP Request
 
-`GET https://api.huobi.pro/market/depth`
+`GET https://api.huobi.sg/market/depth`
 
 ```shell
-curl "https://api.huobi.pro/market/depth?symbol=btcusdt&type=step1"
+curl "https://api.huobi.sg/market/depth?symbol=btcusdt&type=step1"
 ```
 
 ### Request Parameters
@@ -1662,10 +1662,10 @@ This endpoint retrieves the latest trade with its price, volume, and direction.
 
 ### HTTP Request
 
-`GET https://api.huobi.pro/market/trade`
+`GET https://api.huobi.sg/market/trade`
 
 ```shell
-curl "https://api.huobi.pro/market/trade?symbol=ethusdt"
+curl "https://api.huobi.sg/market/trade?symbol=ethusdt"
 ```
 
 ### Request Parameters
@@ -1711,10 +1711,10 @@ This endpoint retrieves the most recent trades with their price, volume, and dir
 
 ### HTTP Request
 
-`GET https://api.huobi.pro/market/history/trade`
+`GET https://api.huobi.sg/market/history/trade`
 
 ```shell
-curl "https://api.huobi.pro/market/history/trade?symbol=ethusdt&size=2"
+curl "https://api.huobi.sg/market/history/trade?symbol=ethusdt&size=2"
 ```
 
 ### Request Parameters
@@ -1787,10 +1787,10 @@ This endpoint retrieves the summary of trading in the market for the last 24 hou
 
 ### HTTP Request
 
-`GET https://api.huobi.pro/market/detail/`
+`GET https://api.huobi.sg/market/detail/`
 
 ```shell
-curl "https://api.huobi.pro/market/detail?symbol=ethusdt"
+curl "https://api.huobi.sg/market/detail?symbol=ethusdt"
 ```
 
 ### Request Parameters
@@ -1839,7 +1839,7 @@ This endpoint returns real time NAV for ETP.
 - GET `/market/etp`
 
 ```shell
-curl "https://api.huobi.pro/market/etp?symbol=btc3lusdt"
+curl "https://api.huobi.sg/market/etp?symbol=btc3lusdt"
 ```
 
 ### Request Parameter
@@ -1919,10 +1919,10 @@ This endpoint returns a list of accounts owned by this API user.
 
 ### HTTP Request
 
-`GET https://api.huobi.pro/v1/account/accounts`
+`GET https://api.huobi.sg/v1/account/accounts`
 
 ```shell
-curl "https://api.huobi.pro/v1/account/accounts"
+curl "https://api.huobi.sg/v1/account/accounts"
 ```
 
 ### Request Parameters
@@ -1961,12 +1961,12 @@ This endpoint returns the balance of an account specified by account id.
 
 ### HTTP Request
 
-`GET https://api.huobi.pro/v1/account/accounts/{account-id}/balance`
+`GET https://api.huobi.sg/v1/account/accounts/{account-id}/balance`
 
 'account-id': The specified account id to get balance for, can be found by query '/v1/account/accounts' endpoint.
 
 ```shell
-curl "https://api.huobi.pro/v1/account/accounts/100009/balance"
+curl "https://api.huobi.sg/v1/account/accounts/100009/balance"
 ```
 
 ### Request Parameters
@@ -2126,10 +2126,10 @@ This endpoint returns the amount changes of a specified user's account.
 
 ### HTTP Request
 
-`GET https://api.huobi.pro/v1/account/history`
+`GET https://api.huobi.sg/v1/account/history`
 
 ```shell
-curl "https://api.huobi.pro/v1/account/history?account-id=5260185"
+curl "https://api.huobi.sg/v1/account/history?account-id=5260185"
 ```
 
 ### Request Parameters
@@ -2511,10 +2511,10 @@ The query window can be within the last 180 days, which means, by adjusting “s
 
 ### HTTP Request
 
-`GET https://api.huobi.pro/v2/account/ledger`
+`GET https://api.huobi.sg/v2/account/ledger`
 
 ```shell
-curl "https://api.huobi.pro/v2/account/ledger?account-id=5260185"
+curl "https://api.huobi.sg/v2/account/ledger?account-id=5260185"
 ```
 
 ### Request Parameters
@@ -2827,10 +2827,10 @@ Rate Limit (NEW): 20times/2s
 
 ### HTTP Request
 
-`GET https://api.huobi.pro/v2/account/deposit/address`
+`GET https://api.huobi.sg/v2/account/deposit/address`
 
 ```shell
-curl "https://api.huobi.pro/v2/account/deposit/address?currency=btc"
+curl "https://api.huobi.sg/v2/account/deposit/address?currency=btc"
 ```
 
 ### Request Parameters
@@ -2876,10 +2876,10 @@ Rate Limit (NEW): 20times/2s
 
 ### HTTP Request
 
-`GET https://api.huobi.pro/v2/account/withdraw/quota`
+`GET https://api.huobi.sg/v2/account/withdraw/quota`
 
 ```shell
-curl "https://api.huobi.pro/v2/account/withdraw/quota?currency=btc"
+curl "https://api.huobi.sg/v2/account/withdraw/quota?currency=btc"
 ```
 
 ### Request Parameters
@@ -3000,10 +3000,10 @@ Parent user creates a withdraw request from spot account to an external address 
 
 ### HTTP Request
 
-`POST https://api.huobi.pro/v1/dw/withdraw/api/create`
+`POST https://api.huobi.sg/v1/dw/withdraw/api/create`
 
 ```shell
-curl -X POST -H "Content-Type: application/json" "https://api.huobi.pro/v1/dw/withdraw/api/create" -d
+curl -X POST -H "Content-Type: application/json" "https://api.huobi.sg/v1/dw/withdraw/api/create" -d
 '{
   "address": "0xde709f2102306220921060314715629080e2fb77",
   "amount": "0.05",
@@ -3049,10 +3049,10 @@ Parent user cancels a previously created withdrawal request by its transfer id.
 
 ### HTTP Request
 
-`POST https://api.huobi.pro/v1/dw/withdraw-virtual/{withdraw-id}/cancel`
+`POST https://api.huobi.sg/v1/dw/withdraw-virtual/{withdraw-id}/cancel`
 
 ```shell
-curl -X POST "https://api.huobi.pro/v1/dw/withdraw-virtual/1000/cancel"
+curl -X POST "https://api.huobi.sg/v1/dw/withdraw-virtual/1000/cancel"
 ```
 
 'withdraw-id': the id returned when previously created a withdraw request
@@ -3083,10 +3083,10 @@ Parent user and sub user search for all existed withdraws and deposits and retur
 
 ### HTTP Request
 
-`GET https://api.huobi.pro/v1/query/deposit-withdraw`
+`GET https://api.huobi.sg/v1/query/deposit-withdraw`
 
 ```shell
-curl "https://api.huobi.pro/v1/query/deposit-withdraw?currency=xrp&type=deposit&from=5&size=12"
+curl "https://api.huobi.sg/v1/query/deposit-withdraw?currency=xrp&type=deposit&from=5&size=12"
 ```
 
 ### Request Parameters
@@ -3478,7 +3478,7 @@ This endpoint allows parent user to lock or unlock a specific sub user.
 
 ### HTTP Request
 
-`POST https://api.huobi.pro/v2/sub-user/management`
+`POST https://api.huobi.sg/v2/sub-user/management`
 
 ### Request Parameters
 
@@ -3836,10 +3836,10 @@ This endpoint allows user to transfer asset between parent and sub account.
 
 ### HTTP Request
 
-`POST https://api.huobi.pro/v1/subuser/transfer`
+`POST https://api.huobi.sg/v1/subuser/transfer`
 
 ```shell
-curl -X POST "https://api.huobi.pro/v1/subuser/transfer" -H "Content-Type: application/json" -d '{"sub-uid": 12345, "currency": "btc", "amount": 123.5, "type": "master-transfer-in"}'
+curl -X POST "https://api.huobi.sg/v1/subuser/transfer" -H "Content-Type: application/json" -d '{"sub-uid": 12345, "currency": "btc", "amount": 123.5, "type": "master-transfer-in"}'
 ```
 
 ### Request Parameters
@@ -3874,7 +3874,7 @@ API Key Permission：Read
 
 ### HTTP Request
 
-`GET https://api.huobi.pro/v2/sub-user/deposit-address`
+`GET https://api.huobi.sg/v2/sub-user/deposit-address`
 
 ### Request Parameters
 
@@ -3921,7 +3921,7 @@ Parent user could query sub user's deposit history via this endpoint.
 
 ### HTTP Request
 
-`GET https://api.huobi.pro/v2/sub-user/query-deposit`
+`GET https://api.huobi.sg/v2/sub-user/query-deposit`
 
 ### Request Parameters
 
@@ -4010,10 +4010,10 @@ This endpoint returns the aggregated balance from all the sub-users.
 
 ### HTTP Request
 
-`GET https://api.huobi.pro/v1/subuser/aggregate-balance`
+`GET https://api.huobi.sg/v1/subuser/aggregate-balance`
 
 ```shell
-curl "https://api.huobi.pro/v1/subuser/aggregate-balance"
+curl "https://api.huobi.sg/v1/subuser/aggregate-balance"
 ```
 
 > The above command returns JSON structured like this:
@@ -4059,12 +4059,12 @@ This endpoint returns the balance of a sub-user specified by sub-uid.
 
 ### HTTP Request
 
-`GET https://api.huobi.pro/v1/account/accounts/{sub-uid}`
+`GET https://api.huobi.sg/v1/account/accounts/{sub-uid}`
 
 'sub-uid': The specified sub user id to get balance for.
 
 ```shell
-curl "https://api.huobi.pro/v1/account/accounts/10758899"
+curl "https://api.huobi.sg/v1/account/accounts/10758899"
 ```
 
 ### Request Parameters
@@ -4194,10 +4194,10 @@ This endpoint places a new order and sends to the exchange to be matched.
 
 ### HTTP Request
 
-`POST https://api.huobi.pro/v1/order/orders/place`
+`POST https://api.huobi.sg/v1/order/orders/place`
 
 ```shell
-curl -X POST -H "Content-Type: application/json" "https://api.huobi.pro/v1/order/orders/place" -d
+curl -X POST -H "Content-Type: application/json" "https://api.huobi.sg/v1/order/orders/place" -d
 '{
    "account-id": "100009",
    "amount": "10.1",
@@ -4344,12 +4344,12 @@ This endpoint submits a request to cancel an order.
 <aside class="warning">The actual result of the cancellation request needs to be checked by order status or match result endpoints after submitting the request.</aside>
 ### HTTP Request
 
-`POST https://api.huobi.pro/v1/order/orders/{order-id}/submitcancel`
+`POST https://api.huobi.sg/v1/order/orders/{order-id}/submitcancel`
 
 'order-id': the previously returned order id when order was created
 
 ```shell
-curl -X POST "https://api.huobi.pro/v1/order/orders/59378/submitcancel"
+curl -X POST "https://api.huobi.sg/v1/order/orders/59378/submitcancel"
 ```
 
 ### Request Parameters
@@ -4406,10 +4406,10 @@ This endpoint submit a request to cancel an order based on client-order-id .
 
 ### HTTP Request
 
-`POST https://api.huobi.pro/v1/order/orders/submitCancelClientOrder`
+`POST https://api.huobi.sg/v1/order/orders/submitCancelClientOrder`
 
 ```shell
-curl -X POST -H "Content-Type: application/json" "https://api.huobi.pro/v1/order/orders/submitCancelClientOrder" -d
+curl -X POST -H "Content-Type: application/json" "https://api.huobi.sg/v1/order/orders/submitCancelClientOrder" -d
 '{
   "client-order-id": "a0001"
   }'
@@ -4455,10 +4455,10 @@ This endpoint returns all open orders which have not been filled completely.
 
 ### HTTP Request
 
-`GET https://api.huobi.pro/v1/order/openOrders`
+`GET https://api.huobi.sg/v1/order/openOrders`
 
 ```shell
-curl "https://api.huobi.pro/v1/order/openOrders?account-id=100009&symbol=btcusdt&side=buy&size=5"
+curl "https://api.huobi.sg/v1/order/openOrders?account-id=100009&symbol=btcusdt&side=buy&size=5"
 ```
 
 ### Request Parameters
@@ -4523,10 +4523,10 @@ like order status, matchresult, etc.
 
 ### HTTP Request
 
-`POST https://api.huobi.pro/v1/order/orders/batchCancelOpenOrders`
+`POST https://api.huobi.sg/v1/order/orders/batchCancelOpenOrders`
 
 ```shell
-curl -X POST -H 'Content-Type: application/json' "https://api.huobi.pro/v1/order/orders/batchCancelOpenOrders" -d
+curl -X POST -H 'Content-Type: application/json' "https://api.huobi.sg/v1/order/orders/batchCancelOpenOrders" -d
 '{
   "account-id": "100009",
   "symbol": "btcusdt,btchusd",
@@ -4571,10 +4571,10 @@ client-order-ids, so that the cancellation is faster, more accurate and more sta
 
 ### HTTP Request
 
-`POST https://api.huobi.pro/v1/order/orders/batchcancel`
+`POST https://api.huobi.sg/v1/order/orders/batchcancel`
 
 ```shell
-curl -X POST -H 'Content-Type: application/json' "https://api.huobi.pro/v1/order/orders/batchcancel" -d
+curl -X POST -H 'Content-Type: application/json' "https://api.huobi.sg/v1/order/orders/batchcancel" -d
 '{
   "client-order-ids": [
     "5983466", "5722939", "5721027", "5719487"
@@ -4754,7 +4754,7 @@ This endpoint returns the detail of a specific order. If an order is created via
 | order-id      | true          | string   | order id when order was created. Place it within path|
 
 ```shell
-curl "https://api.huobi.pro/v1/order/orders/59378"
+curl "https://api.huobi.sg/v1/order/orders/59378"
 ```
 
 
@@ -4818,7 +4818,7 @@ This endpoint returns the detail of one order by specified client order id (with
 `GET /v1/order/orders/getClientOrder`
 
 ```shell
-curl "https://api.huobi.pro/v1/order/orders/getClientOrder?clientOrderId=a0001"
+curl "https://api.huobi.sg/v1/order/orders/getClientOrder?clientOrderId=a0001"
 ```
 
 ### Request Parameters
@@ -4896,7 +4896,7 @@ This endpoint returns the match result of an order.
 
 
 ```shell
-curl "https://api.huobi.pro/v1/order/orders/59378/matchresults"
+curl "https://api.huobi.sg/v1/order/orders/59378/matchresults"
 ```
 
 ### Request Parameters
@@ -4979,7 +4979,7 @@ Huobi Global suggests API users to search historical orders based on “time” 
 `GET /v1/order/orders`
 
 ```shell
-curl "https://api.huobi.pro/v1/order/orders?symbol=ethusdt&type=buy-limit&staet=filled"
+curl "https://api.huobi.sg/v1/order/orders?symbol=ethusdt&type=buy-limit&staet=filled"
 ```
 > Request
 ```json
@@ -5161,10 +5161,10 @@ This endpoint returns the match results of past and current filled, or partially
 
 ### HTTP Request
 
-`GET https://api.huobi.pro/v1/order/matchresults`
+`GET https://api.huobi.sg/v1/order/matchresults`
 
 ```shell
-curl "https://api.huobi.pro/v1/order/matchresults?symbol=ethusdt"
+curl "https://api.huobi.sg/v1/order/matchresults?symbol=ethusdt"
 ```
 
 ### Request Parameters
@@ -5245,7 +5245,7 @@ This endpoint returns the current transaction fee rate applied to the user.
 API Key Permission：Read
 
 ```shell
-curl "https://api.huobi.pro/v2/reference/transact-fee-rate?symbols=btcusdt,ethusdt,ltcusdt"
+curl "https://api.huobi.sg/v2/reference/transact-fee-rate?symbols=btcusdt,ethusdt,ltcusdt"
 ```
 
 ### HTTP Request
@@ -5819,10 +5819,10 @@ This endpoint transfers specific asset from spot trading account to isolated mar
 
 ### HTTP Request
 
-`POST https://api.huobi.pro/v1/dw/transfer-in/margin`
+`POST https://api.huobi.sg/v1/dw/transfer-in/margin`
 
 ```shell
-curl -X POST -H 'Content-Type: application/json' "https://api.huobi.pro/v1/dw/transfer-in/margin" -d
+curl -X POST -H 'Content-Type: application/json' "https://api.huobi.sg/v1/dw/transfer-in/margin" -d
 '{
   "symbol": "ethusdt",
   "currency": "eth",
@@ -5860,10 +5860,10 @@ This endpoint transfers specific asset from isolated margin account to spot trad
 
 ### HTTP Request
 
-`POST https://api.huobi.pro/v1/dw/transfer-out/margin`
+`POST https://api.huobi.sg/v1/dw/transfer-out/margin`
 
 ```shell
-curl -X POST -H 'Content-Type: application/json' "https://api.huobi.pro/v1/dw/transfer-out/margin" -d
+curl -X POST -H 'Content-Type: application/json' "https://api.huobi.sg/v1/dw/transfer-out/margin" -d
 '{
   "symbol": "ethusdt",
   "currency": "eth",
@@ -5904,7 +5904,7 @@ The endpoint returns loan interest rates and quota applied on the user.
 - GET ` /v1/margin/loan-info`
 
 ```shell
-curl "https://api.huobi.pro/v1/margin/loan-info?symbols=btcusdt"
+curl "https://api.huobi.sg/v1/margin/loan-info?symbols=btcusdt"
 ```
 
 ### Request Parameters
@@ -5965,10 +5965,10 @@ This endpoint places an order to apply a margin loan.
 
 ### HTTP Request
 
-`POST https://api.huobi.pro/v1/margin/orders`
+`POST https://api.huobi.sg/v1/margin/orders`
 
 ```shell
-curl -X POST -H 'Content-Type: application/json' "https://api.huobi.pro/v1/margin/orders" -d
+curl -X POST -H 'Content-Type: application/json' "https://api.huobi.sg/v1/margin/orders" -d
 '{
   "symbol": "ethusdt",
   "currency": "eth",
@@ -6009,12 +6009,12 @@ This endpoint repays margin loan with your asset in your margin account.
 
 ### HTTP Request
 
-`POST https://api.huobi.pro/v1/margin/orders/{order-id}/repay`
+`POST https://api.huobi.sg/v1/margin/orders/{order-id}/repay`
 
 'order-id': the previously returned order id when loan order was created
 
 ```shell
-curl -X POST -H 'Content-Type: application/json' "https://api.huobi.pro/v1/margin/orders/1000/repay" -d
+curl -X POST -H 'Content-Type: application/json' "https://api.huobi.sg/v1/margin/orders/1000/repay" -d
 '{
   "amount": "1.0"
 }'
@@ -6049,10 +6049,10 @@ This endpoint returns margin orders based on a specific searching criteria.
 
 ### HTTP Request
 
-`GET https://api.huobi.pro/v1/margin/loan-orders`
+`GET https://api.huobi.sg/v1/margin/loan-orders`
 
 ```shell
-curl "https://api.huobi.pro/v1/margin/load-orders?symbol=ethusdt"
+curl "https://api.huobi.sg/v1/margin/load-orders?symbol=ethusdt"
 ```
 
 ### Request Parameters
@@ -6136,10 +6136,10 @@ This endpoint returns the balance of the margin loan account.
 
 ### HTTP Request
 
-`GET https://api.huobi.pro/v1/margin/accounts/balance`
+`GET https://api.huobi.sg/v1/margin/accounts/balance`
 
 ```shell
-curl "https://api.huobi.pro/v1/margin/accounts/balance?symbol=btcusdt"
+curl "https://api.huobi.sg/v1/margin/accounts/balance?symbol=btcusdt"
 ```
 
 ### Request Parameters
@@ -6218,10 +6218,10 @@ This endpoint transfers specific asset from spot trading account to cross margin
 
 ### HTTP Request
 
-`POST https://api.huobi.pro/v1/cross-margin/transfer-in`
+`POST https://api.huobi.sg/v1/cross-margin/transfer-in`
 
 ```shell
-curl -X POST -H 'Content-Type: application/json' "https://api.huobi.pro/v1/cross-margin/transfer-in" -d
+curl -X POST -H 'Content-Type: application/json' "https://api.huobi.sg/v1/cross-margin/transfer-in" -d
 '{
   "currency": "eth",
   "amount": "1.0"
@@ -6261,12 +6261,12 @@ This endpoint transfers specific asset from cross margin account to spot trading
 
 ### HTTP Request
 
-`POST https://api.huobi.pro/v1/cross-margin/transfer-in`
+`POST https://api.huobi.sg/v1/cross-margin/transfer-in`
 
-`POST https://api.huobi.pro/v1/cross-margin/transfer-out`
+`POST https://api.huobi.sg/v1/cross-margin/transfer-out`
 
 ```shell
-curl -X POST -H 'Content-Type: application/json' "https://api.huobi.pro/v1/cross-margin/transfer-out" -d
+curl -X POST -H 'Content-Type: application/json' "https://api.huobi.sg/v1/cross-margin/transfer-out" -d
 '{
   "currency": "eth",
   "amount": "1.0"
@@ -6307,7 +6307,7 @@ This endpoint returns loan interest rates and loan quota applied on the user.
 - GET ` /v1/cross-margin/loan-info`
 
 ```shell
-curl "https://api.huobi.pro/v1/cross-margin/loan-info"
+curl "https://api.huobi.sg/v1/cross-margin/loan-info"
 ```
 
 ### Request Parameters
@@ -6399,10 +6399,10 @@ This endpoint places an order to apply for a margin loan.
 
 ### HTTP Request
 
-`POST https://api.huobi.pro/v1/cross-margin/orders`
+`POST https://api.huobi.sg/v1/cross-margin/orders`
 
 ```shell
-curl -X POST -H 'Content-Type: application/json' "https://api.huobi.pro/v1/cross-margin/orders" -d
+curl -X POST -H 'Content-Type: application/json' "https://api.huobi.sg/v1/cross-margin/orders" -d
 '{
   "currency": "eth",
   "amount": "1.0"
@@ -6440,12 +6440,12 @@ This endpoint repays margin loan with you asset in your margin account.
 
 ### HTTP Request
 
-`POST https://api.huobi.pro/v1/cross-margin/orders/{order-id}/repay`
+`POST https://api.huobi.sg/v1/cross-margin/orders/{order-id}/repay`
 
 'order-id': the previously returned order id when loan order was created
 
 ```shell
-curl -X POST -H 'Content-Type: application/json' "https://api.huobi.pro/v1/cross-margin/orders/1000/repay" -d
+curl -X POST -H 'Content-Type: application/json' "https://api.huobi.sg/v1/cross-margin/orders/1000/repay" -d
 '{
   "amount": "1.0"
 }'
@@ -6481,10 +6481,10 @@ This endpoint returns margin orders based on a specific searching criteria.
 
 ### HTTP Request
 
-`GET https://api.huobi.pro/v1/cross-margin/loan-orders`
+`GET https://api.huobi.sg/v1/cross-margin/loan-orders`
 
 ```shell
-curl "https://api.huobi.pro/v1/cross-margin/loan-orders?symbol=ethusdt"
+curl "https://api.huobi.sg/v1/cross-margin/loan-orders?symbol=ethusdt"
 ```
 
 ### Request Parameters
@@ -6551,10 +6551,10 @@ This endpoint returns the balance of the margin loan account.
 
 ### HTTP Request
 
-`GET https://api.huobi.pro/v1/cross-margin/accounts/balance`
+`GET https://api.huobi.sg/v1/cross-margin/accounts/balance`
 
 ```shell
-curl "https://api.huobi.pro/v1/cross-margin/accounts/balance?symbol=btcusdt"
+curl "https://api.huobi.sg/v1/cross-margin/accounts/balance?symbol=btcusdt"
 ```
 
 ### Request Parameters
@@ -7410,7 +7410,7 @@ Below is the error code and description for C2C margin loan APIs
 
 **Websocket Market Feed (excluding MBP incremental channel & its REQ channel)**
 
-**`wss://api.huobi.pro/ws`**
+**`wss://api.huobi.sg/ws`**
 or
 **`wss://api-aws.huobi.pro/ws`**
 
@@ -8275,7 +8275,7 @@ Below is the error code, error message and description returned by Market WebSoc
 
 **Websocket Asset and Order**
 
-**`wss://api.huobi.pro/ws/v2`**  
+**`wss://api.huobi.sg/ws/v2`**  
 
 **`wss://api-aws.huobi.pro/ws/v2`**   
 
@@ -8955,7 +8955,7 @@ API Key Permission：Read
 
 ### HTTP Request
 
-`GET https://api.huobi.pro/v1/stable-coin/quote`
+`GET https://api.huobi.sg/v1/stable-coin/quote`
 
 ### Request Parameters
 
@@ -8983,7 +8983,7 @@ API Key Permission：Trade
 
 ### HTTP Request
 
-`POST https://api.huobi.pro/v1/stable-coin/exchange`
+`POST https://api.huobi.sg/v1/stable-coin/exchange`
 
 ### Request Parameters
 
@@ -9036,7 +9036,7 @@ This endpoint will return the basic information of ETF creation and redemption, 
 - GET `/etf/swap/config`
 
 ```shell
-curl "https://api.huobi.pro/etf/swap/config?etf_name=hb10"
+curl "https://api.huobi.sg/etf/swap/config?etf_name=hb10"
 ```
 
 ### Request Parameter
@@ -9101,10 +9101,10 @@ This endpoint allow clients to order creation or redemption of ETF.
 - POST `/etf/swap/out`
 
 ```shell
-curl -X POST -H 'Content-Type: application/json' "https://api.huobi.pro/etf/swap/in" -d
+curl -X POST -H 'Content-Type: application/json' "https://api.huobi.sg/etf/swap/in" -d
 '{"etf_name": "hb10", "amount": 10000}'
 
-curl -X POST -H 'Content-Type: application/json' "https://api.huobi.pro/etf/swap/out" -d
+curl -X POST -H 'Content-Type: application/json' "https://api.huobi.sg/etf/swap/out" -d
 '{"etf_name": "hb10", "amount": 10000}'
 ```
 
@@ -9164,7 +9164,7 @@ This endpoints allows clients to get past creation and redemption.(up to 100 rec
 - GET `/etf/swap/list `
 
 ```shell
-curl "https://api.huobi.pro/etf/swap/list"
+curl "https://api.huobi.sg/etf/swap/list"
 ```
 
 ### Request Parameter
