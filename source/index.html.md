@@ -820,7 +820,7 @@ Market makers will not be able to use point cards, VIP rate, rebate or any other
 If you have any other questions on API, you can contact us by below ways:
 
 - Join official **QQ** group (Huobi Global Spot API, **1160839820**). Please tell your UID and programming language in your join request, and you can join the group after the group administrator has approved it.
-- Contact customer support from Help Center or send email to [support@huobigroup.com](mailto:support@huobigroup.com).
+- Contact customer support from Help Center or send email to [customersupport@huobi.sg](mailto:customersupport@huobi.sg).
 
 If you encounter API errors, please use below template in your feedback:
 
