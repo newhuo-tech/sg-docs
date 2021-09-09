@@ -214,7 +214,7 @@ The API Key can bind maximum 20 IP addresses (either host IP or network IP), we 
 
 **SDK (Suggested)**
 
-[Java](https://github.com/huobi-sg/huobi_Java) | [Python3](https://github.com/huobi-sg/huobi_Python) | [C++](https://github.com/huobi-sg/huobi_Cpp) | [C#](https://github.com/HuobiRDCenter/huobi_CSharp) | [Go](https://github.com/huobirdcenter/huobi_golang)
+[Java](https://github.com/HuobiRDCenter/huobi_Java) | [Python3](https://github.com/HuobiRDCenter/huobi_Python) | [C++](https://github.com/HuobiRDCenter/huobi_Cpp) | [C#](https://github.com/HuobiRDCenter/huobi_CSharp) | [Go](https://github.com/huobirdcenter/huobi_golang)
 
 **Other Demos**
 
@@ -259,25 +259,17 @@ In general, the domain <u>api-aws.huobi.pro</u> is optimized for AWS client, the
 
 **`https://api.huobi.sg`**  
 
-**`https://api-aws.huobi.sg`**  
 
 **Websocket Feed (market data except MBP incremental)**
 
 **`wss://api.huobi.sg/ws`**  
 
-**`wss://api-aws.huobi.sg/ws`**  
 
-**Websocket Feed (market data only MBP incremental)**
-
-**`wss://api.huobi.sg/feed`**  
-
-**`wss://api-aws.huobi.sg/feed`**  
 
 **Websocket Feed (account and order)**
 
 **`wss://api.huobi.sg/ws/v2`**  
 
-**`wss://api-aws.huobi.sg/ws/v2`**     
 
 <aside class="notice">
 Please initiate API calls with non-China IP.
@@ -812,7 +804,6 @@ It indicates the request path doesn't exist, please check the path spelling care
 It is very welcome for market maker who has good market making strategy and large trading volume. If your Huobi Spot account or Contract account has at least 10 BTC, you can send your email to:
 
 - [MM_service@huobi.com](mailto:MM_service@huobi.com) for Huobi Global (spot / leverage) market maker
-- [dm_mm@huobi.com](mailto:dm_mm@huobi.com) for Huobi Contract market maker
 
 And provide below details:
 
