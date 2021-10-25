@@ -873,9 +873,12 @@ The types include:</p>
 <li><p>It is suggested to read HTTP Header <code>X-HB-RateLimit-Requests-Remain</code> and <code>X-HB-RateLimit-Requests-Expire</code> to get the remaining count of request and the expire time for current rate limit time window, then you can adjust the API access rate dynamically.<br></p></li>
 </ul>
 <h2 id='rate-limiting-rule'>Rate Limiting Rule</h2>
-<p>Except those endpoints which are marked with new rate limit value separately, following rate limit rules are applicable -
-* Each API Key is limited to 10 times per second
-* If API Key is empty in request, then each IP is limited to 10 times per second</p>
+<p>Except those endpoints which are marked with new rate limit value separately, following rate limit rules are applicable -</p>
+
+<ul>
+<li>Each API Key is limited to 10 times per second</li>
+<li>If API Key is empty in request, then each IP is limited to 10 times per second</li>
+</ul>
 
 <p>Endpoints marked with rate limit value separately are applied with new rate limit rule. See &quot;new version rate limit rule&quot; sector of this document.</p>
 
@@ -1569,20 +1572,7 @@ Market makers will not be able to use point cards, VIP rate, rebate or any other
 <blockquote>
 <p>Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="s2">"tick"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">600848670</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1489464451000</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">600848670</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"trade-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">102043494568</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">7962.62</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0122</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1489464451000</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="s2">"tick"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">600848670</span><span class="p">,</span><span class="w">    </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1489464451000</span><span class="p">,</span><span class="w">    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">      </span><span class="p">{</span><span class="w">        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">600848670</span><span class="p">,</span><span class="w">        </span><span class="s2">"trade-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">102043494568</span><span class="p">,</span><span class="w">        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">7962.62</span><span class="p">,</span><span class="w">        </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0122</span><span class="p">,</span><span class="w">        </span><span class="s2">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">        </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1489464451000</span><span class="w">      </span><span class="p">}</span><span class="w">    </span><span class="p">]}</span><span class="w">
 </span></code></pre><h3 id='response-content-5'>Response Content</h3>
 <aside class="notice">The returned data object is under 'tick' object instead of 'data' object in the top level JSON</aside>
 
@@ -1661,44 +1651,7 @@ Market makers will not be able to use point cards, VIP rate, rebate or any other
 <blockquote>
 <p>Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  
-   </span><span class="p">{</span><span class="w">  
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">31618787514</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"ts"</span><span class="p">:</span><span class="mi">1544390317905</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"data"</span><span class="p">:[</span><span class="w">  
-         </span><span class="p">{</span><span class="w">  
-            </span><span class="s2">"amount"</span><span class="p">:</span><span class="mf">9.000000000000000000</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"ts"</span><span class="p">:</span><span class="mi">1544390317905</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">3161878751418918529341</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"trade-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">102043495672</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"price"</span><span class="p">:</span><span class="mf">94.690000000000000000</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"direction"</span><span class="p">:</span><span class="s2">"sell"</span><span class="w">
-         </span><span class="p">},</span><span class="w">
-         </span><span class="p">{</span><span class="w">  
-            </span><span class="s2">"amount"</span><span class="p">:</span><span class="mf">73.771000000000000000</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"ts"</span><span class="p">:</span><span class="mi">1544390317905</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">3161878751418918532514</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"trade-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">102043495673</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"price"</span><span class="p">:</span><span class="mf">94.660000000000000000</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"direction"</span><span class="p">:</span><span class="s2">"sell"</span><span class="w">
-         </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-   </span><span class="p">},</span><span class="w">
-   </span><span class="p">{</span><span class="w">  
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">31618776989</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"ts"</span><span class="p">:</span><span class="mi">1544390311353</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"data"</span><span class="p">:[</span><span class="w">  
-         </span><span class="p">{</span><span class="w">  
-            </span><span class="s2">"amount"</span><span class="p">:</span><span class="mf">1.000000000000000000</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"ts"</span><span class="p">:</span><span class="mi">1544390311353</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">3161877698918918522622</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"trade-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">102043495674</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"price"</span><span class="p">:</span><span class="mf">94.710000000000000000</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"direction"</span><span class="p">:</span><span class="s2">"buy"</span><span class="w">
-         </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-   </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">     </span><span class="p">{</span><span class="w">        </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">31618787514</span><span class="p">,</span><span class="w">      </span><span class="s2">"ts"</span><span class="p">:</span><span class="mi">1544390317905</span><span class="p">,</span><span class="w">      </span><span class="s2">"data"</span><span class="p">:[</span><span class="w">           </span><span class="p">{</span><span class="w">              </span><span class="s2">"amount"</span><span class="p">:</span><span class="mf">9.000000000000000000</span><span class="p">,</span><span class="w">            </span><span class="s2">"ts"</span><span class="p">:</span><span class="mi">1544390317905</span><span class="p">,</span><span class="w">            </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">3161878751418918529341</span><span class="p">,</span><span class="w">            </span><span class="s2">"trade-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">102043495672</span><span class="p">,</span><span class="w">            </span><span class="s2">"price"</span><span class="p">:</span><span class="mf">94.690000000000000000</span><span class="p">,</span><span class="w">            </span><span class="s2">"direction"</span><span class="p">:</span><span class="s2">"sell"</span><span class="w">         </span><span class="p">},</span><span class="w">         </span><span class="p">{</span><span class="w">              </span><span class="s2">"amount"</span><span class="p">:</span><span class="mf">73.771000000000000000</span><span class="p">,</span><span class="w">            </span><span class="s2">"ts"</span><span class="p">:</span><span class="mi">1544390317905</span><span class="p">,</span><span class="w">            </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">3161878751418918532514</span><span class="p">,</span><span class="w">            </span><span class="s2">"trade-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">102043495673</span><span class="p">,</span><span class="w">            </span><span class="s2">"price"</span><span class="p">:</span><span class="mf">94.660000000000000000</span><span class="p">,</span><span class="w">            </span><span class="s2">"direction"</span><span class="p">:</span><span class="s2">"sell"</span><span class="w">         </span><span class="p">}</span><span class="w">      </span><span class="p">]</span><span class="w">   </span><span class="p">},</span><span class="w">   </span><span class="p">{</span><span class="w">        </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">31618776989</span><span class="p">,</span><span class="w">      </span><span class="s2">"ts"</span><span class="p">:</span><span class="mi">1544390311353</span><span class="p">,</span><span class="w">      </span><span class="s2">"data"</span><span class="p">:[</span><span class="w">           </span><span class="p">{</span><span class="w">              </span><span class="s2">"amount"</span><span class="p">:</span><span class="mf">1.000000000000000000</span><span class="p">,</span><span class="w">            </span><span class="s2">"ts"</span><span class="p">:</span><span class="mi">1544390311353</span><span class="p">,</span><span class="w">            </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">3161877698918918522622</span><span class="p">,</span><span class="w">            </span><span class="s2">"trade-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">102043495674</span><span class="p">,</span><span class="w">            </span><span class="s2">"price"</span><span class="p">:</span><span class="mf">94.710000000000000000</span><span class="p">,</span><span class="w">            </span><span class="s2">"direction"</span><span class="p">:</span><span class="s2">"buy"</span><span class="w">         </span><span class="p">}</span><span class="w">      </span><span class="p">]</span><span class="w">   </span><span class="p">}}</span><span class="w">
 </span></code></pre><h3 id='response-content-6'>Response Content</h3>
 <aside class="notice">The returned data object is an array which represents one recent timestamp; each timestamp object again is an array which represents all trades occurred at this timestamp.</aside>
 
@@ -1771,17 +1724,7 @@ Market makers will not be able to use point cards, VIP rate, rebate or any other
 <blockquote>
 <p>Response:Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="s2">"tick"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">  
-   </span><span class="s2">"amount"</span><span class="p">:</span><span class="mf">613071.438479561</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"open"</span><span class="p">:</span><span class="mf">86.21</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"close"</span><span class="p">:</span><span class="mf">94.35</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"high"</span><span class="p">:</span><span class="mf">98.7</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">31619471534</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"count"</span><span class="p">:</span><span class="mi">138909</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"low"</span><span class="p">:</span><span class="mf">84.63</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"version"</span><span class="p">:</span><span class="mi">31619471534</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"vol"</span><span class="p">:</span><span class="mf">5.6617373443873316</span><span class="err">E</span><span class="mi">7</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="s2">"tick"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">     </span><span class="s2">"amount"</span><span class="p">:</span><span class="mf">613071.438479561</span><span class="p">,</span><span class="w">   </span><span class="s2">"open"</span><span class="p">:</span><span class="mf">86.21</span><span class="p">,</span><span class="w">   </span><span class="s2">"close"</span><span class="p">:</span><span class="mf">94.35</span><span class="p">,</span><span class="w">   </span><span class="s2">"high"</span><span class="p">:</span><span class="mf">98.7</span><span class="p">,</span><span class="w">   </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">31619471534</span><span class="p">,</span><span class="w">   </span><span class="s2">"count"</span><span class="p">:</span><span class="mi">138909</span><span class="p">,</span><span class="w">   </span><span class="s2">"low"</span><span class="p">:</span><span class="mf">84.63</span><span class="p">,</span><span class="w">   </span><span class="s2">"version"</span><span class="p">:</span><span class="mi">31619471534</span><span class="p">,</span><span class="w">   </span><span class="s2">"vol"</span><span class="p">:</span><span class="mf">5.6617373443873316</span><span class="err">E</span><span class="mi">7</span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='response-content-7'>Response Content</h3>
 <aside class="notice">The returned data object is under 'tick' object instead of 'data' object in the top level JSON</aside>
 
@@ -1905,16 +1848,7 @@ Rate Limit (NEW): 100times/2s</p>
 <blockquote>
 <p>Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100001</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"subtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"working"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">    </span><span class="p">{</span><span class="w">      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100001</span><span class="p">,</span><span class="w">      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot"</span><span class="p">,</span><span class="w">      </span><span class="s2">"subtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">      </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"working"</span><span class="w">    </span><span class="p">}</span><span class="w">  </span><span class="p">]}</span><span class="w">
 </span></code></pre><h3 id='response-content-8'>Response Content</h3>
 <table><thead>
 <tr>
@@ -1976,25 +1910,7 @@ Rate Limit (NEW): 100times/2s</p>
 <blockquote>
 <p>Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100009</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"working"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"list"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trade"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5007.4362872650"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"frozen"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"348.1199920000"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100009</span><span class="p">,</span><span class="w">    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot"</span><span class="p">,</span><span class="w">    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"working"</span><span class="p">,</span><span class="w">    </span><span class="s2">"list"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">      </span><span class="p">{</span><span class="w">        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trade"</span><span class="p">,</span><span class="w">        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5007.4362872650"</span><span class="w">      </span><span class="p">},</span><span class="w">      </span><span class="p">{</span><span class="w">        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"frozen"</span><span class="p">,</span><span class="w">        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"348.1199920000"</span><span class="w">      </span><span class="p">}</span><span class="w">    </span><span class="p">]</span><span class="w">  </span><span class="p">}}</span><span class="w">
 </span></code></pre><h3 id='response-content-9'>Response Content</h3>
 <table><thead>
 <tr>
@@ -2086,7 +2002,7 @@ Rate Limit (NEW): 100times/2s</p>
 <td>string</td>
 <td>The type of this account</td>
 <td>NA</td>
-<td>spot, margin, otc, super-margin</td>
+<td></td>
 </tr>
 <tr>
 <td>valuationCurrency</td>
@@ -2101,113 +2017,15 @@ Rate Limit (NEW): 100times/2s</p>
 <blockquote>
 <p>Responds:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"code"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="s2">"{
-        "</span><span class="err">todayProfit</span><span class="s2">": null,
-        "</span><span class="err">updated</span><span class="s2">": null,
-        "</span><span class="err">totalBalance</span><span class="s2">": "</span><span class="mf">68232.925885978428351309</span><span class="s2">",
-        "</span><span class="err">todayProfitRate</span><span class="s2">": null,
-        "</span><span class="err">profitAccountBalanceList</span><span class="s2">": [
-            {
-                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">1</span><span class="s2">",
-                "</span><span class="err">success</span><span class="s2">": true,
-                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mf">68232.925885978428351309</span><span class="s2">"
-            },
-            {
-                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">2</span><span class="s2">",
-                "</span><span class="err">success</span><span class="s2">": true,
-                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"
-            },
-            {
-                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">3</span><span class="s2">",
-                "</span><span class="err">success</span><span class="s2">": true,
-                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"
-            },
-            {
-                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">4</span><span class="s2">",
-                "</span><span class="err">success</span><span class="s2">": true,
-                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"
-            },
-            {
-                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">5</span><span class="s2">",
-                "</span><span class="err">success</span><span class="s2">": true,
-                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"
-            },
-            {
-                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">6</span><span class="s2">",
-                "</span><span class="err">success</span><span class="s2">": true,
-                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"
-            },
-            {
-                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">7</span><span class="s2">",
-                "</span><span class="err">success</span><span class="s2">": true,
-                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"
-            },
-            {
-                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">8</span><span class="s2">",
-                "</span><span class="err">success</span><span class="s2">": true,
-                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"
-            },
-            {
-                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">9</span><span class="s2">",
-                "</span><span class="err">success</span><span class="s2">": true,
-                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"
-            },
-            {
-                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">10</span><span class="s2">",
-                "</span><span class="err">success</span><span class="s2">": true,
-                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"
-            },
-            {
-                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">11</span><span class="s2">",
-                "</span><span class="err">success</span><span class="s2">": true,
-                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"
-            },
-            {
-                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">12</span><span class="s2">",
-                "</span><span class="err">success</span><span class="s2">": true,
-                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"
-            },
-            {
-                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">13</span><span class="s2">",
-                "</span><span class="err">success</span><span class="s2">": true,
-                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"
-            },
-            {
-                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">14</span><span class="s2">",
-                "</span><span class="err">success</span><span class="s2">": true,
-                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"
-            },
-            {
-                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">15</span><span class="s2">",
-                "</span><span class="err">success</span><span class="s2">": true,
-                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"
-            },
-            {
-                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">16</span><span class="s2">",
-                "</span><span class="err">success</span><span class="s2">": false,
-                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"
-            }
-        ]
-
-    }"</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">    </span><span class="s2">"code"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">    </span><span class="s2">"data"</span><span class="p">:</span><span class="s2">"{        "</span><span class="err">todayProfit</span><span class="s2">": null,        "</span><span class="err">updated</span><span class="s2">": null,        "</span><span class="err">totalBalance</span><span class="s2">": "</span><span class="mf">68232.925885978428351309</span><span class="s2">",        "</span><span class="err">todayProfitRate</span><span class="s2">": null,        "</span><span class="err">profitAccountBalanceList</span><span class="s2">": [            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">1</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": true,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mf">68232.925885978428351309</span><span class="s2">"            },            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">2</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": true,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"            },            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">3</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": true,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"            },            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">4</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": true,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"            },            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">5</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": true,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"            },            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">6</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": true,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"            },            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">7</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": true,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"            },            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">8</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": true,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"            },            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">9</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": true,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"            },            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">10</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": true,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"            },            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">11</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": true,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"            },            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">12</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": true,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"            },            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">13</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": true,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"            },            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">14</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": true,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"            },            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">15</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": true,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"            },            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">16</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": false,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"            }        ]        }"</span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='response-content-10'>Response Content</h3>
 <table><thead>
 <tr>
 <th>todayProfit</th>
 <th>String</th>
-<th>今日总收益，按估值参数计价</th>
+<th>描述</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>todayProfitRate</td>
-<td>Long</td>
-<td>今日收益率</td>
-</tr>
 <tr>
 <td>accountList</td>
 <td>List<AccountBalance></td>
@@ -2283,27 +2101,12 @@ Rate Limit (NEW): 100times/2s</p>
 <td>BTC</td>
 <td>USD,SGD (case sensitive)</td>
 </tr>
-<tr>
-<td>subUid</td>
-<td>false</td>
-<td>long</td>
-<td>Sub User&#39;s UID. When sub user&#39;s UID is not specified, the response would include the records of  API key.</td>
-<td>NA</td>
-<td></td>
-</tr>
 </tbody></table>
 
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"34.75"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1594901254363</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"ok"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"34.75"</span><span class="p">,</span><span class="w">        </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1594901254363</span><span class="w">    </span><span class="p">},</span><span class="w">    </span><span class="s2">"ok"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='response-content-11'>Response Content</h3>
 <table><thead>
 <tr>
@@ -2377,13 +2180,7 @@ Rate Limit (NEW): 100times/2s</p>
 <blockquote>
 <p>Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"transact-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">220521190</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"transact-time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1590662591832</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">        </span><span class="s2">"transact-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">220521190</span><span class="p">,</span><span class="w">        </span><span class="s2">"transact-time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1590662591832</span><span class="w">    </span><span class="p">}}</span><span class="w">
 </span></code></pre><h3 id='response-content-12'>Response Content</h3>
 <table><thead>
 <tr>
@@ -2825,8 +2622,9 @@ endTime default value: current time</p>
 </tbody></table>
 
 <p>Note 3:<br>
-Only when the number of items within the query window (between “startTime” and ”endTime”) exceeded the page limitation (defined by “limit”), Huobi server returns “nextId”. Once received “nextId”, API user should –<br>
-1)  Be aware of that, some items within the query window were not returned due to the page size limitation.<br>
+Only when the number of items within the query window (between “startTime” and ”endTime”) exceeded the page limitation (defined by “limit”), Huobi server returns “nextId”. Once received “nextId”, API user should –<br></p>
+
+<p>1)  Be aware of that, some items within the query window were not returned due to the page size limitation.<br>
 2)  In order to get these items from Huobi server, adopt the “nextId” as “fromId” and submit another request, with other request parameters no change.<br>
 3)  As database record ID, “nextId” and “fromId” are for recurring query purpose and the ID itself does not have any business implication.<br></p>
 <h1 id='wallet-deposit-and-withdraw'>Wallet (Deposit and Withdraw)</h1><h2 id='introduction-4'>Introduction</h2>
@@ -2834,7 +2632,7 @@ Only when the number of items within the query window (between “startTime” a
 
 <aside class="notice">All endpoints in this section require authentication</aside>
 <h2 id='query-deposit-address'>Query Deposit Address</h2>
-<p>Parent user and sub user could query deposit address of corresponding chain, for a specific crypto currency (except IOTA).</p>
+<p>Parent user could query deposit address of corresponding chain, for a specific crypto currency (except IOTA).</p>
 
 <p>API Key Permission：Read<br>
 Rate Limit (NEW): 20times/2s</p>
@@ -2932,7 +2730,7 @@ Rate Limit (NEW): 20times/2s</p>
 <td>tx-hash</td>
 <td>true</td>
 <td>string</td>
-<td>交易哈希。如果是“快速提币”，则提币不通过区块链，该值为空。</td>
+<td>交易哈希。</td>
 <td></td>
 </tr>
 <tr>
@@ -3160,8 +2958,8 @@ Rate Limit (NEW): 20times/2s</p>
 <p>type:</p>
 
 <ul>
-<li>market : The price is not required in order creation request, you only need to specify either volume or amount. The matching and trade will happen automatically according to the request.</li>
-<li>limit: Both of the price and amount should be specified in order creation request.</li>
+<li><p>market : The price is not required in order creation request, you only need to specify either volume or amount. The matching and trade will happen automatically according to the request.</p></li>
+<li><p>limit: Both of the price and amount should be specified in order creation request.</p></li>
 </ul>
 
 <p><strong>order source</strong>: the origin of the order</p>
@@ -3375,19 +3173,7 @@ Rate Limit (NEW): 50times/2s</p>
 <blockquote>
 <p>Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"order-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">61713400772</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"client-order-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c1"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"order-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">61713400940</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"client-order-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d2"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">        </span><span class="p">{</span><span class="w">            </span><span class="s2">"order-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">61713400772</span><span class="p">,</span><span class="w">            </span><span class="s2">"client-order-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c1"</span><span class="w">        </span><span class="p">},</span><span class="w">        </span><span class="p">{</span><span class="w">            </span><span class="s2">"order-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">61713400940</span><span class="p">,</span><span class="w">            </span><span class="s2">"client-order-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d2"</span><span class="w">        </span><span class="p">}</span><span class="w">    </span><span class="p">]}</span><span class="w">
 </span></code></pre><h3 id='response-content-17'>Response Content</h3>
 <table><thead>
 <tr>
@@ -3464,12 +3250,7 @@ Rate Limit (NEW): 100times/2s</p>
 <blockquote>
 <p>Failure response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"error"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"err-code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order-orderstate-error"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"err-msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Incorrect order state"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"order-state"</span><span class="p">:</span><span class="mi">-1</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">current</span><span class="w"> </span><span class="err">order</span><span class="w"> </span><span class="err">state</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"error"</span><span class="p">,</span><span class="w">  </span><span class="s2">"err-code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order-orderstate-error"</span><span class="p">,</span><span class="w">  </span><span class="s2">"err-msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Incorrect order state"</span><span class="p">,</span><span class="w">  </span><span class="s2">"order-state"</span><span class="p">:</span><span class="mi">-1</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">current</span><span class="w"> </span><span class="err">order</span><span class="w"> </span><span class="err">state</span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>The possible values of &quot;order-state&quot; includes -</p>
 
@@ -4227,25 +4008,7 @@ Rate Limit (NEW):50times/2s</p>
 <blockquote>
 <p>Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59378</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethbtc"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100009</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.1000000000"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.1000000000"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1494901162595</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-limit"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"field-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.1000000000"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"field-cash-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1011.0100000000"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"field-fees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0202000000"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"finished-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1494901400468</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"filled"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"canceled-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59378</span><span class="p">,</span><span class="w">    </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethbtc"</span><span class="p">,</span><span class="w">    </span><span class="s2">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100009</span><span class="p">,</span><span class="w">    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.1000000000"</span><span class="p">,</span><span class="w">    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.1000000000"</span><span class="p">,</span><span class="w">    </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1494901162595</span><span class="p">,</span><span class="w">    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-limit"</span><span class="p">,</span><span class="w">    </span><span class="s2">"field-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.1000000000"</span><span class="p">,</span><span class="w">    </span><span class="s2">"field-cash-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1011.0100000000"</span><span class="p">,</span><span class="w">    </span><span class="s2">"field-fees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0202000000"</span><span class="p">,</span><span class="w">    </span><span class="s2">"finished-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1494901400468</span><span class="p">,</span><span class="w">    </span><span class="s2">"user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">    </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api"</span><span class="p">,</span><span class="w">    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"filled"</span><span class="p">,</span><span class="w">    </span><span class="s2">"canceled-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">  </span><span class="p">}}</span><span class="w">
 </span></code></pre><h3 id='response-content-24'>Response Content</h3>
 <table><thead>
 <tr>
@@ -4444,19 +4207,14 @@ Rate Limit (NEW): 50times/2s</p>
 <td>the role in the transaction: taker or maker</td>
 </tr>
 <tr>
-<td>filled-points</td>
+<td>status</td>
 <td>string</td>
-<td>deduction amount (unit: in ht or hbpoint)</td>
+<td>状态</td>
 </tr>
 <tr>
-<td>fee-deduct-currency</td>
-<td>string</td>
-<td>deduction type. if blank, the transaction fee is based on original currency; if showing value as &quot;ht&quot;, the transaction fee is deducted by HT; if showing value as &quot;hbpoint&quot;, the transaction fee is deducted by HB point.</td>
-</tr>
-<tr>
-<td>fee-deduct-state</td>
-<td>string</td>
-<td>Fee deduction status，In deduction：ongoing，Deduction completed：done</td>
+<td><data></td>
+<td>object</td>
+<td></td>
 </tr>
 </tbody></table>
 
@@ -4482,12 +4240,10 @@ Rate Limit (NEW): 50times/2s</p>
 <p><code>GET /v1/order/orders</code></p>
 
 <blockquote>
-<p>Request
-<code>json
-{   &quot;account-id&quot;: &quot;100009&quot;,   &quot;amount&quot;: &quot;10.1&quot;,   &quot;price&quot;: &quot;100.1&quot;,   &quot;source&quot;: &quot;api&quot;,   &quot;symbol&quot;: &quot;ethbtc&quot;,   &quot;type&quot;: &quot;buy-limit&quot;}
-</code></p>
+<p>Request</p>
 </blockquote>
-<h3 id='request-parameters-24'>Request Parameters</h3>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">   </span><span class="s2">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100009"</span><span class="p">,</span><span class="w">   </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.1"</span><span class="p">,</span><span class="w">   </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.1"</span><span class="p">,</span><span class="w">   </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api"</span><span class="p">,</span><span class="w">   </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethbtc"</span><span class="p">,</span><span class="w">   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-limit"</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='request-parameters-24'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4567,25 +4323,7 @@ Rate Limit (NEW): 50times/2s</p>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="w">  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59378</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethbtc"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100009</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.1000000000"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.1000000000"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1494901162595</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-limit"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"field-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.1000000000"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"field-cash-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1011.0100000000"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"field-fees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0202000000"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"finished-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1494901400468</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"filled"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"canceled-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">    </span><span class="p">{</span><span class="w">      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59378</span><span class="p">,</span><span class="w">      </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethbtc"</span><span class="p">,</span><span class="w">      </span><span class="s2">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100009</span><span class="p">,</span><span class="w">      </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.1000000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.1000000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1494901162595</span><span class="p">,</span><span class="w">      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-limit"</span><span class="p">,</span><span class="w">      </span><span class="s2">"field-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.1000000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"field-cash-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1011.0100000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"field-fees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0202000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"finished-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1494901400468</span><span class="p">,</span><span class="w">      </span><span class="s2">"user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">      </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api"</span><span class="p">,</span><span class="w">      </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"filled"</span><span class="p">,</span><span class="w">      </span><span class="s2">"canceled-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">    </span><span class="p">}</span><span class="w">  </span><span class="p">]</span><span class="w">
 </span></code></pre><h3 id='response-content-26'>Response Content</h3>
 <table><thead>
 <tr>
@@ -4725,12 +4463,10 @@ The orders created via API will no longer be queryable after being cancelled for
 <p><code>GET /v1/order/history</code></p>
 
 <blockquote>
-<p>Request
-<code>json
-{   &quot;symbol&quot;: &quot;ethbtc&quot;,   &quot;start-time&quot;: &quot;1556417645419&quot;,   &quot;end-time&quot;: &quot;1556533539282&quot;,   &quot;direct&quot;: &quot;prev&quot;,   &quot;size&quot;: &quot;10&quot;}
-</code></p>
+<p>Request</p>
 </blockquote>
-<h3 id='request-parameters-25'>Request Parameters</h3>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">   </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethbtc"</span><span class="p">,</span><span class="w">   </span><span class="s2">"start-time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1556417645419"</span><span class="p">,</span><span class="w">   </span><span class="s2">"end-time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1556533539282"</span><span class="p">,</span><span class="w">   </span><span class="s2">"direct"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prev"</span><span class="p">,</span><span class="w">   </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='request-parameters-25'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4965,25 +4701,7 @@ Rate Limit (NEW): 20times/2s</p>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="w">  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">29553</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"order-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59378</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"match-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59335</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethbtc"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-limit"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.1000000000"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"filled-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9.1155000000"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"filled-fees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0182310000"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1494901400435</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"trade-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100282808529</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"taker"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"filled-points"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"fee-deduct-currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"fee-deduct-state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"done"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">    </span><span class="p">{</span><span class="w">      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">29553</span><span class="p">,</span><span class="w">      </span><span class="s2">"order-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59378</span><span class="p">,</span><span class="w">      </span><span class="s2">"match-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59335</span><span class="p">,</span><span class="w">      </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethbtc"</span><span class="p">,</span><span class="w">      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-limit"</span><span class="p">,</span><span class="w">      </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api"</span><span class="p">,</span><span class="w">      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.1000000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"filled-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9.1155000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"filled-fees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0182310000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1494901400435</span><span class="p">,</span><span class="w">      </span><span class="s2">"trade-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100282808529</span><span class="p">,</span><span class="w">      </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"taker"</span><span class="p">,</span><span class="w">      </span><span class="s2">"filled-points"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">      </span><span class="s2">"fee-deduct-currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">      </span><span class="s2">"fee-deduct-state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"done"</span><span class="w">    </span><span class="p">}</span><span class="w">  </span><span class="p">]</span><span class="w">
 </span></code></pre><h3 id='response-content-28'>Response Content</h3>
 <aside class="notice">The return data contains a list and each item in the list represents a match result</aside>
 
@@ -5060,19 +4778,14 @@ Rate Limit (NEW): 20times/2s</p>
 <td>The role in the transaction: taker or maker.</td>
 </tr>
 <tr>
-<td>filled-points</td>
+<td>status</td>
 <td>string</td>
-<td>deduction amount (unit: in ht or hbpoint)</td>
+<td>状态</td>
 </tr>
 <tr>
-<td>fee-deduct-currency</td>
-<td>string</td>
-<td>deduction type: ht or hbpoint.</td>
-</tr>
-<tr>
-<td>fee-deduct-state</td>
-<td>string</td>
-<td>Fee deduction status，In deduction：ongoing，Deduction completed：done</td>
+<td><data></td>
+<td>object</td>
+<td></td>
 </tr>
 </tbody></table>
 
@@ -5201,9 +4914,12 @@ Rate Limit (NEW): 20times/2s</p>
 </tr>
 </tbody></table>
 
-<p>Note：
-- If makerFeeRate/actualMakerRate is positive，this field means the transaction fee rate.
-- If makerFeeRate/actualMakerRate is negative, this field means the rebate fee rate.</p>
+<p>Note：</p>
+
+<ul>
+<li>If makerFeeRate/actualMakerRate is positive，this field means the transaction fee rate.</li>
+<li>If makerFeeRate/actualMakerRate is negative, this field means the rebate fee rate.</li>
+</ul>
 <h2 id='error-code-4'>Error Code</h2>
 <p>Below is the error code and description returned by Trading APIs</p>
 
@@ -5224,10 +4940,6 @@ Rate Limit (NEW): 20times/2s</p>
 <tr>
 <td>login-required</td>
 <td>Signature is missing, or user not find (key and uid not match).</td>
-</tr>
-<tr>
-<td>parameter-required</td>
-<td>Stop-price or operator parameter is missing for stop-order type</td>
 </tr>
 <tr>
 <td>base-record-invalid</td>
@@ -5252,10 +4964,6 @@ Rate Limit (NEW): 20times/2s</p>
 <tr>
 <td>account-account-id-inexistent</td>
 <td>The account id doesn&#39;t exist</td>
-</tr>
-<tr>
-<td>sub-user-auth-required</td>
-<td>Isolated margin account is not enabled for sub user</td>
 </tr>
 <tr>
 <td>order-disabled</td>
@@ -5346,28 +5054,8 @@ Rate Limit (NEW): 20times/2s</p>
 <td>Order update error</td>
 </tr>
 <tr>
-<td>order-fl-cancellation-is-disallowed</td>
-<td>Liquidation order cannot be canceled</td>
-</tr>
-<tr>
-<td>operation-forbidden-for-fl-account-state</td>
-<td>The operation is forbidden when the account is in liquidation</td>
-</tr>
-<tr>
-<td>operation-forbidden-for-lock-account-state</td>
-<td>The operation is forbidden when the account is locked</td>
-</tr>
-<tr>
-<td>fl-order-already-existed</td>
-<td>An unfilled liquidation order already exists</td>
-</tr>
-<tr>
 <td>order-user-cancel-forbidden</td>
 <td>IOC or FOK order is not allowed to cancel</td>
-</tr>
-<tr>
-<td>account-state-invalid</td>
-<td>Invalid status of liquidation account</td>
 </tr>
 <tr>
 <td>order-price-greater-than-limit</td>
@@ -5376,10 +5064,6 @@ Rate Limit (NEW): 20times/2s</p>
 <tr>
 <td>order-price-less-than-limit</td>
 <td>Order price is lower than the limitation before market opens</td>
-</tr>
-<tr>
-<td>order-stop-order-hit-trigger</td>
-<td>The stop orders triggered immediately are not allowed</td>
 </tr>
 <tr>
 <td>market-orders-not-support-during-limit-price-trading</td>
@@ -5549,10 +5233,7 @@ or
 <blockquote>
 <p>Subscribe request</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"sub"</span><span class="p">:</span><span class="w"> </span><span class="s2">"market.ethbtc.kline.1min"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id1"</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  </span><span class="s2">"sub"</span><span class="p">:</span><span class="w"> </span><span class="s2">"market.ethbtc.kline.1min"</span><span class="p">,</span><span class="w">  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id1"</span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='topic-parameter'>Topic Parameter</h3>
 <table><thead>
 <tr>
@@ -5582,30 +5263,12 @@ or
 <blockquote>
 <p>Response</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id1"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"subbed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"market.ethbtc.kline.1min"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1489474081631</span><span class="w"> </span><span class="err">//system</span><span class="w"> </span><span class="err">response</span><span class="w"> </span><span class="err">time</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id1"</span><span class="p">,</span><span class="w">  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">  </span><span class="s2">"subbed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"market.ethbtc.kline.1min"</span><span class="p">,</span><span class="w">  </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1489474081631</span><span class="w"> </span><span class="err">//system</span><span class="w"> </span><span class="err">response</span><span class="w"> </span><span class="err">time</span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
 <p>Update example</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"market.ethbtc.kline.1min"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1489474082831</span><span class="p">,</span><span class="w"> </span><span class="err">//system</span><span class="w"> </span><span class="err">update</span><span class="w"> </span><span class="err">time</span><span class="w">
-  </span><span class="s2">"tick"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1489464480</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">7962.62</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">7962.62</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">7962.62</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">7962.62</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"vol"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"market.ethbtc.kline.1min"</span><span class="p">,</span><span class="w">  </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1489474082831</span><span class="p">,</span><span class="w"> </span><span class="err">//system</span><span class="w"> </span><span class="err">update</span><span class="w"> </span><span class="err">time</span><span class="w">  </span><span class="s2">"tick"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1489464480</span><span class="p">,</span><span class="w">    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">    </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">    </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">7962.62</span><span class="p">,</span><span class="w">    </span><span class="s2">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">7962.62</span><span class="p">,</span><span class="w">    </span><span class="s2">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">7962.62</span><span class="p">,</span><span class="w">    </span><span class="s2">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">7962.62</span><span class="p">,</span><span class="w">    </span><span class="s2">"vol"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="w">  </span><span class="p">}}</span><span class="w">
 </span></code></pre><h3 id='update-content'>Update Content</h3>
 <table><thead>
 <tr>
@@ -5655,16 +5318,9 @@ or
 <td>Aggregated trading value during the interval (in quote currency)</td>
 </tr>
 </tbody></table>
-
-<aside class="notice">When symbol is set to "hb10" or "huobi10", amount, count, and vol will always have the value of 0</aside>
 <h3 id='pull-request'>Pull Request</h3>
 <p>Pull request is supported with extra parameters to define the range. The maximum number of ticks in each response is 300.</p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"req"</span><span class="p">:</span><span class="w"> </span><span class="s2">"market.$symbol.kline.$period"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id generated by client"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"from time in epoch seconds"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"to time in epoch seconds"</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  </span><span class="s2">"req"</span><span class="p">:</span><span class="w"> </span><span class="s2">"market.$symbol.kline.$period"</span><span class="p">,</span><span class="w">  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id generated by client"</span><span class="p">,</span><span class="w">  </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"from time in epoch seconds"</span><span class="p">,</span><span class="w">  </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"to time in epoch seconds"</span><span class="p">}</span><span class="w">
 </span></code></pre>
 <table><thead>
 <tr>
@@ -5889,22 +5545,7 @@ While type is set as ‘step1’, ‘step2’, ‘step3’, ‘step4’, or ‘s
 <blockquote>
 <p>Update example</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"market.htbtc.depth.step0"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1572362902027</span><span class="p">,</span><span class="w"> </span><span class="err">//system</span><span class="w"> </span><span class="err">update</span><span class="w"> </span><span class="err">time</span><span class="w">
-  </span><span class="s2">"tick"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"bids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">[</span><span class="mf">3.7721</span><span class="p">,</span><span class="w"> </span><span class="mf">344.86</span><span class="p">],</span><span class="err">//</span><span class="w"> </span><span class="p">[</span><span class="err">price</span><span class="p">,</span><span class="w"> </span><span class="err">size</span><span class="p">]</span><span class="w">
-      </span><span class="p">[</span><span class="mf">3.7709</span><span class="p">,</span><span class="w"> </span><span class="mf">46.66</span><span class="p">]</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"asks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">[</span><span class="mf">3.7745</span><span class="p">,</span><span class="w"> </span><span class="mf">15.44</span><span class="p">],</span><span class="w">
-      </span><span class="p">[</span><span class="mf">3.7746</span><span class="p">,</span><span class="w"> </span><span class="mf">70.52</span><span class="p">]</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">100434317651</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1572362902012</span><span class="w"> </span><span class="err">//quote</span><span class="w"> </span><span class="err">time</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"market.htbtc.depth.step0"</span><span class="p">,</span><span class="w">  </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1572362902027</span><span class="p">,</span><span class="w"> </span><span class="err">//system</span><span class="w"> </span><span class="err">update</span><span class="w"> </span><span class="err">time</span><span class="w">  </span><span class="s2">"tick"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">    </span><span class="s2">"bids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">      </span><span class="p">[</span><span class="mf">3.7721</span><span class="p">,</span><span class="w"> </span><span class="mf">344.86</span><span class="p">],</span><span class="err">//</span><span class="w"> </span><span class="p">[</span><span class="err">price</span><span class="p">,</span><span class="w"> </span><span class="err">size</span><span class="p">]</span><span class="w">      </span><span class="p">[</span><span class="mf">3.7709</span><span class="p">,</span><span class="w"> </span><span class="mf">46.66</span><span class="p">]</span><span class="w">    </span><span class="p">],</span><span class="w">    </span><span class="s2">"asks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">      </span><span class="p">[</span><span class="mf">3.7745</span><span class="p">,</span><span class="w"> </span><span class="mf">15.44</span><span class="p">],</span><span class="w">      </span><span class="p">[</span><span class="mf">3.7746</span><span class="p">,</span><span class="w"> </span><span class="mf">70.52</span><span class="p">]</span><span class="w">    </span><span class="p">],</span><span class="w">    </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">100434317651</span><span class="p">,</span><span class="w">    </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1572362902012</span><span class="w"> </span><span class="err">//quote</span><span class="w"> </span><span class="err">time</span><span class="w">  </span><span class="p">}}</span><span class="w">
 </span></code></pre><h3 id='update-content-2'>Update Content</h3>
 <aside class="notice">Under 'tick' object there is a list of bids and a list of asks</aside>
 
@@ -5950,8 +5591,9 @@ While type is set as ‘step1’, ‘step2’, ‘step3’, ‘step4’, or ‘s
 or
 <strong><code>wss://api-aws.huobi.sg/feed</code></strong></p>
 
-<p>Suggested downstream data processing:<br>
-1)  Subscribe to incremental updates and start to cache them;<br>
+<p>Suggested downstream data processing:<br></p>
+
+<p>1)  Subscribe to incremental updates and start to cache them;<br>
 2)  Request refresh message (with same number of levels), and base on its “seqNum” to align it with the cached incremental message which has the same “prevSeqNum”;<br>
 3)  Start to continuously process incremental messages to build up MBP book;<br>
 4)  The “prevSeqNum” of the current incremental message must be the same with “seqNum” of the previous message, otherwise it implicates message loss which should require another round of refresh message retrieval and alignment;<br>
@@ -5960,8 +5602,9 @@ or
 7)  Once received a “size=0” at existing price level from incremental message, that price level should be removed from MBP book;<br>
 8)  If one incremental message includes updates of multiple price levels, all of those levels should be updated simultaneously in MBP book.<br></p>
 
-<p>Currently Huobi Global only supports 5-level/20-level MBP incremental channel and 150-level incremental channel, the differences between them are -<br>
-1) Different depth of market.<br>
+<p>Currently Huobi Global only supports 5-level/20-level MBP incremental channel and 150-level incremental channel, the differences between them are -<br></p>
+
+<p>1) Different depth of market.<br>
 2) 5-level/20-level incremental MBP is a tick by tick feed, which means whenever there is an order book change at that level, it pushes an update; 150 levels incremental MBP feed is based on the gap between two snapshots at 100ms interval.<br>
 3) While there is single side order book update, either bid or ask, the incremental message sent from 5-level/20-level MBP feed only contains that side update. <br></p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">    </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"market.ethbtc.mbp.5"</span><span class="p">,</span><span class="w">    </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1573199608679</span><span class="p">,</span><span class="w">    </span><span class="s2">"tick"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">        </span><span class="s2">"seqNum"</span><span class="p">:</span><span class="w"> </span><span class="mi">100020146795</span><span class="p">,</span><span class="w">        </span><span class="s2">"prevSeqNum"</span><span class="p">:</span><span class="w"> </span><span class="mi">100020146794</span><span class="p">,</span><span class="w">        </span><span class="s2">"asks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">            </span><span class="p">[</span><span class="mf">645.140000000000000000</span><span class="p">,</span><span class="w"> </span><span class="mf">26.755973959140651643</span><span class="p">]</span><span class="w">        </span><span class="p">]</span><span class="w">    </span><span class="p">}}</span><span class="w">
@@ -5969,13 +5612,15 @@ or
 <p>But the incremental message from 150 levels MBP feed contains not only that side update and also a blank object for another side.</p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">    </span><span class="s2">"ch"</span><span class="p">:</span><span class="s2">"market.ethbtc.mbp.150"</span><span class="p">,</span><span class="w">    </span><span class="s2">"ts"</span><span class="p">:</span><span class="mi">1573199608679</span><span class="p">,</span><span class="w">    </span><span class="s2">"tick"</span><span class="p">:{</span><span class="w">        </span><span class="s2">"seqNum"</span><span class="p">:</span><span class="mi">100020146795</span><span class="p">,</span><span class="w">        </span><span class="s2">"prevSeqNum"</span><span class="p">:</span><span class="mi">100020146794</span><span class="p">,</span><span class="w">        </span><span class="s2">"bids"</span><span class="p">:[</span><span class="w"> </span><span class="p">],</span><span class="w">        </span><span class="s2">"asks"</span><span class="p">:[</span><span class="w">            </span><span class="p">[</span><span class="mf">645.14</span><span class="p">,</span><span class="mf">26.75597395914065</span><span class="p">]</span><span class="w">        </span><span class="p">]</span><span class="w">    </span><span class="p">}}</span><span class="w">
 </span></code></pre>
-<p>In the near future, Huobi Global will align the update behavior of 150-level incremental channel with 5-level/20-level, which means while single side order book changed (either bid or ask), the update message will be no longer including a blank object for another side.<br>
-4) While there is nothing change between two snapshots in past 100ms, the 150 levels incremental MBP feed still sends out a message which contains two blank objects – bids &amp; asks. <br></p>
+<p>In the near future, Huobi Global will align the update behavior of 150-level incremental channel with 5-level/20-level, which means while single side order book changed (either bid or ask), the update message will be no longer including a blank object for another side.<br></p>
+
+<p>4) While there is nothing change between two snapshots in past 100ms, the 150 levels incremental MBP feed still sends out a message which contains two blank objects – bids &amp; asks. <br></p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">    </span><span class="s2">"ch"</span><span class="p">:</span><span class="s2">"market.ethbtc.mbp.150"</span><span class="p">,</span><span class="w">    </span><span class="s2">"ts"</span><span class="p">:</span><span class="mi">1585074391470</span><span class="p">,</span><span class="w">    </span><span class="s2">"tick"</span><span class="p">:{</span><span class="w">        </span><span class="s2">"seqNum"</span><span class="p">:</span><span class="mi">100772868478</span><span class="p">,</span><span class="w">        </span><span class="s2">"prevSeqNum"</span><span class="p">:</span><span class="mi">100772868476</span><span class="p">,</span><span class="w">        </span><span class="s2">"bids"</span><span class="p">:[</span><span class="w">  </span><span class="p">],</span><span class="w">        </span><span class="s2">"asks"</span><span class="p">:[</span><span class="w">  </span><span class="p">]</span><span class="w">    </span><span class="p">}}</span><span class="w">
 </span></code></pre>
 <p>But 5-level/20-level incremental channel won’t disseminate any update in such a case.<br>
-In the future, Huobi Global will align the update behavior of 150-level incremental channel with 5-level/20-level, which means while there is no order book change at all, the channel will be no longer disseminating messages of blank object any more.<br>
-5) 5-level/20-level incremental channel only supports the following symbols at this stage - ethbtc,ltcbtc,bchbtc, while 150-level incremental channel supports all symbols.<br></p>
+In the future, Huobi Global will align the update behavior of 150-level incremental channel with 5-level/20-level, which means while there is no order book change at all, the channel will be no longer disseminating messages of blank object any more.<br></p>
+
+<p>5) 5-level/20-level incremental channel only supports the following symbols at this stage - ethbtc,ltcbtc,bchbtc, while 150-level incremental channel supports all symbols.<br></p>
 
 <p>REQ channel supports refreshing message for 5-level, 20-level, and 150-level.</p>
 <h3 id='subscribe-incremntal-updates'>Subscribe incremntal updates</h3>
@@ -6068,11 +5713,7 @@ In the future, Huobi Global will align the update behavior of 150-level incremen
 <p>User could subscribe to this channel to receive refresh update of Market By Price order book. The update interval is around 100ms.</p>
 <h3 id='subscription'>Subscription</h3>
 <p><code>market.$symbol.mbp.refresh.$levels</code></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-</span><span class="s2">"sub"</span><span class="p">:</span><span class="w"> </span><span class="s2">"market.ltcbtc.mbp.refresh.20"</span><span class="p">,</span><span class="w">
-</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id1"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"sub"</span><span class="p">:</span><span class="w"> </span><span class="s2">"market.ltcbtc.mbp.refresh.20"</span><span class="p">,</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id1"</span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='parameters-2'>Parameters</h3>
 <table><thead>
 <tr>
@@ -6401,20 +6042,10 @@ In the future, Huobi Global will align the update behavior of 150-level incremen
 By comparing to api-aws.huobi.sg, the network latency to api-aws.huobi.sg is lower, for those client&#39;s servers locating at AWS.</p>
 <h3 id='message-compression'>Message Compression</h3>
 <p>Unlike Market WebSocket, the return data of Account and Order Websocket are not compressed by GZIP.</p>
-<h3 id='heartbeat'>Heartbeat</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ping"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1575537778295</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<h3 id='heartbeat'>Heartbeat</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">   </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ping"</span><span class="p">,</span><span class="w">   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">       </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1575537778295</span><span class="w"> </span><span class="p">}}</span><span class="w">
 </span></code></pre>
 <p>Once the Websocket connection is established, Huobi server will periodically send &quot;ping&quot; message at 20s interval, with an integer inside.</p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pong"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1575537778295</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">same</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="s2">"ping"</span><span class="w"> </span><span class="err">message</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">    </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pong"</span><span class="p">,</span><span class="w">    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">          </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1575537778295</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">same</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="s2">"ping"</span><span class="w"> </span><span class="err">message</span><span class="w">    </span><span class="p">}}</span><span class="w">
 </span></code></pre>
 <p>Once client receives &quot;ping&quot;, it should respond &quot;pong&quot; message back with the same integer.</p>
 <h3 id='valid-values-of-action'>Valid Values of <code>action</code></h3>
@@ -6509,26 +6140,10 @@ By comparing to api-aws.huobi.sg, the network latency to api-aws.huobi.sg is low
 <td>Signature</td>
 </tr>
 </tbody></table>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"req"</span><span class="p">,</span><span class="w"> 
-    </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"auth"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
-        </span><span class="s2">"authType"</span><span class="p">:</span><span class="s2">"api"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"accessKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"signatureMethod"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HmacSHA256"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"signatureVersion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.1"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-01T18:16:16"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"signature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4F65x5A2bLyMWVQj3Aqp+B4w+ivaA7n5Oi2SuYtCJ9o="</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">    </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"req"</span><span class="p">,</span><span class="w">     </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"auth"</span><span class="p">,</span><span class="w">    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">         </span><span class="s2">"authType"</span><span class="p">:</span><span class="s2">"api"</span><span class="p">,</span><span class="w">        </span><span class="s2">"accessKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx"</span><span class="p">,</span><span class="w">        </span><span class="s2">"signatureMethod"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HmacSHA256"</span><span class="p">,</span><span class="w">        </span><span class="s2">"signatureVersion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.1"</span><span class="p">,</span><span class="w">        </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-01T18:16:16"</span><span class="p">,</span><span class="w">        </span><span class="s2">"signature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4F65x5A2bLyMWVQj3Aqp+B4w+ivaA7n5Oi2SuYtCJ9o="</span><span class="w">    </span><span class="p">}}</span><span class="w">
 </span></code></pre>
 <p>This is an exmaple of authentication request:</p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"req"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"auth"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">   </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"req"</span><span class="p">,</span><span class="w">    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">    </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"auth"</span><span class="p">,</span><span class="w">   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{}}</span><span class="w">
 </span></code></pre>
 <p>The response of success:</p>
 <h3 id='generating-signature'>Generating Signature</h3>
@@ -6550,37 +6165,35 @@ By comparing to api-aws.huobi.sg, the network latency to api-aws.huobi.sg is low
 <blockquote>
 <p>Sub request:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accounts.update"</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">   </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w">    </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accounts.update"</span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Once the Websocket connection is established, Websocket client could send following request to subscribe a topic:</p>
 
 <blockquote>
 <p>Sub respose:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accounts.update#0"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">   </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w">    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">    </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accounts.update#0"</span><span class="p">,</span><span class="w">  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{}}</span><span class="w">
 </span></code></pre>
 <p>Upon success, Websocket client should receive a response below:</p>
 <h2 id='subscribe-order-updates'>Subscribe Order Updates</h2>
 <p>API Key Permission: Read</p>
 
-<p>An order update can be triggered by any of following:<br>
--   Conditional order triggering failure (eventType=trigger)<br>
--   Conditional order cancellation before trigger (eventType=deletion)<br>
--   Order creation (eventType=creation)<br>
--   Order matching (eventType=trade)<br>
--   Order cancellation (eventType=cancellation)<br></p>
+<p>An order update can be triggered by any of following:<br></p>
 
-<p>The field list in order update message can be various per event type, developers can design the data structure in either of two ways:<br>
-- Define a data structure including fields for all event types, allowing a few of them are null<br>
-- Define different data structure for each event type to include specific fields, inheriting from a common data structure which has common fields</p>
+<ul>
+<li>  Conditional order triggering failure (eventType=trigger)<br></li>
+<li>  Conditional order cancellation before trigger (eventType=deletion)<br></li>
+<li>  Order creation (eventType=creation)<br></li>
+<li>  Order matching (eventType=trade)<br></li>
+<li>  Order cancellation (eventType=cancellation)<br></li>
+</ul>
+
+<p>The field list in order update message can be various per event type, developers can design the data structure in either of two ways:<br></p>
+
+<ul>
+<li>Define a data structure including fields for all event types, allowing a few of them are null<br></li>
+<li>Define different data structure for each event type to include specific fields, inheriting from a common data structure which has common fields</li>
+</ul>
 <h3 id='topic-7'>Topic</h3>
 <p><code>orders#${symbol}</code></p>
 
@@ -6774,8 +6387,11 @@ By comparing to api-aws.huobi.sg, the network latency to api-aws.huobi.sg is low
 </tr>
 </tbody></table>
 
-<p>Note:<br>
-- The topic will send creation update for taker&#39;s order before it being filled.<br></p>
+<p>Note:<br></p>
+
+<ul>
+<li>The topic will send creation update for taker&#39;s order before it being filled.<br></li>
+</ul>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">   </span><span class="s2">"action"</span><span class="p">:</span><span class="s2">"push"</span><span class="p">,</span><span class="w">    </span><span class="s2">"ch"</span><span class="p">:</span><span class="s2">"orders#ethbtc"</span><span class="p">,</span><span class="w">   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">       </span><span class="s2">"tradePrice"</span><span class="p">:</span><span class="s2">"76.000000000000000000"</span><span class="p">,</span><span class="w">       </span><span class="s2">"tradeVolume"</span><span class="p">:</span><span class="s2">"1.013157894736842100"</span><span class="p">,</span><span class="w">       </span><span class="s2">"tradeId"</span><span class="p">:</span><span class="mi">301</span><span class="p">,</span><span class="w">      </span><span class="s2">"tradeTime"</span><span class="p">:</span><span class="mi">1583854188883</span><span class="p">,</span><span class="w">      </span><span class="s2">"aggressor"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">       </span><span class="s2">"remainAmt"</span><span class="p">:</span><span class="s2">"0.000000000000000400000000000000000000"</span><span class="p">,</span><span class="w">       </span><span class="s2">"execAmt"</span><span class="p">:</span><span class="s2">"2"</span><span class="p">,</span><span class="w">      </span><span class="s2">"orderId"</span><span class="p">:</span><span class="mi">27163536</span><span class="p">,</span><span class="w">     </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"sell-limit"</span><span class="p">,</span><span class="w">        </span><span class="s2">"clientOrderId"</span><span class="p">:</span><span class="s2">"abc123"</span><span class="p">,</span><span class="w">       </span><span class="s2">"orderSource"</span><span class="p">:</span><span class="s2">"spot-api"</span><span class="p">,</span><span class="w">       </span><span class="s2">"orderPrice"</span><span class="p">:</span><span class="s2">"15000"</span><span class="p">,</span><span class="w">       </span><span class="s2">"orderSize"</span><span class="p">:</span><span class="s2">"0.01"</span><span class="p">,</span><span class="w">     </span><span class="s2">"orderStatus"</span><span class="p">:</span><span class="s2">"filled"</span><span class="p">,</span><span class="w">     </span><span class="s2">"symbol"</span><span class="p">:</span><span class="s2">"ethbtc"</span><span class="p">,</span><span class="w">      </span><span class="s2">"eventType"</span><span class="p">:</span><span class="s2">"trade"</span><span class="w"> </span><span class="p">}}</span><span class="w">
 </span></code></pre>
 <p>After order matching –</p>
@@ -6874,8 +6490,11 @@ By comparing to api-aws.huobi.sg, the network latency to api-aws.huobi.sg is low
 </tr>
 </tbody></table>
 
-<p>Note:<br>
-- If a taker’s order matching with multiple orders at opposite side simultaneously, the multiple trades will be disseminated over separately instead of merging into one trade.<br></p>
+<p>Note:<br></p>
+
+<ul>
+<li>If a taker’s order matching with multiple orders at opposite side simultaneously, the multiple trades will be disseminated over separately instead of merging into one trade.<br></li>
+</ul>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">   </span><span class="s2">"action"</span><span class="p">:</span><span class="s2">"push"</span><span class="p">,</span><span class="w">    </span><span class="s2">"ch"</span><span class="p">:</span><span class="s2">"orders#ethbtc"</span><span class="p">,</span><span class="w">   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">       </span><span class="s2">"lastActTime"</span><span class="p">:</span><span class="mi">1583853475406</span><span class="p">,</span><span class="w">        </span><span class="s2">"remainAmt"</span><span class="p">:</span><span class="s2">"2.000000000000000000"</span><span class="p">,</span><span class="w">     </span><span class="s2">"execAmt"</span><span class="p">:</span><span class="s2">"2"</span><span class="p">,</span><span class="w">      </span><span class="s2">"orderId"</span><span class="p">:</span><span class="mi">27163533</span><span class="p">,</span><span class="w">     </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"sell-limit"</span><span class="p">,</span><span class="w">        </span><span class="s2">"clientOrderId"</span><span class="p">:</span><span class="s2">"abc123"</span><span class="p">,</span><span class="w">       </span><span class="s2">"orderSource"</span><span class="p">:</span><span class="s2">"spot-api"</span><span class="p">,</span><span class="w">       </span><span class="s2">"orderPrice"</span><span class="p">:</span><span class="s2">"15000"</span><span class="p">,</span><span class="w">       </span><span class="s2">"orderSize"</span><span class="p">:</span><span class="s2">"0.01"</span><span class="p">,</span><span class="w">     </span><span class="s2">"orderStatus"</span><span class="p">:</span><span class="s2">"canceled"</span><span class="p">,</span><span class="w">       </span><span class="s2">"symbol"</span><span class="p">:</span><span class="s2">"ethbtc"</span><span class="p">,</span><span class="w">      </span><span class="s2">"eventType"</span><span class="p">:</span><span class="s2">"cancellation"</span><span class="w">  </span><span class="p">}}</span><span class="w">
 </span></code></pre>
 <p>After order cancellation –</p>
@@ -6987,50 +6606,17 @@ About optional field ‘mode’: If not filled, or filled with 0, it implicates 
 <blockquote>
 <p>Subscribe request</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trade.clearing#ltcbtc#0"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">   </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w">    </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trade.clearing#ltcbtc#0"</span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
 <p>Response</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trade.clearing#ltcbtc#0"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">   </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w">    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">    </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trade.clearing#ltcbtc#0"</span><span class="p">,</span><span class="w">    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{}}</span><span class="w">
 </span></code></pre>
 <blockquote>
 <p>Update example</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trade.clearing#ltcbtc#0"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-         </span><span class="s2">"eventType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trade"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ltcbtc"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">99998888</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"tradePrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9999.99"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"tradeVolume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.96"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"orderSide"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"aggressor"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"tradeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">919219323232</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"tradeTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">998787897878</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"transactFee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"19.88"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"feeDeduct "</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"feeDeductType"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"feeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">9912791</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot-api"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"orderPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"orderSize"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"clientOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a001"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"orderCreateTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">998787897878</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"orderStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"partial-filled"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">    </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trade.clearing#ltcbtc#0"</span><span class="p">,</span><span class="w">    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">         </span><span class="s2">"eventType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trade"</span><span class="p">,</span><span class="w">         </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ltcbtc"</span><span class="p">,</span><span class="w">         </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">99998888</span><span class="p">,</span><span class="w">         </span><span class="s2">"tradePrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9999.99"</span><span class="p">,</span><span class="w">         </span><span class="s2">"tradeVolume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.96"</span><span class="p">,</span><span class="w">         </span><span class="s2">"orderSide"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">         </span><span class="s2">"aggressor"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">         </span><span class="s2">"tradeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">919219323232</span><span class="p">,</span><span class="w">         </span><span class="s2">"tradeTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">998787897878</span><span class="p">,</span><span class="w">         </span><span class="s2">"transactFee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"19.88"</span><span class="p">,</span><span class="w">         </span><span class="s2">"feeDeduct "</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">         </span><span class="s2">"feeDeductType"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">         </span><span class="s2">"feeCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">         </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">9912791</span><span class="p">,</span><span class="w">         </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot-api"</span><span class="p">,</span><span class="w">         </span><span class="s2">"orderPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="p">,</span><span class="w">         </span><span class="s2">"orderSize"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">         </span><span class="s2">"clientOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a001"</span><span class="p">,</span><span class="w">         </span><span class="s2">"orderCreateTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">998787897878</span><span class="p">,</span><span class="w">         </span><span class="s2">"orderStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"partial-filled"</span><span class="w">    </span><span class="p">}}</span><span class="w">
 </span></code></pre><h3 id='update-contents-after-order-matching'>Update Contents (after order matching)</h3>
 <table><thead>
 <tr>
@@ -7161,8 +6747,11 @@ About optional field ‘mode’: If not filled, or filled with 0, it implicates 
 </tr>
 </tbody></table>
 
-<p>Notes:<br>
-- The calculated maker rebate value inside ‘transactFee’ may not be paid immediately.<br></p>
+<p>Notes:<br></p>
+
+<ul>
+<li>The calculated maker rebate value inside ‘transactFee’ may not be paid immediately.<br></li>
+</ul>
 <h3 id='update-contents-after-order-cancellation'>Update Contents (after order cancellation)</h3>
 <table><thead>
 <tr>
@@ -7307,63 +6896,17 @@ The topic disseminates the current static value of individual accounts first, at
 <blockquote>
 <p>Subscribe request</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accounts.update"</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">   </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w">    </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accounts.update"</span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
 <p>Response</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accounts.update#0"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">   </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w">    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">    </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accounts.update#0"</span><span class="p">,</span><span class="w">  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{}}</span><span class="w">
 </span></code></pre>
 <blockquote>
 <p>Update example</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="err">accounts.update#</span><span class="mi">0</span><span class="err">：</span><span class="w">
-</span><span class="p">{</span><span class="w">
-    </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"push"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accounts.update#0"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">123456</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23.111"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"changeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfer"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"accountType"</span><span class="p">:</span><span class="s2">"trade"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"changeTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1568601800000</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span><span class="err">accounts.update#</span><span class="mi">1</span><span class="err">：</span><span class="w">
-</span><span class="p">{</span><span class="w">
-    </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"push"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accounts.update#1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">33385</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2028.699426619837209087"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"changeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order.match"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"accountType"</span><span class="p">:</span><span class="s2">"trade"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"changeTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1574393385167</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span><span class="p">{</span><span class="w">
-    </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"push"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accounts.update#1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">33385</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2065.100267619837209301"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"changeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order.match"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"accountType"</span><span class="p">:</span><span class="s2">"trade"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"changeTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1574393385122</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="err">accounts.update#</span><span class="mi">0</span><span class="err">：</span><span class="p">{</span><span class="w">   </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"push"</span><span class="p">,</span><span class="w">   </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accounts.update#0"</span><span class="p">,</span><span class="w">  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">       </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">      </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">123456</span><span class="p">,</span><span class="w">        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23.111"</span><span class="p">,</span><span class="w">        </span><span class="s2">"changeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfer"</span><span class="p">,</span><span class="w">               </span><span class="s2">"accountType"</span><span class="p">:</span><span class="s2">"trade"</span><span class="p">,</span><span class="w">      </span><span class="s2">"changeTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1568601800000</span><span class="w"> </span><span class="p">}}</span><span class="err">accounts.update#</span><span class="mi">1</span><span class="err">：</span><span class="p">{</span><span class="w"> </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"push"</span><span class="p">,</span><span class="w">   </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accounts.update#1"</span><span class="p">,</span><span class="w">  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">       </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">      </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">33385</span><span class="p">,</span><span class="w">     </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2028.699426619837209087"</span><span class="p">,</span><span class="w">     </span><span class="s2">"changeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order.match"</span><span class="p">,</span><span class="w">                </span><span class="s2">"accountType"</span><span class="p">:</span><span class="s2">"trade"</span><span class="p">,</span><span class="w">      </span><span class="s2">"changeTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1574393385167</span><span class="w"> </span><span class="p">}}{</span><span class="w"> </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"push"</span><span class="p">,</span><span class="w">   </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accounts.update#1"</span><span class="p">,</span><span class="w">  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">       </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">      </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">33385</span><span class="p">,</span><span class="w">     </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2065.100267619837209301"</span><span class="p">,</span><span class="w">       </span><span class="s2">"changeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order.match"</span><span class="p">,</span><span class="w">            </span><span class="s2">"accountType"</span><span class="p">:</span><span class="s2">"trade"</span><span class="p">,</span><span class="w">      </span><span class="s2">"changeTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1574393385122</span><span class="w"> </span><span class="p">}}</span><span class="w">
 </span></code></pre><h3 id='update-contents'>Update Contents</h3>
 <table><thead>
 <tr>
