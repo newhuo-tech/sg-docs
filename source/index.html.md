@@ -25,6 +25,7 @@ table th {
 
 
 
+
 | 生效时间<br>(UTC +8) | 接口                    | 变化 | 摘要                       |
 | -------------------- | ----------------------- | ---- | -------------------------- |
 | 2021.8.24            | `market.$symbol.ticker` | 新增 | 增加聚合行情（Ticker）数据 |
@@ -87,6 +88,7 @@ table th {
 <aside class="warning">
 <red><b>风险提示</b></red>：这两个密钥与账号安全紧密相关，无论何时都请勿将二者<b>同时</b>向其它人透露。API Key的泄露可能会造成您的资产损失（即使未开通提币权限），若发现API Key泄露请尽快删除该API Key。
 </aside> 
+
 
 
 
@@ -157,6 +159,7 @@ wss://api.huobi.sg/ws/v
 <aside class="notice">
 为保证API服务的稳定性，建议使用日本AWS云服务器进行访问。如使用中国大陆境内的客户端服务器，连接的稳定性将难以保证。 
 </aside> 
+
 
 
 ## 签名认证
@@ -241,6 +244,7 @@ api.huobi.sg\n
 <aside class="notice">
 时间戳（Timestamp）需要以YYYY-MM-DDThh:mm:ss格式添加并且进行 URL 编码。时间戳有效时间5分钟。
 </aside>
+
 
 
 经过排序之后
@@ -505,6 +509,7 @@ account-id可通过/v1/account/accounts接口获取，并根据account-type区�
 <aside class="notice">
 做市商项目不支持点卡抵扣、VIP、交易量相关活动以及任何形式的返佣活动。
 </aside>
+
 联系
 
 ## 技术支持
@@ -553,7 +558,7 @@ account-id可通过/v1/account/accounts接口获取，并根据account-type区�
 此接口返回历史K线数据。K线周期以新加坡时间为基准开始计算，例如日K线的起始周期为新加坡时间0时至新加坡时间次日0时。
 
 <aside class="notice">当前 REST API 不支持自定义时间区间，如需要历史固定时间范围的数据，请参考 Websocket API 中的 K 线接口。</aside>
-<aside class="notice">获取 hb10 净值时， symbol 请填写 “hb10”。</aside>
+<aside class="notice">获取 btc 净值时， symbol 请填写 “btc”。</aside>
 
 ```shell
 curl "https://api.huobi.sg/market/history/kline?period=1day&size=200&symbol=ethbtc"
@@ -822,17 +827,7 @@ curl "https://api.huobi.sg/market/detail?symbol=ethbtc"
 > Response:
 
 ```json
-{  
-   "amount":613071.438479561,
-   "open":86.21,
-   "close":94.35,
-   "high":98.7,
-   "id":31619471534,
-   "count":138909,
-   "low":84.63,
-   "version":31619471534,
-   "vol":5.6617373443873316E7
-}
+{     "amount":613071.438479561,   "open":86.21,   "close":94.35,   "high":98.7,   "id":31619471534,   "count":138909,   "low":84.63,   "version":31619471534,   "vol":5.6617373443873316E7}
 ```
 
 ### 响应数据
@@ -895,16 +890,7 @@ API Key 权限：读取<br>
 > Response:
 
 ```json
-{
-  "data": [
-    {
-      "id": 100001,
-      "type": "spot",
-      "subtype": "",
-      "state": "working"
-    }
-  ]
-}
+{  "data": [    {      "id": 100001,      "type": "spot",      "subtype": "",      "state": "working"    }  ]}
 ```
 
 ### 响应数据
@@ -938,25 +924,7 @@ spot：现货账户
 > Response:
 
 ```json
-{
-  "data": {
-    "id": 100009,
-    "type": "spot",
-    "state": "working",
-    "list": [
-      {
-        "currency": "btc",
-        "type": "trade",
-        "balance": "5007.4362872650"
-      },
-      {
-        "currency": "btc",
-        "type": "frozen",
-        "balance": "348.1199920000"
-      }
-    ]
-  }
-}
+{  "data": {    "id": 100009,    "type": "spot",    "state": "working",    "list": [      {        "currency": "btc",        "type": "trade",        "balance": "5007.4362872650"      },      {        "currency": "btc",        "type": "frozen",        "balance": "348.1199920000"      }    ]  }}
 ```
 
 ### 响应数据
@@ -990,121 +958,26 @@ API Key 权限：读取
 
 ### 请求参数
 
-| 参数              | 是否必填 | 数据类型 | 描述                                     | 默认值 | 取值范围 |
-| ----------------- | -------- | -------- | ---------------------------------------- | ------ | -------- |
-| accountType       | false    | string   | 账户类型，详见账户类型数据字典           |        |          |
-| valuationCurrency | false    | string   | 不填默认为btc估值（目前暂只支持BTC估值） |        |          |
+| 参数              | 是否必填 | 数据类型 | 描述                                                   | 默认值 | 取值范围 |
+| ----------------- | -------- | -------- | ------------------------------------------------------ | ------ | -------- |
+| accountType       | false    | string   | 账户类型，详见账户类型数据字典                         |        |          |
+| valuationCurrency | false    | string   | 不填默认为btc估值（目前暂只支持BTC估值，参数值需大写） |        |          |
 
 > Responds:
 
 ```lang=json
-{
-    "message": null,
-    "success": true,
-    "code":200,
-    "data":"{
-        "todayProfit": null,
-        "updated": null,
-        "totalBalance": "68232.925885978428351309",
-        "todayProfitRate": null,
-        "profitAccountBalanceList": [
-            {
-                "distributionType": "1",
-                "success": true,
-                "accountBalance": "68232.925885978428351309"
-            },
-            {
-                "distributionType": "2",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "3",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "4",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "5",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "6",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "7",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "8",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "9",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "10",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "11",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "12",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "13",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "14",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "15",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "16",
-                "success": false,
-                "accountBalance": "0"
-            }
-        ]
-    
-    }"
-}
+{    "message": null,    "success": true,    "code":200,    "data":"{        "todayProfit": null,        "updated": null,        "totalBalance": "68232.925885978428351309",        "todayProfitRate": null,        "profitAccountBalanceList": [            {                "distributionType": "1",                "success": true,                "accountBalance": "68232.925885978428351309"            },            {                "distributionType": "2",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "3",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "4",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "5",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "6",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "7",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "8",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "9",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "10",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "11",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "12",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "13",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "14",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "15",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "16",                "success": false,                "accountBalance": "0"            }        ]        }"}
 ```
 
 ### 响应数据
 
-| 参数名称        | 数据类型             | 描述                                              |
-| --------------- | -------------------- | ------------------------------------------------- |
-| todayProfit     | String               | 今日总收益，按估值参数计价                        |
-| todayProfitRate | Long                 | 今日收益率                                        |
-| accountList     | List<AccountBalance> | 账户资产列表                                      |
-| {accountType    | String               | 账户类型                                          |
-| accountBalance  | String               | 账户资产                                          |
-| success}        | Boolean              | 账户资产是否成功获取,为false时accountBalance返回0 |
-| timestamp       | long                 | 数据返回时间，为unix time in millisecond          |
+| 参数名称       | 数据类型             | 描述                                              |
+| -------------- | -------------------- | ------------------------------------------------- |
+| accountList    | List<AccountBalance> | 账户资产列表                                      |
+| {accountType   | String               | 账户类型                                          |
+| accountBalance | String               | 账户资产                                          |
+| success}       | Boolean              | 账户资产是否成功获取,为false时accountBalance返回0 |
+| timestamp      | long                 | 数据返回时间，为unix time in millisecond          |
 
 ### 账户类型数据字典
 
@@ -1128,11 +1001,10 @@ API Key 权限：读取
 
 ### 请求参数
 
-| 参数              | 是否必填 | 数据类型 | 描述                                                      | 默认值 | 取值范围                            |
-| ----------------- | -------- | -------- | --------------------------------------------------------- | ------ | ----------------------------------- |
-| accountType       | true     | string   | 账户类型                                                  | NA     | spot：现货账户                      |
-| valuationCurrency | false    | string   | 资产估值法币，即资产按哪个法币为单位进行估值。            | BTC    | 可选法币有：USD、SGD （大小写敏感） |
-| subUid            | false    | long     | 子用户的 UID，若不填，则返回API key所属用户的账户资产估值 | NA     |                                     |
+| 参数              | 是否必填 | 数据类型 | 描述                                           | 默认值 | 取值范围                            |
+| ----------------- | -------- | -------- | ---------------------------------------------- | ------ | ----------------------------------- |
+| accountType       | true     | string   | 账户类型                                       | NA     | spot：现货账户                      |
+| valuationCurrency | false    | string   | 资产估值法币，即资产按哪个法币为单位进行估值。 | BTC    | 可选法币有：USD、SGD （大小写敏感） |
 
 > Responds:
 
@@ -1182,6 +1054,7 @@ API Key 权限：交易<br>
 | data            | true     | list     |            |                 |
 | { transact-id   | true     | int      | 交易流水号 |                 |
 | transact-time } | true     | long     | 交易时间   |                 |
+| </data>         |          |          |            |                 |
 
 
 ## 账户流水
@@ -1216,19 +1089,19 @@ API Key 权限：读取<br>
 
 ### 响应数据
 
-| 字段名称      | 数据类型 | 描述                                                        | 取值范围 |
-| ------------- | -------- | ----------------------------------------------------------- | -------- |
-| status        | string   | 状态码                                                      |          |
-| data          | object   |                                                             |          |
-| { account-id  | long     | 账户编号                                                    |          |
-| currency      | string   | 币种                                                        |          |
-| transact-amt  | string   | 变动金额（入账为正 or 出账为负）                            |          |
-| transact-type | string   | 变动类型                                                    |          |
-| avail-balance | string   | 可用余额                                                    |          |
-| acct-balance  | string   | 账户余额                                                    |          |
-| transact-time | long     | 交易时间（数据库记录时间）                                  |          |
-| record-id }   | long     | 数据库记录编号（全局唯一）                                  |          |
-| next-id       | long     | 下页起始编号（仅在查询结果需要分页返回时包含此字段，见注2） |          |
+| 字段名称      | 数据类型 | 描述                                                        | 取值范围     |
+| ------------- | -------- | ----------------------------------------------------------- | ------------ |
+| status        | string   | 状态码                                                      | "ok","error" |
+| data          | object   |                                                             |              |
+| { account-id  | long     | 账户编号                                                    |              |
+| currency      | string   | 币种                                                        |              |
+| transact-amt  | string   | 变动金额（入账为正 or 出账为负）                            |              |
+| transact-type | string   | 变动类型                                                    |              |
+| avail-balance | string   | 可用余额                                                    |              |
+| acct-balance  | string   | 账户余额                                                    |              |
+| transact-time | long     | 交易时间（数据库记录时间）                                  |              |
+| record-id }   | long     | 数据库记录编号（全局唯一）                                  |              |
+| next-id       | long     | 下页起始编号（仅在查询结果需要分页返回时包含此字段，见注2） |              |
 
 注1：<br>
 账户流水中返回的交易返佣为到账金额，多笔成交产生的多笔返佣可能会合并到帐，成为一笔流水。<br>
@@ -1358,7 +1231,7 @@ API Key 权限：读取<br>
 | id          | true     | long     | 充币或者提币订单id，翻页查询时from参数取自此值               |                                          |
 | type        | true     | string   | 类型                                                         | 'deposit', 'withdraw', 子用户仅有deposit |
 | currency    | true     | string   | 币种                                                         |                                          |
-| tx-hash     | true     | string   | 交易哈希。如果是“快速提币”，则提币不通过区块链，该值为空。   |                                          |
+| tx-hash     | true     | string   | 交易哈希。                                                   |                                          |
 | chain       | true     | string   | 链名称                                                       |                                          |
 | amount      | true     | float    | 个数                                                         |                                          |
 | address     | true     | string   | 目的地址                                                     |                                          |
@@ -1763,7 +1636,7 @@ API Key 权限：读取<br>
 
 | 参数名称   | 数据类型 | 是否必需                                         | 默认值 | 描述                                                         |
 | ---------- | -------- | ------------------------------------------------ | ------ | ------------------------------------------------------------ |
-| account-id | string   | true                                             | NA     | 账户 ID，取值参考 `GET /v1/account/accounts`。现货交易使用‘spot’账户的 account-id；逐仓杠杆交易，请使用 ‘margin’ 账户的 account-id；全仓杠杆交易，请使用 ‘super-margin’ 账户的 account-id；c2c杠杆交易，请使用borrow账户的account-id |
+| account-id | string   | true                                             | NA     | 账户 ID，取值参考 `GET /v1/account/accounts`。               |
 | symbol     | string   | ture                                             | NA     | 交易对,即ltcbtc, ethbtc...（取值参考`GET /v1/common/symbols`） |
 | side       | string   | false                                            | both   | 指定只返回某一个方向的订单，可能的值有: buy, sell. 默认两个方向都返回。 |
 | types      | string   | false                                            |        | 查询的订单类型组合，使用逗号分割                             |
@@ -1783,7 +1656,7 @@ API Key 权限：读取<br>
 | ------------------ | -------- | ------------------------------------------------------ |
 | id                 | integer  | 订单id，无大小顺序，可作为下一次翻页查询请求的from字段 |
 | client-order-id    | string   | 用户自编订单号（所有open订单可返回client-order-id）    |
-| symbol             | string   | 交易对, 例如ltcbtc, ethbtc                             |
+| symbol             | string   | 交易对, 例如ltcbtc, ethbtc                             |
 | price              | string   | limit order的交易价格                                  |
 | created-at         | int      | 订单创建的调整为新加坡时间的时间戳，单位毫秒           |
 | type               | string   | 订单类型                                               |
@@ -1936,7 +1809,7 @@ API Key 权限：读取<br>
 | price             | true     | string   | 订单价格                                                     |                                    |
 | source            | true     | string   | 订单来源                                                     | api                                |
 | state             | true     | string   | 订单状态                                                     | 所有可能的订单状态（见本章节简介） |
-| symbol            | true     | string   | 交易对                                                       | ltcbtc, ethbtc ...                 |
+| symbol            | true     | string   | 交易对                                                       | ltcbtc, ethbtc ...                 |
 | type              | true     | string   | 订单类型                                                     | 所有可能的订单类型（见本章节简介） |
 
 
@@ -1980,7 +1853,7 @@ API Key 权限：读取<br>
 | price             | true     | string   | 订单价格                                                     |                                    |
 | source            | true     | string   | 订单来源                                                     | api                                |
 | state             | true     | string   | 订单状态                                                     | 所有可能的订单状态（见本章节简介） |
-| symbol            | true     | string   | 交易对                                                       | ltcbtc, ethbtc...                  |
+| symbol            | true     | string   | 交易对                                                       | ltcbtc, ethbtc...                  |
 | type              | true     | string   | 订单类型                                                     | 所有可能的订单类型（见本章节简介） |
 
 如client order ID不存在，返回如下错误信息 
@@ -2012,15 +1885,18 @@ API Key 权限：读取<br>
 > Response:
 
 ```json
-{    "data": [    {      "id": 29553,      "order-id": 59378,      "match-id": 59335,      "trade-id": 100282808529,      "symbol": "ethbtc",      "type": "buy-limit",      "source": "api",      "price": "100.1000000000",      "filled-amount": "9.1155000000",      "filled-fees": "0.0182310000",      "created-at": 1494901400435,      "role": "maker",      "filled-points": "0.0",      “fee-deduct-state”:"done",      "fee-deduct-currency": ""    }    ...  ]}
+{    "status": "ok",    "data": [        {            "symbol": "polyusdt",            "fee-currency": "poly",            "source": "spot-web",            "order-id": 345487249132375,            "price": "0.338",            "created-at": 1629443051839,            "role": "taker",            "match-id": 5014,            "filled-amount": "147.928994082840236",            "filled-fees": "0",            "filled-points": "0.1",            "fee-deduct-currency": "hbpoint",            "fee-deduct-state": "done",            "trade-id": 1085,            "id": 313288753120940,            "type": "buy-market"        }    ]}
 ```
 
 ### 响应数据
 
 <aside class="notice">返回的主数据对象为一个对象数组，其中每一个元件代表一个交易结果。</aside>
 
+|               |          |          |                                                              |                                    |
+| :------------ | :------- | :------- | :----------------------------------------------------------- | :--------------------------------- |
 | 字段名称      | 是否必须 | 数据类型 | 描述                                                         | 取值范围                           |
-| ------------- | -------- | -------- | ------------------------------------------------------------ | ---------------------------------- |
+| status        | true     | string   | 状态                                                         |                                    |
+| <data>        | true     | object   |                                                              |                                    |
 | created-at    | true     | long     | 该成交记录创建的时间戳（略晚于成交时间）                     |                                    |
 | filled-amount | true     | string   | 成交数量                                                     |                                    |
 | filled-fees   | true     | string   | 交易手续费（正值）或交易返佣金（负值）                       |                                    |
@@ -2031,9 +1907,10 @@ API Key 权限：读取<br>
 | trade-id      | false    | integer  | Unique trade ID (NEW)唯一成交编号，成交时产生的唯一编号ID    |                                    |
 | price         | true     | string   | 成交价格                                                     |                                    |
 | source        | true     | string   | 订单来源                                                     | api                                |
-| symbol        | true     | string   | 交易对                                                       | ltcbtc, ethbtc ...                 |
+| symbol        | true     | string   | 交易对                                                       | btcusdt, ethbtc, rcneth ...        |
 | type          | true     | string   | 订单类型                                                     | 所有可能的订单类型（见本章节简介） |
 | role          | true     | string   | 成交角色                                                     | maker,taker                        |
+| </data>       |          |          |                                                              |                                    |
 
 注：<br>
 
@@ -2085,7 +1962,7 @@ API Key 权限：读取<br>
 > Response:
 
 ```json
-{    "data": [    {      "id": 59378,      "symbol": "ethbtc",      "account-id": 100009,      "amount": "10.1000000000",      "price": "100.1000000000",      "created-at": 1494901162595,      "type": "buy-limit",      "field-amount": "10.1000000000",      "field-cash-amount": "1011.0100000000",      "field-fees": "0.0202000000",      "finished-at": 1494901400468,      "user-id": 1000,      "source": "api",      "state": "filled",      "canceled-at": 0    }    ...  ]}
+  "data": [    {      "id": 59378,      "symbol": "ethbtc",      "account-id": 100009,      "amount": "10.1000000000",      "price": "100.1000000000",      "created-at": 1494901162595,      "type": "buy-limit",      "field-amount": "10.1000000000",      "field-cash-amount": "1011.0100000000",      "field-fees": "0.0202000000",      "finished-at": 1494901400468,      "user-id": 1000,      "source": "api",      "state": "filled",      "canceled-at": 0    }  ]
 ```
 
 ### 响应数据
@@ -2198,15 +2075,18 @@ API Key 权限：读取<br>
 > Response:
 
 ```json
-{    "data": [    {      "id": 29553,      "order-id": 59378,      "match-id": 59335,      "symbol": "ethbtc",      "type": "buy-limit",      "source": "api",      "price": "100.1000000000",      "filled-amount": "9.1155000000",      "filled-fees": "0.0182310000",      "created-at": 1494901400435,      "trade-id": 100282808529,      "role": taker,      "filled-points": "0.0",      “fee-deduct-state”:"done",      "fee-deduct-currency": ""    }    ...  ]}
+{    "status": "ok",    "data": [        {            "symbol": "polyusdt",            "fee-currency": "poly",            "source": "spot-web",            "price": "0.338",            "created-at": 1629443051839,            "role": "taker",            "order-id": 345487249132375,            "match-id": 5014,            "trade-id": 1085,            "filled-amount": "147.928994082840236",            "filled-fees": "0",            "filled-points": "0.1",            "fee-deduct-currency": "hbpoint",            "fee-deduct-state": "done",            "id": 313288753120940,            "type": "buy-market"        }    ]}
 ```
 
 ### 响应数据
 
 <aside class="notice">返回的主数据对象为一个对象数组，其中每一个元件代表一个交易结果。</aside>
 
-| 参数名称      | 是否必须 | 数据类型 | 描述                                                         | 取值范围                           |
-| ------------- | -------- | -------- | ------------------------------------------------------------ | ---------------------------------- |
+|               |          |          |                                                              |                                    |
+| :------------ | :------- | :------- | :----------------------------------------------------------- | :--------------------------------: |
+| 参数名称      | 是否必须 | 数据类型 | 描述                                                         |              取值范围              |
+| status        | true     | string   | 状态                                                         |                                    |
+| <data>        | true     | object   |                                                              |                                    |
 | created-at    | true     | long     | 该成交记录创建的时间戳（略晚于成交时间）                     |                                    |
 | filled-amount | true     | string   | 成交数量                                                     |                                    |
 | filled-fees   | true     | string   | 交易手续费（正值）或交易返佣（负值）                         |                                    |
@@ -2216,10 +2096,11 @@ API Key 权限：读取<br>
 | order-id      | true     | long     | 订单 ID                                                      |                                    |
 | trade-id      | false    | integer  | 唯一成交编号                                                 |                                    |
 | price         | true     | string   | 成交价格                                                     |                                    |
-| source        | true     | string   | 订单来源                                                     | api                                |
-| symbol        | true     | string   | 交易对                                                       | ltcbtc, ethbtc ...                 |
+| source        | true     | string   | 订单来源                                                     |                api                 |
+| symbol        | true     | string   | 交易对                                                       |    btcusdt, ethbtc, rcneth ...     |
 | type          | true     | string   | 订单类型                                                     | 所有可能的订单类型（见本章节简介） |
-| role          | true     | string   | 成交角色                                                     | maker,taker                        |
+| role          | true     | string   | 成交角色                                                     |            maker,taker             |
+| </data>       |          |          |                                                              |                                    |
 
 注：<br>
 
@@ -2283,7 +2164,7 @@ curl "https://api.huobi.sg/v2/reference/transact-fee-rate?symbols=,ethbtc,ltcbtc
 以下是交易相关接口返回的返回码以及说明。
 
 | 返回码                                                       | 说明                                                         |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| :----------------------------------------------------------- | :----------------------------------------------------------- |
 | base-argument-unsupported                                    | 某参数不支持，请检查参数                                     |
 | base-system-error                                            | 系统错误，如果是撤单：缓存中查不到订单状态，该订单无法撤单；如果是下单：订单入缓存失败，请再次尝试 |
 | login-required                                               | url中没有Signature参数或找不到此用户（key与账户id不对应等情况） |
@@ -2315,6 +2196,7 @@ curl "https://api.huobi.sg/v2/reference/transact-fee-rate?symbols=,ethbtc,ltcbtc
 | order-date-limit-error                                       | 查询时间不能超过系统限制                                     |
 | order-source-invalid                                         | 订单来源非法                                                 |
 | order-update-error                                           | 更新数据错误                                                 |
+| order-user-cancel-forbidden                                  | 订单类型为IOC或FOK 不允许撤单                                |
 | order-price-greater-than-limit                               | 下单价格高于开盘前下单限制价格，请重新下单                   |
 | order-price-less-than-limit                                  | 下单价格低于开盘前下单限制价格，请重新下单                   |
 | market-orders-not-support-during-limit-price-trading         | 限时下单不支持市价单                                         |
@@ -2326,6 +2208,7 @@ curl "https://api.huobi.sg/v2/reference/transact-fee-rate?symbols=,ethbtc,ltcbtc
 | invalid-start-time                                           | 查询起始时间含非法取值                                       |
 | invalid-end-time                                             | 查询起始时间含非法取值                                       |
 | validation-constraints-required                              | 指定的必填参数缺失                                           |
+| symbol-not-support                                           | 交易对不支持，全仓杠杆或c2c                                  |
 | not-found                                                    | 撤单时订单不存在                                             |
 | base-not-found                                               | 未找到记录                                                   |
 | base_record_invalid                                          | 订单不存在 （传错订单ID）                                    |
@@ -2532,8 +2415,6 @@ Websocket服务器同时支持一次性请求数据（pull）。
 | high   | float    | 最高价                                      |
 | vol    | float    | 成交额, 即 sum(每一笔成交价 * 该笔的成交量) |
 
-<aside class="notice">当symbol被设为“hb10”或“huobi10”时，amount，count，vol均为零值。</aside>
-
 ### 数据请求
 
 用请求方式一次性获取K线数据需要额外提供以下参数：
@@ -2654,8 +2535,6 @@ Websocket服务器同时支持一次性请求数据（pull）。
 | asks    | object   | 当前的所有卖单 [price, size] |
 | version | integer  | 内部字段                     |
 | ts      | integer  | 新加坡时间的时间戳，单位毫秒 |
-
-<aside class="notice">当symbol被设为"hb10"时，amount, count, vol均为零值 </aside>
 
 ### 数据请求
 
@@ -3408,45 +3287,7 @@ accounts.update#2
 > Update example
 
 ```json
-accounts.update#0：
-{
-	"action": "push",
-	"ch": "accounts.update#0",
-	"data": {
-		"currency": "btc",
-		"accountId": 123456,
-		"balance": "23.111",
-		"changeType": "transfer",
-           	"accountType":"trade",
-		"changeTime": 1568601800000
-	}
-}
-
-accounts.update#1：
-{
-	"action": "push",
-	"ch": "accounts.update#1",
-	"data": {
-		"currency": "btc",
-		"accountId": 33385,
-		"available": "2028.699426619837209087",
-		"changeType": "order.match",
-         		"accountType":"trade",
-		"changeTime": 1574393385167
-	}
-}
-{
-	"action": "push",
-	"ch": "accounts.update#1",
-	"data": {
-		"currency": "btc",
-		"accountId": 33385,
-		"balance": "2065.100267619837209301",
-		"changeType": "order.match",
-           	"accountType":"trade",
-		"changeTime": 1574393385122
-	}
-}
+accounts.update#0：{	"action": "push",	"ch": "accounts.update#0",	"data": {		"currency": "btc",		"accountId": 123456,		"balance": "23.111",		"changeType": "transfer",           	"accountType":"trade",		"changeTime": 1568601800000	}}accounts.update#1：{	"action": "push",	"ch": "accounts.update#1",	"data": {		"currency": "btc",		"accountId": 33385,		"available": "2028.699426619837209087",		"changeType": "order.match",         		"accountType":"trade",		"changeTime": 1574393385167	}}{	"action": "push",	"ch": "accounts.update#1",	"data": {		"currency": "btc",		"accountId": 33385,		"balance": "2065.100267619837209301",		"changeType": "order.match",           	"accountType":"trade",		"changeTime": 1574393385122	}}
 ```
 
 ### 数据更新字段列表
