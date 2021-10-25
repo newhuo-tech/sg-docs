@@ -27,6 +27,7 @@ table th {
     white-space: nowrap; /*表头内容强制在一行显示*/
 }
 </style>
+
 | 生效时间<br>(UTC +8) | 接口                    | 变化 | 摘要                       |
 | -------------------- | ----------------------- | ---- | -------------------------- |
 | 2021.8.24            | `market.$symbol.ticker` | 新增 | 增加聚合行情（Ticker）数据 |
@@ -80,7 +81,7 @@ Every user can create at most 20 API Keys, each can be applied with either permi
 Please remember below information after creation:
 
 - `Access Key`  It is used in API request
-  
+
 - `Secret Key`  It is used to generate the signature (only visible once after creation)
 
 <aside class="notice">
@@ -89,6 +90,7 @@ The API Key can bind maximum 20 IP addresses (either host IP or network IP), we 
 <aside class="warning">
 <red><b>Warning</b></red>: These two keys are important to your account safety, please don't share <b>both</b> of them together to anyone else (including any product or person from Huobi). If you find your API Key is disposed, please remove it immediately.
 </aside> 
+
 
 
 ## SDK and Demo
@@ -132,6 +134,7 @@ Public API: It is for basic information and market data. It doesn't need authent
 Private API: It is for account related operation like trading and account management. Each private API must be authenticated with API Key.
 
 ## Access URLs
+
 You can compare the network latency between two domain <u>api.huobi.sg</u> and <u>api-aws.huobi.sg</u>, and then choose the better one for you.
 
 In general, the domain <u>api-aws.huobi.sg</u> is optimized for AWS client, the latency will be lower.
@@ -160,6 +163,7 @@ It is not recommended to use proxy to access Huobi Singapore API because it will
 <aside class="notice">
 It is recommended to access Huobi Singapore API from AWS Japan for better stability. If your server is in China mainland, it may be not stable.
 </aside> 
+
 
 ## Authentication
 
@@ -244,6 +248,7 @@ Use UTF-8 encoding and URL encoded, the hex must be upper case. For example, The
 <aside class="notice">
 The 'timestamp' should be formated as 'YYYY-MM-DDThh:mm:ss' and URL encoded. The value is valid within 5 minutes.
 </aside>
+
 
 Then above parameter should be ordered like below:
 
@@ -361,6 +366,7 @@ Above is a general category, it doesn't cover all API, you can refer to detailed
 ## Rate Limiting Rule
 
 Except those endpoints which are marked with new rate limit value separately, following rate limit rules are applicable -
+
 * Each API Key is limited to 10 times per second
 * If API Key is empty in request, then each IP is limited to 10 times per second
 
@@ -434,10 +440,12 @@ The JSON data type described in this document is defined as below:
 ## Best Practice
 
 ### Security
+
 - It is strongly suggested to bind your IP with your API Key to ensure that your API Key can only be used in your machine. Furthermore, your API Key will be expired after 90 days if it is not binded with any IP.
 - It is strongly suggested not to share your API Key with any body or third-party software, otherwise your personal information and asset may be stolen. If your expose your API Key by accident, please do delete the API Key and create a new one.
 
 ### General
+
 **API Access**
 
 - It is suggested not to use temporary domain or proxy, which may be not stable.
@@ -517,6 +525,7 @@ And provide below details:
 <aside class="notice">
 Market makers will not be able to use point cards, VIP rate, rebate or any other fee promotion.
 </aside>
+
 
 ## Technical Support
 
@@ -669,6 +678,7 @@ curl "https://api.huobi.sg/market/tickers"
 ```
 
 <aside class="notice">The returned data object can contain large amount of tickers.</aside>
+
 ### HTTP Request
 
 GET `/market/tickers`
@@ -752,6 +762,7 @@ GET `/market/depth`
 | type      | string    | true     | step0         | Market depth aggregation level, details below     | step0, step1, step2, step3, step4, step5           |
 
 <aside class="notice">when type is set to "step0", the default value of "depth" is 150 instead of 20.</aside>
+
 **"type" Details**
 
 | Value | Description                          |
@@ -772,6 +783,7 @@ GET `/market/depth`
 ### Response Content
 
 <aside class="notice">The returned data object is under 'tick' object instead of 'data' object in the top level JSON</aside>
+
 | Field   | Data Type | Description                                                  |
 | ------- | --------- | ------------------------------------------------------------ |
 | ts      | integer   | The UNIX timestamp in milliseconds is adjusted to Singapore time |
@@ -803,25 +815,13 @@ curl "https://api.huobi.sg/market/trade?symbol=ethbtc"
 > Response:
 
 ```json
-"tick": {
-    "id": 600848670,
-    "ts": 1489464451000,
-    "data": [
-      {
-        "id": 600848670,
-        "trade-id": 102043494568,
-        "price": 7962.62,
-        "amount": 0.0122,
-        "direction": "buy",
-        "ts": 1489464451000
-      }
-    ]
-}
+"tick": {    "id": 600848670,    "ts": 1489464451000,    "data": [      {        "id": 600848670,        "trade-id": 102043494568,        "price": 7962.62,        "amount": 0.0122,        "direction": "buy",        "ts": 1489464451000      }    ]}
 ```
 
 ### Response Content
 
 <aside class="notice">The returned data object is under 'tick' object instead of 'data' object in the top level JSON</aside>
+
 | Parameter | Data Type | Description                                                  |
 | --------- | --------- | ------------------------------------------------------------ |
 | id        | integer   | The unique trade id of this trade (to be obsoleted)          |
@@ -857,49 +857,13 @@ GET `/market/history/trade`
 > Response:
 
 ```json
-"data": [  
-   {  
-      "id":31618787514,
-      "ts":1544390317905,
-      "data":[  
-         {  
-            "amount":9.000000000000000000,
-            "ts":1544390317905,
-            "id":3161878751418918529341,
-            "trade-id": 102043495672,
-            "price":94.690000000000000000,
-            "direction":"sell"
-         },
-         {  
-            "amount":73.771000000000000000,
-            "ts":1544390317905,
-            "id":3161878751418918532514,
-            "trade-id": 102043495673,
-            "price":94.660000000000000000,
-            "direction":"sell"
-         }
-      ]
-   },
-   {  
-      "id":31618776989,
-      "ts":1544390311353,
-      "data":[  
-         {  
-            "amount":1.000000000000000000,
-            "ts":1544390311353,
-            "id":3161877698918918522622,
-            "trade-id": 102043495674,
-            "price":94.710000000000000000,
-            "direction":"buy"
-         }
-      ]
-   }
-}
+"data": [     {        "id":31618787514,      "ts":1544390317905,      "data":[           {              "amount":9.000000000000000000,            "ts":1544390317905,            "id":3161878751418918529341,            "trade-id": 102043495672,            "price":94.690000000000000000,            "direction":"sell"         },         {              "amount":73.771000000000000000,            "ts":1544390317905,            "id":3161878751418918532514,            "trade-id": 102043495673,            "price":94.660000000000000000,            "direction":"sell"         }      ]   },   {        "id":31618776989,      "ts":1544390311353,      "data":[           {              "amount":1.000000000000000000,            "ts":1544390311353,            "id":3161877698918918522622,            "trade-id": 102043495674,            "price":94.710000000000000000,            "direction":"buy"         }      ]   }}
 ```
 
 ### Response Content
 
 <aside class="notice">The returned data object is an array which represents one recent timestamp; each timestamp object again is an array which represents all trades occurred at this timestamp.</aside>
+
 | Field     | Data Type | Description                                                  |
 | --------- | --------- | ------------------------------------------------------------ |
 | id        | integer   | The unique trade id of this trade (to be obsoleted)          |
@@ -934,22 +898,13 @@ curl "https://api.huobi.sg/market/detail?symbol=ethbtc"
 > Response:Response:
 
 ```json
-"tick": {  
-   "amount":613071.438479561,
-   "open":86.21,
-   "close":94.35,
-   "high":98.7,
-   "id":31619471534,
-   "count":138909,
-   "low":84.63,
-   "version":31619471534,
-   "vol":5.6617373443873316E7
-}
+"tick": {     "amount":613071.438479561,   "open":86.21,   "close":94.35,   "high":98.7,   "id":31619471534,   "count":138909,   "low":84.63,   "version":31619471534,   "vol":5.6617373443873316E7}
 ```
 
 ### Response Content
 
 <aside class="notice">The returned data object is under 'tick' object instead of 'data' object in the top level JSON</aside>
+
 | Field   | Data Type | Description                                                  |
 | ------- | --------- | ------------------------------------------------------------ |
 | id      | integer   | The internal identity                                        |
@@ -1008,19 +963,11 @@ GET `/v1/account/accounts`
 ### Request Parameters
 
 <aside class="notice">No parameter is available for this endpoint</aside>
+
 > Response:
 
 ```json
-{
-  "data": [
-    {
-      "id": 100001,
-      "type": "spot",
-      "subtype": "",
-      "state": "working"
-    }
-  ]
-}
+{  "data": [    {      "id": 100001,      "type": "spot",      "subtype": "",      "state": "working"    }  ]}
 ```
 
 ### Response Content
@@ -1055,25 +1002,7 @@ GET `/v1/account/accounts/{account-id}/balance`
 > Response:
 
 ```json
-{
-  "data": {
-    "id": 100009,
-    "type": "spot",
-    "state": "working",
-    "list": [
-      {
-        "currency": "btc",
-        "type": "trade",
-        "balance": "5007.4362872650"
-      },
-      {
-        "currency": "btc",
-        "type": "frozen",
-        "balance": "348.1199920000"
-      }
-    ]
-  }
-}
+{  "data": {    "id": 100009,    "type": "spot",    "state": "working",    "list": [      {        "currency": "btc",        "type": "trade",        "balance": "5007.4362872650"      },      {        "currency": "btc",        "type": "frozen",        "balance": "348.1199920000"      }    ]  }}
 ```
 
 ### Response Content
@@ -1106,121 +1035,28 @@ This endpoint returns the valuation of the total assets of the account in btc or
 - GET `/v2/account/valuation`
 
 ### Request Parameters
-| Parameter         | Required | Data Type | Description                                          | Default Value | Value Range                     |
-| ----------------- | -------- | --------- | ---------------------------------------------------- | ------------- | ------------------------------- |
-| accountType       | true     | string    | The type of this account                             | NA            | spot, margin, otc, super-margin |
-| valuationCurrency | false    | string    | The valuation according to the certain fiat currency | BTC           | BTC (case sensitive)            |
+
+| Parameter         | Required | Data Type | Description                                          | Default Value | Value Range          |
+| ----------------- | -------- | --------- | ---------------------------------------------------- | ------------- | -------------------- |
+| accountType       | true     | string    | The type of this account                             | NA            |                      |
+| valuationCurrency | false    | string    | The valuation according to the certain fiat currency | BTC           | BTC (case sensitive) |
 
 
 > Responds:
 
 ```json
-{
-    "message": null,
-    "success": true,
-    "code":200,
-    "data":"{
-        "todayProfit": null,
-        "updated": null,
-        "totalBalance": "68232.925885978428351309",
-        "todayProfitRate": null,
-        "profitAccountBalanceList": [
-            {
-                "distributionType": "1",
-                "success": true,
-                "accountBalance": "68232.925885978428351309"
-            },
-            {
-                "distributionType": "2",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "3",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "4",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "5",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "6",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "7",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "8",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "9",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "10",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "11",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "12",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "13",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "14",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "15",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "16",
-                "success": false,
-                "accountBalance": "0"
-            }
-        ]
-    
-    }"
-}
+{    "message": null,    "success": true,    "code":200,    "data":"{        "todayProfit": null,        "updated": null,        "totalBalance": "68232.925885978428351309",        "todayProfitRate": null,        "profitAccountBalanceList": [            {                "distributionType": "1",                "success": true,                "accountBalance": "68232.925885978428351309"            },            {                "distributionType": "2",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "3",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "4",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "5",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "6",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "7",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "8",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "9",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "10",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "11",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "12",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "13",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "14",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "15",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "16",                "success": false,                "accountBalance": "0"            }        ]        }"}
 ```
 
 ### Response Content
 
-| todayProfit     | String               | 今日总收益，按估值参数计价                        |
-| --------------- | -------------------- | ------------------------------------------------- |
-| todayProfitRate | Long                 | 今日收益率                                        |
-| accountList     | List<AccountBalance> | 账户资产列表                                      |
-| {accountType    | String               | 账户类型                                          |
-| accountBalance  | String               | 账户资产                                          |
-| success}        | Boolean              | 账户资产是否成功获取,为false时accountBalance返回0 |
-| timestamp       | long                 | 数据返回时间，为unix time in millisecond          |
+| todayProfit    | String               | 描述                                              |
+| -------------- | -------------------- | ------------------------------------------------- |
+| accountList    | List<AccountBalance> | 账户资产列表                                      |
+| {accountType   | String               | 账户类型                                          |
+| accountBalance | String               | 账户资产                                          |
+| success}       | Boolean              | 账户资产是否成功获取,为false时accountBalance返回0 |
+| timestamp      | long                 | 数据返回时间，为unix time in millisecond          |
 
 ### 账户类型数据字典
 
@@ -1242,24 +1078,16 @@ This endpoint returns the valuation of the total assets of the account in btc or
 
 ### Request Parameters
 
-| Parameter         | Required | Data Type | Description                                                  | Default Value | Value Range              |
-| ----------------- | -------- | --------- | ------------------------------------------------------------ | ------------- | ------------------------ |
-| accountType       | true     | string    | The type of this account                                     | NA            | spot                     |
-| valuationCurrency | false    | string    | The valuation according to the certain fiat currency         | BTC           | USD,SGD (case sensitive) |
-| subUid            | false    | long      | Sub User's UID. When sub user's UID is not specified, the response would include the records of  API key. | NA            |                          |
+| Parameter         | Required | Data Type | Description                                          | Default Value | Value Range              |
+| ----------------- | -------- | --------- | ---------------------------------------------------- | ------------- | ------------------------ |
+| accountType       | true     | string    | The type of this account                             | NA            | spot                     |
+| valuationCurrency | false    | string    | The valuation according to the certain fiat currency | BTC           | USD,SGD (case sensitive) |
 
 
 > The above command returns JSON structured like this:
 
 ```json
-{
-    "code": 200,
-    "data": {
-        "balance": "34.75",
-        "timestamp": 1594901254363
-    },
-    "ok": true
-}
+{    "code": 200,    "data": {        "balance": "34.75",        "timestamp": 1594901254363    },    "ok": true}
 ```
 
 ### Response Content
@@ -1295,16 +1123,11 @@ API Key Permission：Trade<br>
 > Response:
 
 ```json
-{
-    "status": "ok",
-    "data": {
-        "transact-id": 220521190,
-        "transact-time": 1590662591832
-    }
-}
+{    "status": "ok",    "data": {        "transact-id": 220521190,        "transact-time": 1590662591832    }}
 ```
 
 ### Response Content
+
 | Field          | Required | Data Type | Description    | Values          |
 | -------------- | -------- | --------- | -------------- | --------------- |
 | status         | true     | string    | Request status | "ok" or "error" |
@@ -1450,6 +1273,7 @@ endTime default value: current time
 
 Note 3:<br>
 Only when the number of items within the query window (between “startTime” and ”endTime”) exceeded the page limitation (defined by “limit”), Huobi server returns “nextId”. Once received “nextId”, API user should –<br>
+
 1)	Be aware of that, some items within the query window were not returned due to the page size limitation.<br>
 2)	In order to get these items from Huobi server, adopt the “nextId” as “fromId” and submit another request, with other request parameters no change.<br>
 3)	As database record ID, “nextId” and “fromId” are for recurring query purpose and the ID itself does not have any business implication.<br>
@@ -1466,7 +1290,7 @@ Wallet APIs provide query functionality for deposit address, withdraw address, w
 
 ## Query Deposit Address
 
-Parent user and sub user could query deposit address of corresponding chain, for a specific crypto currency (except IOTA).
+Parent user could query deposit address of corresponding chain, for a specific crypto currency (except IOTA).
 
 API Key Permission：Read<br>
 Rate Limit (NEW): 20times/2s
@@ -1504,7 +1328,7 @@ GET `/v1/query/deposit-withdraw`
 | id          | true     | long     | 充币或者提币订单id，翻页查询时from参数取自此值               |                                          |
 | type        | true     | string   | 类型                                                         | 'deposit', 'withdraw', 子用户仅有deposit |
 | currency    | true     | string   | 币种                                                         |                                          |
-| tx-hash     | true     | string   | 交易哈希。如果是“快速提币”，则提币不通过区块链，该值为空。   |                                          |
+| tx-hash     | true     | string   | 交易哈希。                                                   |                                          |
 | chain       | true     | string   | 链名称                                                       |                                          |
 | amount      | true     | float    | 个数                                                         |                                          |
 | address     | true     | string   | 目的地址                                                     |                                          |
@@ -1584,6 +1408,7 @@ direction:
 type:
 
 - market : The price is not required in order creation request, you only need to specify either volume or amount. The matching and trade will happen automatically according to the request.
+
 - limit: Both of the price and amount should be specified in order creation request.
 
   
@@ -1709,19 +1534,7 @@ If the order price is greater than the highest buy price in the market, the orde
 > Response:
 
 ```json
-{
-    "status": "ok",
-    "data": [
-        {
-            "order-id": 61713400772,
-            "client-order-id": "c1"
-        },
-        {
-            "order-id": 61713400940,
-            "client-order-id": "d2"
-        }
-    ]
-}
+{    "status": "ok",    "data": [        {            "order-id": 61713400772,            "client-order-id": "c1"        },        {            "order-id": 61713400940,            "client-order-id": "d2"        }    ]}
 ```
 
 ### Response Content
@@ -1743,6 +1556,7 @@ Rate Limit (NEW): 100times/2s
 This endpoint submits a request to cancel an order.
 
 <aside class="warning">The actual result of the cancellation request needs to be checked by order status or match result endpoints after submitting the request.</aside>
+
 ### HTTP Request
 
 POST ` /v1/order/orders/{order-id}/submitcancel`
@@ -1763,17 +1577,13 @@ POST ` /v1/order/orders/{order-id}/submitcancel`
 ### Response Content
 
 <aside class="notice">The returned data object is a single string which represents the order id</aside>
+
 ### Error Code
 
 > Failure response:
 
 ```json
-{
-  "status": "error",
-  "err-code": "order-orderstate-error",
-  "err-msg": "Incorrect order state",
-  "order-state":-1 // current order state
-}
+{  "status": "error",  "err-code": "order-orderstate-error",  "err-msg": "Incorrect order state",  "order-state":-1 // current order state}
 ```
 
 The possible values of "order-state" includes -
@@ -2068,6 +1878,7 @@ This endpoint returns the detail of a specific order. If an order is created via
 `GET /v1/order/orders/{order-id}`
 
 ### Request Parameters
+
 | **Name** | **Mandatory** | **Type** | **Description**                                       | 默认值 | 取值范围 |
 | -------- | ------------- | -------- | ----------------------------------------------------- | ------ | -------- |
 | order-id | true          | string   | order id when order was created. Place it within path |        |          |
@@ -2127,25 +1938,7 @@ This endpoint returns the detail of one order by specified client order id (with
 > Response:
 
 ```json
-{  
-  "data": {
-    "id": 59378,
-    "symbol": "ethbtc",
-    "account-id": 100009,
-    "amount": "10.1000000000",
-    "price": "100.1000000000",
-    "created-at": 1494901162595,
-    "type": "buy-limit",
-    "field-amount": "10.1000000000",
-    "field-cash-amount": "1011.0100000000",
-    "field-fees": "0.0202000000",
-    "finished-at": 1494901400468,
-    "user-id": 1000,
-    "source": "api",
-    "state": "filled",
-    "canceled-at": 0
-  }
-}
+{    "data": {    "id": 59378,    "symbol": "ethbtc",    "account-id": 100009,    "amount": "10.1000000000",    "price": "100.1000000000",    "created-at": 1494901162595,    "type": "buy-limit",    "field-amount": "10.1000000000",    "field-cash-amount": "1011.0100000000",    "field-fees": "0.0202000000",    "finished-at": 1494901400468,    "user-id": 1000,    "source": "api",    "state": "filled",    "canceled-at": 0  }}
 ```
 
 ### Response Content
@@ -2209,24 +2002,24 @@ This endpoint returns the match result of an order.
 ### Response Content
 
 <aside class="notice">The return data contains a list and each item in the list represents a match result</aside>
-| Parameter           | Data Type | Description                                                  |
-| ------------------- | --------- | ------------------------------------------------------------ |
-| id                  | long      | Internal id                                                  |
-| symbol              | string    | The trading symbol to trade, e.g. ltcbtc, ethbtc ...         |
-| order-id            | long      | The order id of this order                                   |
-| match-id            | long      | The match id of this match                                   |
-| trade-id            | integer   | Unique trade ID (NEW)                                        |
-| price               | string    | The limit price of limit order                               |
-| created-at          | int       | The timestamp in milliseconds when this record is created (slightly later than trade time) |
-| type                | string    | All possible order type (refer to introduction in this section) |
-| filled-amount       | string    | The amount which has been filled                             |
-| filled-fees         | string    | Transaction fee (positive value). If maker rebate applicable, revert maker rebate value per trade (negative value). |
-| fee-currency        | string    | Currency of transaction fee or transaction fee rebate (transaction fee of buy order is based on base currency, transaction fee of sell order is based on quote currency; transaction fee rebate of buy order is based on quote currency, transaction fee rebate of sell order is based on base currency) |
-| source              | string    | All possible order source (refer to introduction in this section) |
-| role                | string    | the role in the transaction: taker or maker                  |
-| filled-points       | string    | deduction amount (unit: in ht or hbpoint)                    |
-| fee-deduct-currency | string    | deduction type. if blank, the transaction fee is based on original currency; if showing value as "ht", the transaction fee is deducted by HT; if showing value as "hbpoint", the transaction fee is deducted by HB point. |
-| fee-deduct-state    | string    | Fee deduction status，In deduction：ongoing，Deduction completed：done |
+
+| Parameter     | Data Type | Description                                                  |
+| ------------- | --------- | ------------------------------------------------------------ |
+| id            | long      | Internal id                                                  |
+| symbol        | string    | The trading symbol to trade, e.g. ltcbtc, ethbtc ...         |
+| order-id      | long      | The order id of this order                                   |
+| match-id      | long      | The match id of this match                                   |
+| trade-id      | integer   | Unique trade ID (NEW)                                        |
+| price         | string    | The limit price of limit order                               |
+| created-at    | int       | The timestamp in milliseconds when this record is created (slightly later than trade time) |
+| type          | string    | All possible order type (refer to introduction in this section) |
+| filled-amount | string    | The amount which has been filled                             |
+| filled-fees   | string    | Transaction fee (positive value). If maker rebate applicable, revert maker rebate value per trade (negative value). |
+| fee-currency  | string    | Currency of transaction fee or transaction fee rebate (transaction fee of buy order is based on base currency, transaction fee of sell order is based on quote currency; transaction fee rebate of buy order is based on quote currency, transaction fee rebate of sell order is based on base currency) |
+| source        | string    | All possible order source (refer to introduction in this section) |
+| role          | string    | the role in the transaction: taker or maker                  |
+| status        | string    | 状态                                                         |
+| <data>        | object    |                                                              |
 
 
 
@@ -2257,6 +2050,7 @@ Huobi Global suggests API users to search historical orders based on “time” 
 `GET /v1/order/orders`
 
 > Request
+
 ```json
 {   "account-id": "100009",   "amount": "10.1",   "price": "100.1",   "source": "api",   "symbol": "ethbtc",   "type": "buy-limit"}
 ```
@@ -2278,25 +2072,7 @@ Huobi Global suggests API users to search historical orders based on “time” 
 > The above command returns JSON structured like this:
 
 ```json
-  "data": [
-    {
-      "id": 59378,
-      "symbol": "ethbtc",
-      "account-id": 100009,
-      "amount": "10.1000000000",
-      "price": "100.1000000000",
-      "created-at": 1494901162595,
-      "type": "buy-limit",
-      "field-amount": "10.1000000000",
-      "field-cash-amount": "1011.0100000000",
-      "field-fees": "0.0202000000",
-      "finished-at": 1494901400468,
-      "user-id": 1000,
-      "source": "api",
-      "state": "filled",
-      "canceled-at": 0
-    }
-  ]
+  "data": [    {      "id": 59378,      "symbol": "ethbtc",      "account-id": 100009,      "amount": "10.1000000000",      "price": "100.1000000000",      "created-at": 1494901162595,      "type": "buy-limit",      "field-amount": "10.1000000000",      "field-cash-amount": "1011.0100000000",      "field-fees": "0.0202000000",      "finished-at": 1494901400468,      "user-id": 1000,      "source": "api",      "state": "filled",      "canceled-at": 0    }  ]
 ```
 
 ### Response Content
@@ -2347,6 +2123,7 @@ The orders created via API will no longer be queryable after being cancelled for
 `GET /v1/order/history`
 
 >Request
+
 ```json
 {   "symbol": "ethbtc",   "start-time": "1556417645419",   "end-time": "1556533539282",   "direct": "prev",   "size": "10"}
 ```
@@ -2419,48 +2196,30 @@ GET `/v1/order/matchresults`
 > The above command returns JSON structured like this:
 
 ```json
-  "data": [
-    {
-      "id": 29553,
-      "order-id": 59378,
-      "match-id": 59335,
-      "symbol": "ethbtc",
-      "type": "buy-limit",
-      "source": "api",
-      "price": "100.1000000000",
-      "filled-amount": "9.1155000000",
-      "filled-fees": "0.0182310000",
-      "created-at": 1494901400435,
-      "trade-id": 100282808529,
-      "role": "taker",
-      "filled-points": "0.0",
-      "fee-deduct-currency": "",
-      "fee-deduct-state": "done"
-    }
-  ]
+  "data": [    {      "id": 29553,      "order-id": 59378,      "match-id": 59335,      "symbol": "ethbtc",      "type": "buy-limit",      "source": "api",      "price": "100.1000000000",      "filled-amount": "9.1155000000",      "filled-fees": "0.0182310000",      "created-at": 1494901400435,      "trade-id": 100282808529,      "role": "taker",      "filled-points": "0.0",      "fee-deduct-currency": "",      "fee-deduct-state": "done"    }  ]
 ```
 
 ### Response Content
 
 <aside class="notice">The return data contains a list and each item in the list represents a match result</aside>
-| Field               | Data Type | Description                                                  |
-| ------------------- | --------- | ------------------------------------------------------------ |
-| id                  | long      | Record id, non sequential, it can be used in "from" field for next request |
-| symbol              | string    | The trading symbol to trade, e.g. ltcbtc, ethbtc             |
-| order-id            | long      | The order id of this order                                   |
-| match-id            | long      | The match id of this match                                   |
-| trade-id            | long      | Unique trade ID                                              |
-| price               | string    | The limit price of limit order                               |
-| created-at          | long      | The timestamp in milliseconds when this record is created    |
-| type                | string    | All possible order type (refer to introduction in this section) |
-| filled-amount       | string    | The amount which has been filled                             |
-| filled-fees         | string    | Transaction fee (positive value). If maker rebate applicable, revert maker rebate value per trade (negative value). |
-| fee-currency        | string    | Currency of transaction fee or transaction fee rebate (transaction fee of buy order is based on base currency, transaction fee of sell order is based on quote currency; transaction fee rebate of buy order is based on quote currency, transaction fee rebate of sell order is based on base currency) |
-| source              | string    | All possible order source (refer to introduction in this section) |
-| role                | string    | The role in the transaction: taker or maker.                 |
-| filled-points       | string    | deduction amount (unit: in ht or hbpoint)                    |
-| fee-deduct-currency | string    | deduction type: ht or hbpoint.                               |
-| fee-deduct-state    | string    | Fee deduction status，In deduction：ongoing，Deduction completed：done |
+
+| Field         | Data Type | Description                                                  |
+| ------------- | --------- | ------------------------------------------------------------ |
+| id            | long      | Record id, non sequential, it can be used in "from" field for next request |
+| symbol        | string    | The trading symbol to trade, e.g. ltcbtc, ethbtc             |
+| order-id      | long      | The order id of this order                                   |
+| match-id      | long      | The match id of this match                                   |
+| trade-id      | long      | Unique trade ID                                              |
+| price         | string    | The limit price of limit order                               |
+| created-at    | long      | The timestamp in milliseconds when this record is created    |
+| type          | string    | All possible order type (refer to introduction in this section) |
+| filled-amount | string    | The amount which has been filled                             |
+| filled-fees   | string    | Transaction fee (positive value). If maker rebate applicable, revert maker rebate value per trade (negative value). |
+| fee-currency  | string    | Currency of transaction fee or transaction fee rebate (transaction fee of buy order is based on base currency, transaction fee of sell order is based on quote currency; transaction fee rebate of buy order is based on quote currency, transaction fee rebate of sell order is based on base currency) |
+| source        | string    | All possible order source (refer to introduction in this section) |
+| role          | string    | The role in the transaction: taker or maker.                 |
+| status        | string    | 状态                                                         |
+| <data>        | object    |                                                              |
 
 Notes:<br>
 
@@ -2515,6 +2274,7 @@ curl "https://api.huobi.sg/v2/reference/transact-fee-rate?symbols=,ethbtc,ltcbtc
 |      | actualTakerRate } | string    | Deducted fee rate – aggressive side. If deduction is inapplicable or disabled, return basic fee rate. |      |
 
 Note：
+
 - If makerFeeRate/actualMakerRate is positive，this field means the transaction fee rate.
 - If makerFeeRate/actualMakerRate is negative, this field means the rebate fee rate.
 
@@ -2527,14 +2287,12 @@ Below is the error code and description returned by Trading APIs
 | base-argument-unsupported                                    | The specified parameter is not supported                     |
 | base-system-error                                            | System internel error. For placing or canceling order, it is mostly due to cache issue, please try again later. |
 | login-required                                               | Signature is missing, or user not find (key and uid not match). |
-| parameter-required                                           | Stop-price or operator parameter is missing for stop-order type |
 | base-record-invalid                                          | Failed to get data, please try again later                   |
 | order-amount-over-limit                                      | The amount of order exceeds the limitation                   |
 | base-symbol-trade-disabled                                   | The symbol is disabled for trading                           |
 | base-operation-forbidden                                     | The operation is forbidden for current user or the symbol is not allowed to trade over OTC |
 | account-get-accounts-inexistent-error                        | The account doesn't exist in current user                    |
 | account-account-id-inexistent                                | The account id doesn't exist                                 |
-| sub-user-auth-required                                       | Isolated margin account is not enabled for sub user          |
 | order-disabled                                               | The symbol is pending and not allowed to place order         |
 | cancel-disabled                                              | The symbol is pending and not allowed to cancel order        |
 | order-invalid-price                                          | The order price is invalid, usually exceeds the 10% of latest trade price |
@@ -2557,15 +2315,9 @@ Below is the error code and description returned by Trading APIs
 | order-date-limit-error                                       | Order query date exceed the limit                            |
 | order-source-invalid                                         | Order source is invalid                                      |
 | order-update-error                                           | Order update error                                           |
-| order-fl-cancellation-is-disallowed                          | Liquidation order cannot be canceled                         |
-| operation-forbidden-for-fl-account-state                     | The operation is forbidden when the account is in liquidation |
-| operation-forbidden-for-lock-account-state                   | The operation is forbidden when the account is locked        |
-| fl-order-already-existed                                     | An unfilled liquidation order already exists                 |
 | order-user-cancel-forbidden                                  | IOC or FOK order is not allowed to cancel                    |
-| account-state-invalid                                        | Invalid status of liquidation account                        |
 | order-price-greater-than-limit                               | Order price is higher than the limitation before market opens |
 | order-price-less-than-limit                                  | Order price is lower than the limitation before market opens |
-| order-stop-order-hit-trigger                                 | The stop orders triggered immediately are not allowed        |
 | market-orders-not-support-during-limit-price-trading         | Market orders are not supported during limit-price trading   |
 | price-exceeds-the-protective-price-during-limit-price-trading | The price exceeds the protective price during limit-price trading |
 | invalid-client-order-id                                      | The parameter client order id is duplicated (within last 24h) in place or cancel order request |
@@ -2582,9 +2334,11 @@ Below is the error code and description returned by Trading APIs
 ## FAQ
 
 ### Q1：What is client-order-id?
+
 A： The `client-order-id` is an optional request parameter while placing order. It's string type which maximum length is 64. The client order id is generated by client, and is only valid within 8 hours (It’s only valid within 2 hours for the final state).
 
 ### Q2：How to get the order size, price and decimal precision?
+
 A： You can call API `GET /v1/common/symbols` to get the currency pair information, pay attention to the difference between the minimum amount and the minimum price.   
 
 Below are common errors:
@@ -2598,6 +2352,7 @@ Below are common errors:
 - order-limitorder-amount-min-error : The limited order amount is smaller than the threshold  
 
 ### Q3：Why I got insufficient balance error while placing an order just after a successful order matching?
+
 A：To ensure the low latency of order update, Order update push is made directly after order matching. Meanwhile, the clearing service of that order may be still in progress at backend. It is suggested to follow either of below to ensure a successful order submission:
 
 1、Subscribe to WebSocket topic `accounts` for getting account balance moves to ensure the completion of asset clearing.
@@ -2607,6 +2362,7 @@ A：To ensure the low latency of order update, Order update push is made directl
 3、Leave sufficient balance in your account.
 
 ### Q4: What is the difference between 'filled-fees' and 'filled-points' in match result?
+
 A: Transaction fee can be paid from either of below. They won't exist at the same time.
 
 1、filled-fees: Filled-fee is also called transaction fee. It's charged from your income currency from the transaction. For example, if your purchase order of BTC/btc got matched，the transaction fee will be based on BTC.
@@ -2614,9 +2370,11 @@ A: Transaction fee can be paid from either of below. They won't exist at the sam
 2、filled-points: If user enabled transaction fee deduction, the fee should be charged from either HT or Point. When there's sufficient fund in HT/Point, filled-fees is empty while filled-points has value. That means the deduction is made via HT/Point. User could refer to field `fee-deduct-currency` to get the exact deduction type of the transaction. 
 
 ### Q5: What is the difference between 'match-id' and 'trade-id' in matching result?
+
 A: The `match-id` is the identity for order matching, while the `trade-id` is the unique identifier for each trade. One `match-id` may be correlated with multiple `trade-id`, or no `trade-id`(if the order is cancelled). For example, if a taker's order got matched with 3 maker's orders at the same time, it generates 3 trade IDs but only one match ID.
 
 ### Q6: Why the order submission could be rejected even though the order price is set as same as current best bid (or best ask)?
+
 A: For some extreme illiquid trading symbols, the best quote price at particular time might be far away from last trade price. But the price limit is actually based on last trade price which could possibly exclude best quote price from valid range for any new order. It is suggested to place orders based on the WebSocket pushed Bid and market data.
 
 
@@ -2648,11 +2406,13 @@ All return data of websocket Market APIs are compressed with GZIP so they need t
 ```json
 {"ping": 1492420473027} 
 ```
+
 After connected to Huobi's Websocket server, the server will send heartbeat periodically (currently at 5s interval). The heartbeat message will have an integer in it, e.g.
 
 ```json
 {"pong": 1492420473027} 
 ```
+
 When client receives this heartbeat message, it should respond with a matching "pong" message which has the same integer in it, e.g.
 
 <aside class="warning">After the server sent two consecutive heartbeat messages without receiving at least one matching "pong" response from a client, then right before server sends the next "ping" heartbeat, the server will be disconnected with the client server.</aside>
@@ -2735,10 +2495,7 @@ This topic sends a new candlestick whenever it is available.
 > Subscribe request
 
 ```json
-{
-  "sub": "market.ethbtc.kline.1min",
-  "id": "id1"
-}
+{  "sub": "market.ethbtc.kline.1min",  "id": "id1"}
 ```
 
 ### Topic Parameter
@@ -2751,31 +2508,13 @@ This topic sends a new candlestick whenever it is available.
 > Response
 
 ```json
-{
-  "id": "id1",
-  "status": "ok",
-  "subbed": "market.ethbtc.kline.1min",
-  "ts": 1489474081631 //system response time
-}
+{  "id": "id1",  "status": "ok",  "subbed": "market.ethbtc.kline.1min",  "ts": 1489474081631 //system response time}
 ```
 
 > Update example
 
 ```json
-{
-  "ch": "market.ethbtc.kline.1min",
-  "ts": 1489474082831, //system update time
-  "tick": {
-    "id": 1489464480,
-    "amount": 0.0,
-    "count": 0,
-    "open": 7962.62,
-    "close": 7962.62,
-    "low": 7962.62,
-    "high": 7962.62,
-    "vol": 0.0
-  }
-}
+{  "ch": "market.ethbtc.kline.1min",  "ts": 1489474082831, //system update time  "tick": {    "id": 1489464480,    "amount": 0.0,    "count": 0,    "open": 7962.62,    "close": 7962.62,    "low": 7962.62,    "high": 7962.62,    "vol": 0.0  }}
 ```
 
 ### Update Content
@@ -2791,18 +2530,14 @@ This topic sends a new candlestick whenever it is available.
 | high   | float     | High price during the interval                               |
 | vol    | float     | Aggregated trading value during the interval (in quote currency) |
 
-<aside class="notice">When symbol is set to "hb10" or "huobi10", amount, count, and vol will always have the value of 0</aside>
+
+
 ### Pull Request
 
 Pull request is supported with extra parameters to define the range. The maximum number of ticks in each response is 300.
 
 ```json
-{
-  "req": "market.$symbol.kline.$period",
-  "id": "id generated by client",
-  "from": "from time in epoch seconds",
-  "to": "to time in epoch seconds"
-}
+{  "req": "market.$symbol.kline.$period",  "id": "id generated by client",  "from": "from time in epoch seconds",  "to": "to time in epoch seconds"}
 ```
 
 | Parameter | Data Type | Required | Default Value                         | Description                        | Value Range                                                  |
@@ -2901,27 +2636,13 @@ While type is set as ‘step1’, ‘step2’, ‘step3’, ‘step4’, or ‘s
 > Update example
 
 ```json
-{
-  "ch": "market.htbtc.depth.step0",
-  "ts": 1572362902027, //system update time
-  "tick": {
-    "bids": [
-      [3.7721, 344.86],// [price, size]
-      [3.7709, 46.66]
-    ],
-    "asks": [
-      [3.7745, 15.44],
-      [3.7746, 70.52]
-    ],
-    "version": 100434317651,
-    "ts": 1572362902012 //quote time
-  }
-}
+{  "ch": "market.htbtc.depth.step0",  "ts": 1572362902027, //system update time  "tick": {    "bids": [      [3.7721, 344.86],// [price, size]      [3.7709, 46.66]    ],    "asks": [      [3.7745, 15.44],      [3.7746, 70.52]    ],    "version": 100434317651,    "ts": 1572362902012 //quote time  }}
 ```
 
 ### Update Content
 
 <aside class="notice">Under 'tick' object there is a list of bids and a list of asks</aside>
+
 | Field   | Data Type | Description                                                  |
 | ------- | --------- | ------------------------------------------------------------ |
 | bids    | object    | The current all bids in format [price, size]                 |
@@ -2930,6 +2651,7 @@ While type is set as ‘step1’, ‘step2’, ‘step3’, ‘step4’, or ‘s
 | ts      | integer   | The UNIX timestamp in milliseconds adjusted to Singapore time |
 
 <aside class="notice">When symbol is set to "hb10" amount, count, and vol will always have the value of 0</aside>
+
 ### Pull Request
 
 Pull request is supported.
@@ -2949,6 +2671,7 @@ or
 **`wss://api-aws.huobi.sg/feed`**
 
 Suggested downstream data processing:<br>
+
 1)	Subscribe to incremental updates and start to cache them;<br>
 2)	Request refresh message (with same number of levels), and base on its “seqNum” to align it with the cached incremental message which has the same “prevSeqNum”;<br>
 3)	Start to continuously process incremental messages to build up MBP book;<br>
@@ -2959,6 +2682,7 @@ Suggested downstream data processing:<br>
 8)	If one incremental message includes updates of multiple price levels, all of those levels should be updated simultaneously in MBP book.<br>
 
 Currently Huobi Global only supports 5-level/20-level MBP incremental channel and 150-level incremental channel, the differences between them are -<br>
+
 1) Different depth of market.<br>
 2) 5-level/20-level incremental MBP is a tick by tick feed, which means whenever there is an order book change at that level, it pushes an update; 150 levels incremental MBP feed is based on the gap between two snapshots at 100ms interval.<br>
 3) While there is single side order book update, either bid or ask, the incremental message sent from 5-level/20-level MBP feed only contains that side update. <br>
@@ -2966,19 +2690,24 @@ Currently Huobi Global only supports 5-level/20-level MBP incremental channel an
 ```json
 {    "ch": "market.ethbtc.mbp.5",    "ts": 1573199608679,    "tick": {        "seqNum": 100020146795,        "prevSeqNum": 100020146794,        "asks": [            [645.140000000000000000, 26.755973959140651643]        ]    }}
 ```
+
 But the incremental message from 150 levels MBP feed contains not only that side update and also a blank object for another side.
 
 ```json
 {    "ch":"market.ethbtc.mbp.150",    "ts":1573199608679,    "tick":{        "seqNum":100020146795,        "prevSeqNum":100020146794,        "bids":[ ],        "asks":[            [645.14,26.75597395914065]        ]    }}
 ```
+
 In the near future, Huobi Global will align the update behavior of 150-level incremental channel with 5-level/20-level, which means while single side order book changed (either bid or ask), the update message will be no longer including a blank object for another side.<br>
+
 4) While there is nothing change between two snapshots in past 100ms, the 150 levels incremental MBP feed still sends out a message which contains two blank objects – bids & asks. <br>
 
 ```json
 {    "ch":"market.ethbtc.mbp.150",    "ts":1585074391470,    "tick":{        "seqNum":100772868478,        "prevSeqNum":100772868476,        "bids":[  ],        "asks":[  ]    }}
 ```
+
 But 5-level/20-level incremental channel won’t disseminate any update in such a case.<br>
 In the future, Huobi Global will align the update behavior of 150-level incremental channel with 5-level/20-level, which means while there is no order book change at all, the channel will be no longer disseminating messages of blank object any more.<br>
+
 5) 5-level/20-level incremental channel only supports the following symbols at this stage - ethbtc,ltcbtc,bchbtc, while 150-level incremental channel supports all symbols.<br>
 
 REQ channel supports refreshing message for 5-level, 20-level, and 150-level.
@@ -3046,11 +2775,7 @@ User could subscribe to this channel to receive refresh update of Market By Pric
 `market.$symbol.mbp.refresh.$levels`
 
 ```json
-{
-"sub": "market.ltcbtc.mbp.refresh.20",
-"id": "id1"
-}
-
+{"sub": "market.ltcbtc.mbp.refresh.20","id": "id1"}
 ```
 
 ### Parameters
@@ -3251,23 +2976,13 @@ Unlike Market WebSocket, the return data of Account and Order Websocket are not 
 ### Heartbeat
 
 ```json
-{
-	"action": "ping",
-	"data": {
-		"ts": 1575537778295
-	}
-}
+{	"action": "ping",	"data": {		"ts": 1575537778295	}}
 ```
 
 Once the Websocket connection is established, Huobi server will periodically send "ping" message at 20s interval, with an integer inside.
 
 ```json
-{
-    "action": "pong",
-    "data": {
-          "ts": 1575537778295 // the same with "ping" message
-    }
-}
+{    "action": "pong",    "data": {          "ts": 1575537778295 // the same with "ping" message    }}
 ```
 
 Once client receives "ping", it should respond "pong" message back with the same integer.
@@ -3305,29 +3020,13 @@ Authentication request field list
 | signature        | true      | string    | Signature                                                    |
 
 ```json
-{
-    "action": "req", 
-    "ch": "auth",
-    "params": { 
-        "authType":"api",
-        "accessKey": "e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx",
-        "signatureMethod": "HmacSHA256",
-        "signatureVersion": "2.1",
-        "timestamp": "2019-09-01T18:16:16",
-        "signature": "4F65x5A2bLyMWVQj3Aqp+B4w+ivaA7n5Oi2SuYtCJ9o="
-    }
-}
+{    "action": "req",     "ch": "auth",    "params": {         "authType":"api",        "accessKey": "e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx",        "signatureMethod": "HmacSHA256",        "signatureVersion": "2.1",        "timestamp": "2019-09-01T18:16:16",        "signature": "4F65x5A2bLyMWVQj3Aqp+B4w+ivaA7n5Oi2SuYtCJ9o="    }}
 ```
 
 This is an exmaple of authentication request:
 
 ```json
-{
-	"action": "req",
-	"code": 200,
-	"ch": "auth",
-	"data": {}
-}
+{	"action": "req",	"code": 200,	"ch": "auth",	"data": {}}
 ```
 
 The response of success:
@@ -3355,10 +3054,7 @@ Note: The data in JSON request doesn't require URL encode
 > Sub request:
 
 ```json
-{
-	"action": "sub",
-	"ch": "accounts.update"
-}
+{	"action": "sub",	"ch": "accounts.update"}
 ```
 
 Once the Websocket connection is established, Websocket client could send following request to subscribe a topic:
@@ -3366,12 +3062,7 @@ Once the Websocket connection is established, Websocket client could send follow
 > Sub respose:
 
 ```json
-{
-	"action": "sub",
-	"code": 200,
-	"ch": "accounts.update#0",
-	"data": {}
-}
+{	"action": "sub",	"code": 200,	"ch": "accounts.update#0",	"data": {}}
 ```
 
 Upon success, Websocket client should receive a response below:
@@ -3381,6 +3072,7 @@ Upon success, Websocket client should receive a response below:
 API Key Permission: Read
 
 An order update can be triggered by any of following:<br>
+
 -	Conditional order triggering failure (eventType=trigger)<br>
 -	Conditional order cancellation before trigger (eventType=deletion)<br>
 -	Order creation (eventType=creation)<br>
@@ -3388,6 +3080,7 @@ An order update can be triggered by any of following:<br>
 -	Order cancellation (eventType=cancellation)<br>
 
 The field list in order update message can be various per event type, developers can design the data structure in either of two ways:<br>
+
 - Define a data structure including fields for all event types, allowing a few of them are null<br>
 - Define different data structure for each event type to include specific fields, inheriting from a common data structure which has common fields
 
@@ -3469,6 +3162,7 @@ After order is submitted –
 | orderCreateTime | long      | Order creation time                                          |
 
 Note:<br>
+
 - The topic will send creation update for taker's order before it being filled.<br>
 
 ```json
@@ -3498,6 +3192,7 @@ After order matching –
 | execAmt       | string    | Accumulative amount (for buy-market order it is accumulative value) |
 
 Note:<br>
+
 - If a taker’s order matching with multiple orders at opposite side simultaneously, the multiple trades will be disseminated over separately instead of merging into one trade.<br>
 
 ```json
@@ -3550,52 +3245,19 @@ About optional field ‘mode’: If not filled, or filled with 0, it implicates 
 > Subscribe request
 
 ```json
-{
-	"action": "sub",
-	"ch": "trade.clearing#ltcbtc#0"
-}
-
+{	"action": "sub",	"ch": "trade.clearing#ltcbtc#0"}
 ```
 
 > Response
 
 ```json
-{
-	"action": "sub",
-	"code": 200,
-	"ch": "trade.clearing#ltcbtc#0",
-	"data": {}
-}
+{	"action": "sub",	"code": 200,	"ch": "trade.clearing#ltcbtc#0",	"data": {}}
 ```
 
 > Update example
 
 ```json
-{
-    "ch": "trade.clearing#ltcbtc#0",
-    "data": {
-         "eventType": "trade",
-         "symbol": "ltcbtc",
-         "orderId": 99998888,
-         "tradePrice": "9999.99",
-         "tradeVolume": "0.96",
-         "orderSide": "buy",
-         "aggressor": true,
-         "tradeId": 919219323232,
-         "tradeTime": 998787897878,
-         "transactFee": "19.88",
-         "feeDeduct ": "0",
-         "feeDeductType": "",
-         "feeCurrency": "btc",
-         "accountId": 9912791,
-         "source": "spot-api",
-         "orderPrice": "10000",
-         "orderSize": "1",
-         "clientOrderId": "a001",
-         "orderCreateTime": 998787897878,
-         "orderStatus": "partial-filled"
-    }
-}
+{    "ch": "trade.clearing#ltcbtc#0",    "data": {         "eventType": "trade",         "symbol": "ltcbtc",         "orderId": 99998888,         "tradePrice": "9999.99",         "tradeVolume": "0.96",         "orderSide": "buy",         "aggressor": true,         "tradeId": 919219323232,         "tradeTime": 998787897878,         "transactFee": "19.88",         "feeDeduct ": "0",         "feeDeductType": "",         "feeCurrency": "btc",         "accountId": 9912791,         "source": "spot-api",         "orderPrice": "10000",         "orderSize": "1",         "clientOrderId": "a001",         "orderCreateTime": 998787897878,         "orderStatus": "partial-filled"    }}
 ```
 
 ### Update Contents (after order matching)
@@ -3628,6 +3290,7 @@ About optional field ‘mode’: If not filled, or filled with 0, it implicates 
 | orderStatus     | string    | Order status, valid value: filled, partial-filled            |
 
 Notes:<br>
+
 - The calculated maker rebate value inside ‘transactFee’ may not be paid immediately.<br>
 
 ### Update Contents (after order cancellation)
@@ -3701,65 +3364,19 @@ The topic disseminates the current static value of individual accounts first, at
 > Subscribe request
 
 ```json
-{
-	"action": "sub",
-	"ch": "accounts.update"
-}
+{	"action": "sub",	"ch": "accounts.update"}
 ```
 
 > Response
 
 ```json
-{
-	"action": "sub",
-	"code": 200,
-	"ch": "accounts.update#0",
-	"data": {}
-}
+{	"action": "sub",	"code": 200,	"ch": "accounts.update#0",	"data": {}}
 ```
 
 > Update example
 
 ```json
-accounts.update#0：
-{
-	"action": "push",
-	"ch": "accounts.update#0",
-	"data": {
-		"currency": "btc",
-		"accountId": 123456,
-		"balance": "23.111",
-		"changeType": "transfer",
-           	"accountType":"trade",
-		"changeTime": 1568601800000
-	}
-}
-
-accounts.update#1：
-{
-	"action": "push",
-	"ch": "accounts.update#1",
-	"data": {
-		"currency": "btc",
-		"accountId": 33385,
-		"available": "2028.699426619837209087",
-		"changeType": "order.match",
-         		"accountType":"trade",
-		"changeTime": 1574393385167
-	}
-}
-{
-	"action": "push",
-	"ch": "accounts.update#1",
-	"data": {
-		"currency": "btc",
-		"accountId": 33385,
-		"balance": "2065.100267619837209301",
-		"changeType": "order.match",
-           	"accountType":"trade",
-		"changeTime": 1574393385122
-	}
-}
+accounts.update#0：{	"action": "push",	"ch": "accounts.update#0",	"data": {		"currency": "btc",		"accountId": 123456,		"balance": "23.111",		"changeType": "transfer",           	"accountType":"trade",		"changeTime": 1568601800000	}}accounts.update#1：{	"action": "push",	"ch": "accounts.update#1",	"data": {		"currency": "btc",		"accountId": 33385,		"available": "2028.699426619837209087",		"changeType": "order.match",         		"accountType":"trade",		"changeTime": 1574393385167	}}{	"action": "push",	"ch": "accounts.update#1",	"data": {		"currency": "btc",		"accountId": 33385,		"balance": "2065.100267619837209301",		"changeType": "order.match",           	"accountType":"trade",		"changeTime": 1574393385122	}}
 ```
 
 ### Update Contents
