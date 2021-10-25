@@ -220,7 +220,7 @@
             </ul>
           </span>
           <span class="nav_cell nav_tab">
-            <a href="/docs/spot/v1/en/" id="btn_spot">现货</a>
+            <a href="/docs/spot/v1/cn/" id="btn_spot">现货</a>
           </span>
        <!--
           <span class="nav_cell nav_tab">
@@ -1120,7 +1120,7 @@ api.huobi.sg\n
 
 <aside class="notice">当前 REST API 不支持自定义时间区间，如需要历史固定时间范围的数据，请参考 Websocket API 中的 K 线接口。</aside>
 
-<aside class="notice">获取 hb10 净值时， symbol 请填写 “hb10”。</aside>
+<aside class="notice">获取 btc 净值时， symbol 请填写 “btc”。</aside>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.sg/market/history/kline?period=1day&amp;size=200&amp;symbol=ethbtc"</span>
 </code></pre><h3 id='http'>HTTP 请求</h3>
 <ul>
@@ -1693,17 +1693,7 @@ api.huobi.sg\n
 <blockquote>
 <p>Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  
-   </span><span class="s2">"amount"</span><span class="p">:</span><span class="mf">613071.438479561</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"open"</span><span class="p">:</span><span class="mf">86.21</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"close"</span><span class="p">:</span><span class="mf">94.35</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"high"</span><span class="p">:</span><span class="mf">98.7</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">31619471534</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"count"</span><span class="p">:</span><span class="mi">138909</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"low"</span><span class="p">:</span><span class="mf">84.63</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"version"</span><span class="p">:</span><span class="mi">31619471534</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"vol"</span><span class="p">:</span><span class="mf">5.6617373443873316</span><span class="err">E</span><span class="mi">7</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">     </span><span class="s2">"amount"</span><span class="p">:</span><span class="mf">613071.438479561</span><span class="p">,</span><span class="w">   </span><span class="s2">"open"</span><span class="p">:</span><span class="mf">86.21</span><span class="p">,</span><span class="w">   </span><span class="s2">"close"</span><span class="p">:</span><span class="mf">94.35</span><span class="p">,</span><span class="w">   </span><span class="s2">"high"</span><span class="p">:</span><span class="mf">98.7</span><span class="p">,</span><span class="w">   </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">31619471534</span><span class="p">,</span><span class="w">   </span><span class="s2">"count"</span><span class="p">:</span><span class="mi">138909</span><span class="p">,</span><span class="w">   </span><span class="s2">"low"</span><span class="p">:</span><span class="mf">84.63</span><span class="p">,</span><span class="w">   </span><span class="s2">"version"</span><span class="p">:</span><span class="mi">31619471534</span><span class="p">,</span><span class="w">   </span><span class="s2">"vol"</span><span class="p">:</span><span class="mf">5.6617373443873316</span><span class="err">E</span><span class="mi">7</span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='2213f4c32f-7'>响应数据</h3>
 <aside class="notice">返回的JSON顶级数据对象名为'tick'而不是通常的'data'。</aside>
 
@@ -1829,16 +1819,7 @@ api.huobi.sg\n
 <blockquote>
 <p>Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100001</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"subtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"working"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">    </span><span class="p">{</span><span class="w">      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100001</span><span class="p">,</span><span class="w">      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot"</span><span class="p">,</span><span class="w">      </span><span class="s2">"subtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">      </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"working"</span><span class="w">    </span><span class="p">}</span><span class="w">  </span><span class="p">]}</span><span class="w">
 </span></code></pre><h3 id='2213f4c32f-8'>响应数据</h3>
 <table><thead>
 <tr>
@@ -1906,25 +1887,7 @@ api.huobi.sg\n
 <blockquote>
 <p>Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100009</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"working"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"list"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trade"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5007.4362872650"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"frozen"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"348.1199920000"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100009</span><span class="p">,</span><span class="w">    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot"</span><span class="p">,</span><span class="w">    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"working"</span><span class="p">,</span><span class="w">    </span><span class="s2">"list"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">      </span><span class="p">{</span><span class="w">        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trade"</span><span class="p">,</span><span class="w">        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5007.4362872650"</span><span class="w">      </span><span class="p">},</span><span class="w">      </span><span class="p">{</span><span class="w">        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"frozen"</span><span class="p">,</span><span class="w">        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"348.1199920000"</span><span class="w">      </span><span class="p">}</span><span class="w">    </span><span class="p">]</span><span class="w">  </span><span class="p">}}</span><span class="w">
 </span></code></pre><h3 id='2213f4c32f-9'>响应数据</h3>
 <table><thead>
 <tr>
@@ -2031,7 +1994,7 @@ api.huobi.sg\n
 <td>valuationCurrency</td>
 <td>false</td>
 <td>string</td>
-<td>不填默认为btc估值（目前暂只支持BTC估值）</td>
+<td>不填默认为btc估值（目前暂只支持BTC估值，参数值需大写）</td>
 <td></td>
 <td></td>
 </tr>
@@ -2040,100 +2003,7 @@ api.huobi.sg\n
 <blockquote>
 <p>Responds:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>{
-    "message": null,
-    "success": true,
-    "code":200,
-    "data":"{
-        "todayProfit": null,
-        "updated": null,
-        "totalBalance": "68232.925885978428351309",
-        "todayProfitRate": null,
-        "profitAccountBalanceList": [
-            {
-                "distributionType": "1",
-                "success": true,
-                "accountBalance": "68232.925885978428351309"
-            },
-            {
-                "distributionType": "2",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "3",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "4",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "5",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "6",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "7",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "8",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "9",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "10",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "11",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "12",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "13",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "14",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "15",
-                "success": true,
-                "accountBalance": "0"
-            },
-            {
-                "distributionType": "16",
-                "success": false,
-                "accountBalance": "0"
-            }
-        ]
-
-    }"
-}
+<pre class="highlight plaintext"><code>{    "message": null,    "success": true,    "code":200,    "data":"{        "todayProfit": null,        "updated": null,        "totalBalance": "68232.925885978428351309",        "todayProfitRate": null,        "profitAccountBalanceList": [            {                "distributionType": "1",                "success": true,                "accountBalance": "68232.925885978428351309"            },            {                "distributionType": "2",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "3",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "4",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "5",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "6",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "7",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "8",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "9",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "10",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "11",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "12",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "13",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "14",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "15",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "16",                "success": false,                "accountBalance": "0"            }        ]        }"}
 </code></pre><h3 id='2213f4c32f-10'>响应数据</h3>
 <table><thead>
 <tr>
@@ -2142,16 +2012,6 @@ api.huobi.sg\n
 <th>描述</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>todayProfit</td>
-<td>String</td>
-<td>今日总收益，按估值参数计价</td>
-</tr>
-<tr>
-<td>todayProfitRate</td>
-<td>Long</td>
-<td>今日收益率</td>
-</tr>
 <tr>
 <td>accountList</td>
 <td>List<AccountBalance></td>
@@ -2226,14 +2086,6 @@ api.huobi.sg\n
 <td>资产估值法币，即资产按哪个法币为单位进行估值。</td>
 <td>BTC</td>
 <td>可选法币有：USD、SGD （大小写敏感）</td>
-</tr>
-<tr>
-<td>subUid</td>
-<td>false</td>
-<td>long</td>
-<td>子用户的 UID，若不填，则返回API key所属用户的账户资产估值</td>
-<td>NA</td>
-<td></td>
 </tr>
 </tbody></table>
 
@@ -2353,6 +2205,13 @@ api.huobi.sg\n
 <td>交易时间</td>
 <td></td>
 </tr>
+<tr>
+<td></data></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
 </tbody></table>
 <h2 id='84f1b5486d'>账户流水</h2>
 <p>API Key 权限：读取<br>
@@ -2457,7 +2316,7 @@ api.huobi.sg\n
 <td>status</td>
 <td>string</td>
 <td>状态码</td>
-<td></td>
+<td>&quot;ok&quot;,&quot;error&quot;</td>
 </tr>
 <tr>
 <td>data</td>
@@ -2862,7 +2721,7 @@ endTime缺省值：当前时间</p>
 <td>tx-hash</td>
 <td>true</td>
 <td>string</td>
-<td>交易哈希。如果是“快速提币”，则提币不通过区块链，该值为空。</td>
+<td>交易哈希。</td>
 <td></td>
 </tr>
 <tr>
@@ -3659,7 +3518,7 @@ Response:</p>
 <td>string</td>
 <td>true</td>
 <td>NA</td>
-<td>账户 ID，取值参考 <code>GET /v1/account/accounts</code>。现货交易使用‘spot’账户的 account-id；逐仓杠杆交易，请使用 ‘margin’ 账户的 account-id；全仓杠杆交易，请使用 ‘super-margin’ 账户的 account-id；c2c杠杆交易，请使用borrow账户的account-id</td>
+<td>账户 ID，取值参考 <code>GET /v1/account/accounts</code>。</td>
 </tr>
 <tr>
 <td>symbol</td>
@@ -3730,7 +3589,7 @@ Response:</p>
 <tr>
 <td>symbol</td>
 <td>string</td>
-<td>交易对, 例如ltcbtc, ethbtc</td>
+<td>交易对, 例如ltcbtc, ethbtc</td>
 </tr>
 <tr>
 <td>price</td>
@@ -4153,7 +4012,7 @@ Response:</p>
 <td>true</td>
 <td>string</td>
 <td>交易对</td>
-<td>ltcbtc, ethbtc ...</td>
+<td>ltcbtc, ethbtc ...</td>
 </tr>
 <tr>
 <td>type</td>
@@ -4303,7 +4162,7 @@ Response:</p>
 <td>true</td>
 <td>string</td>
 <td>交易对</td>
-<td>ltcbtc, ethbtc...</td>
+<td>ltcbtc, ethbtc...</td>
 </tr>
 <tr>
 <td>type</td>
@@ -4354,109 +4213,137 @@ Response:</p>
 <blockquote>
 <p>Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">    </span><span class="p">{</span><span class="w">      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">29553</span><span class="p">,</span><span class="w">      </span><span class="s2">"order-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59378</span><span class="p">,</span><span class="w">      </span><span class="s2">"match-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59335</span><span class="p">,</span><span class="w">      </span><span class="s2">"trade-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100282808529</span><span class="p">,</span><span class="w">      </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethbtc"</span><span class="p">,</span><span class="w">      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-limit"</span><span class="p">,</span><span class="w">      </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api"</span><span class="p">,</span><span class="w">      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.1000000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"filled-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9.1155000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"filled-fees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0182310000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1494901400435</span><span class="p">,</span><span class="w">      </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"maker"</span><span class="p">,</span><span class="w">      </span><span class="s2">"filled-points"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">      </span><span class="err">“fee-deduct-state”</span><span class="p">:</span><span class="s2">"done"</span><span class="p">,</span><span class="w">      </span><span class="s2">"fee-deduct-currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">    </span><span class="p">}</span><span class="w">    </span><span class="err">...</span><span class="w">  </span><span class="p">]}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">        </span><span class="p">{</span><span class="w">            </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"polyusdt"</span><span class="p">,</span><span class="w">            </span><span class="s2">"fee-currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"poly"</span><span class="p">,</span><span class="w">            </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot-web"</span><span class="p">,</span><span class="w">            </span><span class="s2">"order-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">345487249132375</span><span class="p">,</span><span class="w">            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.338"</span><span class="p">,</span><span class="w">            </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1629443051839</span><span class="p">,</span><span class="w">            </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"taker"</span><span class="p">,</span><span class="w">            </span><span class="s2">"match-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5014</span><span class="p">,</span><span class="w">            </span><span class="s2">"filled-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"147.928994082840236"</span><span class="p">,</span><span class="w">            </span><span class="s2">"filled-fees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">            </span><span class="s2">"filled-points"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="p">,</span><span class="w">            </span><span class="s2">"fee-deduct-currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hbpoint"</span><span class="p">,</span><span class="w">            </span><span class="s2">"fee-deduct-state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"done"</span><span class="p">,</span><span class="w">            </span><span class="s2">"trade-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1085</span><span class="p">,</span><span class="w">            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">313288753120940</span><span class="p">,</span><span class="w">            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-market"</span><span class="w">        </span><span class="p">}</span><span class="w">    </span><span class="p">]}</span><span class="w">
 </span></code></pre><h3 id='2213f4c32f-25'>响应数据</h3>
 <aside class="notice">返回的主数据对象为一个对象数组，其中每一个元件代表一个交易结果。</aside>
 
 <table><thead>
 <tr>
-<th>字段名称</th>
-<th>是否必须</th>
-<th>数据类型</th>
-<th>描述</th>
-<th>取值范围</th>
+<th style="text-align: left"></th>
+<th style="text-align: left"></th>
+<th style="text-align: left"></th>
+<th style="text-align: left"></th>
+<th style="text-align: left"></th>
 </tr>
 </thead><tbody>
 <tr>
-<td>created-at</td>
-<td>true</td>
-<td>long</td>
-<td>该成交记录创建的时间戳（略晚于成交时间）</td>
-<td></td>
+<td style="text-align: left">字段名称</td>
+<td style="text-align: left">是否必须</td>
+<td style="text-align: left">数据类型</td>
+<td style="text-align: left">描述</td>
+<td style="text-align: left">取值范围</td>
 </tr>
 <tr>
-<td>filled-amount</td>
-<td>true</td>
-<td>string</td>
-<td>成交数量</td>
-<td></td>
+<td style="text-align: left">status</td>
+<td style="text-align: left">true</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">状态</td>
+<td style="text-align: left"></td>
 </tr>
 <tr>
-<td>filled-fees</td>
-<td>true</td>
-<td>string</td>
-<td>交易手续费（正值）或交易返佣金（负值）</td>
-<td></td>
+<td style="text-align: left"><data></td>
+<td style="text-align: left">true</td>
+<td style="text-align: left">object</td>
+<td style="text-align: left"></td>
+<td style="text-align: left"></td>
 </tr>
 <tr>
-<td>fee-currency</td>
-<td>true</td>
-<td>string</td>
-<td>交易手续费或交易返佣币种（买单的交易手续费币种为基础币种，卖单的交易手续费币种为计价币种；买单的交易返佣币种为计价币种，卖单的交易返佣币种为基础币种）</td>
-<td></td>
+<td style="text-align: left">created-at</td>
+<td style="text-align: left">true</td>
+<td style="text-align: left">long</td>
+<td style="text-align: left">该成交记录创建的时间戳（略晚于成交时间）</td>
+<td style="text-align: left"></td>
 </tr>
 <tr>
-<td>id</td>
-<td>true</td>
-<td>long</td>
-<td>订单成交记录ID</td>
-<td></td>
+<td style="text-align: left">filled-amount</td>
+<td style="text-align: left">true</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">成交数量</td>
+<td style="text-align: left"></td>
 </tr>
 <tr>
-<td>match-id</td>
-<td>true</td>
-<td>long</td>
-<td>撮合ID，订单在撮合中执行的顺序ID</td>
-<td></td>
+<td style="text-align: left">filled-fees</td>
+<td style="text-align: left">true</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">交易手续费（正值）或交易返佣金（负值）</td>
+<td style="text-align: left"></td>
 </tr>
 <tr>
-<td>order-id</td>
-<td>true</td>
-<td>long</td>
-<td>订单ID，成交所属订单的ID</td>
-<td></td>
+<td style="text-align: left">fee-currency</td>
+<td style="text-align: left">true</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">交易手续费或交易返佣币种（买单的交易手续费币种为基础币种，卖单的交易手续费币种为计价币种；买单的交易返佣币种为计价币种，卖单的交易返佣币种为基础币种）</td>
+<td style="text-align: left"></td>
 </tr>
 <tr>
-<td>trade-id</td>
-<td>false</td>
-<td>integer</td>
-<td>Unique trade ID (NEW)唯一成交编号，成交时产生的唯一编号ID</td>
-<td></td>
+<td style="text-align: left">id</td>
+<td style="text-align: left">true</td>
+<td style="text-align: left">long</td>
+<td style="text-align: left">订单成交记录ID</td>
+<td style="text-align: left"></td>
 </tr>
 <tr>
-<td>price</td>
-<td>true</td>
-<td>string</td>
-<td>成交价格</td>
-<td></td>
+<td style="text-align: left">match-id</td>
+<td style="text-align: left">true</td>
+<td style="text-align: left">long</td>
+<td style="text-align: left">撮合ID，订单在撮合中执行的顺序ID</td>
+<td style="text-align: left"></td>
 </tr>
 <tr>
-<td>source</td>
-<td>true</td>
-<td>string</td>
-<td>订单来源</td>
-<td>api</td>
+<td style="text-align: left">order-id</td>
+<td style="text-align: left">true</td>
+<td style="text-align: left">long</td>
+<td style="text-align: left">订单ID，成交所属订单的ID</td>
+<td style="text-align: left"></td>
 </tr>
 <tr>
-<td>symbol</td>
-<td>true</td>
-<td>string</td>
-<td>交易对</td>
-<td>ltcbtc, ethbtc ...</td>
+<td style="text-align: left">trade-id</td>
+<td style="text-align: left">false</td>
+<td style="text-align: left">integer</td>
+<td style="text-align: left">Unique trade ID (NEW)唯一成交编号，成交时产生的唯一编号ID</td>
+<td style="text-align: left"></td>
 </tr>
 <tr>
-<td>type</td>
-<td>true</td>
-<td>string</td>
-<td>订单类型</td>
-<td>所有可能的订单类型（见本章节简介）</td>
+<td style="text-align: left">price</td>
+<td style="text-align: left">true</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">成交价格</td>
+<td style="text-align: left"></td>
 </tr>
 <tr>
-<td>role</td>
-<td>true</td>
-<td>string</td>
-<td>成交角色</td>
-<td>maker,taker</td>
+<td style="text-align: left">source</td>
+<td style="text-align: left">true</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">订单来源</td>
+<td style="text-align: left">api</td>
+</tr>
+<tr>
+<td style="text-align: left">symbol</td>
+<td style="text-align: left">true</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">交易对</td>
+<td style="text-align: left">btcusdt, ethbtc, rcneth ...</td>
+</tr>
+<tr>
+<td style="text-align: left">type</td>
+<td style="text-align: left">true</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">订单类型</td>
+<td style="text-align: left">所有可能的订单类型（见本章节简介）</td>
+</tr>
+<tr>
+<td style="text-align: left">role</td>
+<td style="text-align: left">true</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">成交角色</td>
+<td style="text-align: left">maker,taker</td>
+</tr>
+<tr>
+<td style="text-align: left"></data></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"></td>
 </tr>
 </tbody></table>
 
@@ -4569,7 +4456,7 @@ Response:</p>
 <blockquote>
 <p>Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">    </span><span class="p">{</span><span class="w">      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59378</span><span class="p">,</span><span class="w">      </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethbtc"</span><span class="p">,</span><span class="w">      </span><span class="s2">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100009</span><span class="p">,</span><span class="w">      </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.1000000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.1000000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1494901162595</span><span class="p">,</span><span class="w">      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-limit"</span><span class="p">,</span><span class="w">      </span><span class="s2">"field-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.1000000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"field-cash-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1011.0100000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"field-fees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0202000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"finished-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1494901400468</span><span class="p">,</span><span class="w">      </span><span class="s2">"user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">      </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api"</span><span class="p">,</span><span class="w">      </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"filled"</span><span class="p">,</span><span class="w">      </span><span class="s2">"canceled-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">    </span><span class="p">}</span><span class="w">    </span><span class="err">...</span><span class="w">  </span><span class="p">]}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">    </span><span class="p">{</span><span class="w">      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59378</span><span class="p">,</span><span class="w">      </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethbtc"</span><span class="p">,</span><span class="w">      </span><span class="s2">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100009</span><span class="p">,</span><span class="w">      </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.1000000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.1000000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1494901162595</span><span class="p">,</span><span class="w">      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-limit"</span><span class="p">,</span><span class="w">      </span><span class="s2">"field-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.1000000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"field-cash-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1011.0100000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"field-fees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0202000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"finished-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1494901400468</span><span class="p">,</span><span class="w">      </span><span class="s2">"user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">      </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api"</span><span class="p">,</span><span class="w">      </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"filled"</span><span class="p">,</span><span class="w">      </span><span class="s2">"canceled-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">    </span><span class="p">}</span><span class="w">  </span><span class="p">]</span><span class="w">
 </span></code></pre><h3 id='2213f4c32f-26'>响应数据</h3>
 <table><thead>
 <tr>
@@ -4981,109 +4868,137 @@ Response:</p>
 <blockquote>
 <p>Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">    </span><span class="p">{</span><span class="w">      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">29553</span><span class="p">,</span><span class="w">      </span><span class="s2">"order-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59378</span><span class="p">,</span><span class="w">      </span><span class="s2">"match-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59335</span><span class="p">,</span><span class="w">      </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethbtc"</span><span class="p">,</span><span class="w">      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-limit"</span><span class="p">,</span><span class="w">      </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api"</span><span class="p">,</span><span class="w">      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.1000000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"filled-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9.1155000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"filled-fees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0182310000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1494901400435</span><span class="p">,</span><span class="w">      </span><span class="s2">"trade-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100282808529</span><span class="p">,</span><span class="w">      </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="err">taker</span><span class="p">,</span><span class="w">      </span><span class="s2">"filled-points"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">      </span><span class="err">“fee-deduct-state”</span><span class="p">:</span><span class="s2">"done"</span><span class="p">,</span><span class="w">      </span><span class="s2">"fee-deduct-currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">    </span><span class="p">}</span><span class="w">    </span><span class="err">...</span><span class="w">  </span><span class="p">]}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">        </span><span class="p">{</span><span class="w">            </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"polyusdt"</span><span class="p">,</span><span class="w">            </span><span class="s2">"fee-currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"poly"</span><span class="p">,</span><span class="w">            </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot-web"</span><span class="p">,</span><span class="w">            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.338"</span><span class="p">,</span><span class="w">            </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1629443051839</span><span class="p">,</span><span class="w">            </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"taker"</span><span class="p">,</span><span class="w">            </span><span class="s2">"order-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">345487249132375</span><span class="p">,</span><span class="w">            </span><span class="s2">"match-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5014</span><span class="p">,</span><span class="w">            </span><span class="s2">"trade-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1085</span><span class="p">,</span><span class="w">            </span><span class="s2">"filled-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"147.928994082840236"</span><span class="p">,</span><span class="w">            </span><span class="s2">"filled-fees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">            </span><span class="s2">"filled-points"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="p">,</span><span class="w">            </span><span class="s2">"fee-deduct-currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hbpoint"</span><span class="p">,</span><span class="w">            </span><span class="s2">"fee-deduct-state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"done"</span><span class="p">,</span><span class="w">            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">313288753120940</span><span class="p">,</span><span class="w">            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-market"</span><span class="w">        </span><span class="p">}</span><span class="w">    </span><span class="p">]}</span><span class="w">
 </span></code></pre><h3 id='2213f4c32f-28'>响应数据</h3>
 <aside class="notice">返回的主数据对象为一个对象数组，其中每一个元件代表一个交易结果。</aside>
 
 <table><thead>
 <tr>
-<th>参数名称</th>
-<th>是否必须</th>
-<th>数据类型</th>
-<th>描述</th>
-<th>取值范围</th>
+<th style="text-align: left"></th>
+<th style="text-align: left"></th>
+<th style="text-align: left"></th>
+<th style="text-align: left"></th>
+<th style="text-align: center"></th>
 </tr>
 </thead><tbody>
 <tr>
-<td>created-at</td>
-<td>true</td>
-<td>long</td>
-<td>该成交记录创建的时间戳（略晚于成交时间）</td>
-<td></td>
+<td style="text-align: left">参数名称</td>
+<td style="text-align: left">是否必须</td>
+<td style="text-align: left">数据类型</td>
+<td style="text-align: left">描述</td>
+<td style="text-align: center">取值范围</td>
 </tr>
 <tr>
-<td>filled-amount</td>
-<td>true</td>
-<td>string</td>
-<td>成交数量</td>
-<td></td>
+<td style="text-align: left">status</td>
+<td style="text-align: left">true</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">状态</td>
+<td style="text-align: center"></td>
 </tr>
 <tr>
-<td>filled-fees</td>
-<td>true</td>
-<td>string</td>
-<td>交易手续费（正值）或交易返佣（负值）</td>
-<td></td>
+<td style="text-align: left"><data></td>
+<td style="text-align: left">true</td>
+<td style="text-align: left">object</td>
+<td style="text-align: left"></td>
+<td style="text-align: center"></td>
 </tr>
 <tr>
-<td>fee-currency</td>
-<td>true</td>
-<td>string</td>
-<td>交易手续费或交易返佣币种（买单的交易手续费币种为基础币种，卖单的交易手续费币种为计价币种；买单的交易返佣币种为计价币种，卖单的交易返佣币种为基础币种）</td>
-<td></td>
+<td style="text-align: left">created-at</td>
+<td style="text-align: left">true</td>
+<td style="text-align: left">long</td>
+<td style="text-align: left">该成交记录创建的时间戳（略晚于成交时间）</td>
+<td style="text-align: center"></td>
 </tr>
 <tr>
-<td>id</td>
-<td>true</td>
-<td>long</td>
-<td>订单成交记录 ID，无大小顺序，可作为下一次翻页查询请求的from字段</td>
-<td></td>
+<td style="text-align: left">filled-amount</td>
+<td style="text-align: left">true</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">成交数量</td>
+<td style="text-align: center"></td>
 </tr>
 <tr>
-<td>match-id</td>
-<td>true</td>
-<td>long</td>
-<td>撮合 ID</td>
-<td></td>
+<td style="text-align: left">filled-fees</td>
+<td style="text-align: left">true</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">交易手续费（正值）或交易返佣（负值）</td>
+<td style="text-align: center"></td>
 </tr>
 <tr>
-<td>order-id</td>
-<td>true</td>
-<td>long</td>
-<td>订单 ID</td>
-<td></td>
+<td style="text-align: left">fee-currency</td>
+<td style="text-align: left">true</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">交易手续费或交易返佣币种（买单的交易手续费币种为基础币种，卖单的交易手续费币种为计价币种；买单的交易返佣币种为计价币种，卖单的交易返佣币种为基础币种）</td>
+<td style="text-align: center"></td>
 </tr>
 <tr>
-<td>trade-id</td>
-<td>false</td>
-<td>integer</td>
-<td>唯一成交编号</td>
-<td></td>
+<td style="text-align: left">id</td>
+<td style="text-align: left">true</td>
+<td style="text-align: left">long</td>
+<td style="text-align: left">订单成交记录 ID，无大小顺序，可作为下一次翻页查询请求的from字段</td>
+<td style="text-align: center"></td>
 </tr>
 <tr>
-<td>price</td>
-<td>true</td>
-<td>string</td>
-<td>成交价格</td>
-<td></td>
+<td style="text-align: left">match-id</td>
+<td style="text-align: left">true</td>
+<td style="text-align: left">long</td>
+<td style="text-align: left">撮合 ID</td>
+<td style="text-align: center"></td>
 </tr>
 <tr>
-<td>source</td>
-<td>true</td>
-<td>string</td>
-<td>订单来源</td>
-<td>api</td>
+<td style="text-align: left">order-id</td>
+<td style="text-align: left">true</td>
+<td style="text-align: left">long</td>
+<td style="text-align: left">订单 ID</td>
+<td style="text-align: center"></td>
 </tr>
 <tr>
-<td>symbol</td>
-<td>true</td>
-<td>string</td>
-<td>交易对</td>
-<td>ltcbtc, ethbtc ...</td>
+<td style="text-align: left">trade-id</td>
+<td style="text-align: left">false</td>
+<td style="text-align: left">integer</td>
+<td style="text-align: left">唯一成交编号</td>
+<td style="text-align: center"></td>
 </tr>
 <tr>
-<td>type</td>
-<td>true</td>
-<td>string</td>
-<td>订单类型</td>
-<td>所有可能的订单类型（见本章节简介）</td>
+<td style="text-align: left">price</td>
+<td style="text-align: left">true</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">成交价格</td>
+<td style="text-align: center"></td>
 </tr>
 <tr>
-<td>role</td>
-<td>true</td>
-<td>string</td>
-<td>成交角色</td>
-<td>maker,taker</td>
+<td style="text-align: left">source</td>
+<td style="text-align: left">true</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">订单来源</td>
+<td style="text-align: center">api</td>
+</tr>
+<tr>
+<td style="text-align: left">symbol</td>
+<td style="text-align: left">true</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">交易对</td>
+<td style="text-align: center">btcusdt, ethbtc, rcneth ...</td>
+</tr>
+<tr>
+<td style="text-align: left">type</td>
+<td style="text-align: left">true</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">订单类型</td>
+<td style="text-align: center">所有可能的订单类型（见本章节简介）</td>
+</tr>
+<tr>
+<td style="text-align: left">role</td>
+<td style="text-align: left">true</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">成交角色</td>
+<td style="text-align: center">maker,taker</td>
+</tr>
+<tr>
+<td style="text-align: left"></data></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: center"></td>
 </tr>
 </tbody></table>
 
@@ -5225,197 +5140,205 @@ Response:</p>
 
 <table><thead>
 <tr>
-<th>返回码</th>
-<th>说明</th>
+<th style="text-align: left">返回码</th>
+<th style="text-align: left">说明</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>base-argument-unsupported</td>
-<td>某参数不支持，请检查参数</td>
+<td style="text-align: left">base-argument-unsupported</td>
+<td style="text-align: left">某参数不支持，请检查参数</td>
 </tr>
 <tr>
-<td>base-system-error</td>
-<td>系统错误，如果是撤单：缓存中查不到订单状态，该订单无法撤单；如果是下单：订单入缓存失败，请再次尝试</td>
+<td style="text-align: left">base-system-error</td>
+<td style="text-align: left">系统错误，如果是撤单：缓存中查不到订单状态，该订单无法撤单；如果是下单：订单入缓存失败，请再次尝试</td>
 </tr>
 <tr>
-<td>login-required</td>
-<td>url中没有Signature参数或找不到此用户（key与账户id不对应等情况）</td>
+<td style="text-align: left">login-required</td>
+<td style="text-align: left">url中没有Signature参数或找不到此用户（key与账户id不对应等情况）</td>
 </tr>
 <tr>
-<td>base-record-invalid</td>
-<td>暂时未找到数据，请稍后重试</td>
+<td style="text-align: left">base-record-invalid</td>
+<td style="text-align: left">暂时未找到数据，请稍后重试</td>
 </tr>
 <tr>
-<td>order-amount-over-limit</td>
-<td>订单数量超出限额</td>
+<td style="text-align: left">order-amount-over-limit</td>
+<td style="text-align: left">订单数量超出限额</td>
 </tr>
 <tr>
-<td>base-symbol-trade-disabled</td>
-<td>该交易对被禁止交易</td>
+<td style="text-align: left">base-symbol-trade-disabled</td>
+<td style="text-align: left">该交易对被禁止交易</td>
 </tr>
 <tr>
-<td>base-operation-forbidden</td>
-<td>用户不在白名单内或该币种不允许OTC交易等禁止行为</td>
+<td style="text-align: left">base-operation-forbidden</td>
+<td style="text-align: left">用户不在白名单内或该币种不允许OTC交易等禁止行为</td>
 </tr>
 <tr>
-<td>account-get-accounts-inexistent-error</td>
-<td>该账户在该用户下不存在</td>
+<td style="text-align: left">account-get-accounts-inexistent-error</td>
+<td style="text-align: left">该账户在该用户下不存在</td>
 </tr>
 <tr>
-<td>account-account-id-inexistent</td>
-<td>该账户不存在</td>
+<td style="text-align: left">account-account-id-inexistent</td>
+<td style="text-align: left">该账户不存在</td>
 </tr>
 <tr>
-<td>order-disabled</td>
-<td>交易对暂停，无法下单</td>
+<td style="text-align: left">order-disabled</td>
+<td style="text-align: left">交易对暂停，无法下单</td>
 </tr>
 <tr>
-<td>cancel-disabled</td>
-<td>交易对暂停，无法撤单</td>
+<td style="text-align: left">cancel-disabled</td>
+<td style="text-align: left">交易对暂停，无法撤单</td>
 </tr>
 <tr>
-<td>order-invalid-price</td>
-<td>下单价格非法（如市价单不能有价格，或限价单价格超过市场价10%）</td>
+<td style="text-align: left">order-invalid-price</td>
+<td style="text-align: left">下单价格非法（如市价单不能有价格，或限价单价格超过市场价10%）</td>
 </tr>
 <tr>
-<td>order-accountbalance-error</td>
-<td>账户余额不足</td>
+<td style="text-align: left">order-accountbalance-error</td>
+<td style="text-align: left">账户余额不足</td>
 </tr>
 <tr>
-<td>order-limitorder-price-min-error</td>
-<td>卖出价格不能低于指定价格</td>
+<td style="text-align: left">order-limitorder-price-min-error</td>
+<td style="text-align: left">卖出价格不能低于指定价格</td>
 </tr>
 <tr>
-<td>order-limitorder-price-max-error</td>
-<td>买入价格不能高于指定价格</td>
+<td style="text-align: left">order-limitorder-price-max-error</td>
+<td style="text-align: left">买入价格不能高于指定价格</td>
 </tr>
 <tr>
-<td>order-limitorder-amount-min-error</td>
-<td>下单数量不能低于指定数量</td>
+<td style="text-align: left">order-limitorder-amount-min-error</td>
+<td style="text-align: left">下单数量不能低于指定数量</td>
 </tr>
 <tr>
-<td>order-limitorder-amount-max-error</td>
-<td>下单数量不能高于指定数量</td>
+<td style="text-align: left">order-limitorder-amount-max-error</td>
+<td style="text-align: left">下单数量不能高于指定数量</td>
 </tr>
 <tr>
-<td>order-etp-nav-price-min-error</td>
-<td>下单价格不能低于净值的指定比率</td>
+<td style="text-align: left">order-etp-nav-price-min-error</td>
+<td style="text-align: left">下单价格不能低于净值的指定比率</td>
 </tr>
 <tr>
-<td>order-etp-nav-price-max-error</td>
-<td>下单价格不能高于净值等指定比率</td>
+<td style="text-align: left">order-etp-nav-price-max-error</td>
+<td style="text-align: left">下单价格不能高于净值等指定比率</td>
 </tr>
 <tr>
-<td>order-orderprice-precision-error</td>
-<td>交易价格精度错误</td>
+<td style="text-align: left">order-orderprice-precision-error</td>
+<td style="text-align: left">交易价格精度错误</td>
 </tr>
 <tr>
-<td>order-orderamount-precision-error</td>
-<td>交易数额精度错误</td>
+<td style="text-align: left">order-orderamount-precision-error</td>
+<td style="text-align: left">交易数额精度错误</td>
 </tr>
 <tr>
-<td>order-value-min-error</td>
-<td>订单交易额不能低于指定额度</td>
+<td style="text-align: left">order-value-min-error</td>
+<td style="text-align: left">订单交易额不能低于指定额度</td>
 </tr>
 <tr>
-<td>order-marketorder-amount-min-error</td>
-<td>卖出数量不能低于指定数量</td>
+<td style="text-align: left">order-marketorder-amount-min-error</td>
+<td style="text-align: left">卖出数量不能低于指定数量</td>
 </tr>
 <tr>
-<td>order-marketorder-amount-buy-max-error</td>
-<td>市价单买入额度不能高于指定额度</td>
+<td style="text-align: left">order-marketorder-amount-buy-max-error</td>
+<td style="text-align: left">市价单买入额度不能高于指定额度</td>
 </tr>
 <tr>
-<td>order-marketorder-amount-sell-max-error</td>
-<td>市价单卖出数量不能高于指定数量</td>
+<td style="text-align: left">order-marketorder-amount-sell-max-error</td>
+<td style="text-align: left">市价单卖出数量不能高于指定数量</td>
 </tr>
 <tr>
-<td>order-holding-limit-failed</td>
-<td>下单超出该币种的持仓限额</td>
+<td style="text-align: left">order-holding-limit-failed</td>
+<td style="text-align: left">下单超出该币种的持仓限额</td>
 </tr>
 <tr>
-<td>order-type-invalid</td>
-<td>订单类型非法</td>
+<td style="text-align: left">order-type-invalid</td>
+<td style="text-align: left">订单类型非法</td>
 </tr>
 <tr>
-<td>order-orderstate-error</td>
-<td>订单状态错误</td>
+<td style="text-align: left">order-orderstate-error</td>
+<td style="text-align: left">订单状态错误</td>
 </tr>
 <tr>
-<td>order-date-limit-error</td>
-<td>查询时间不能超过系统限制</td>
+<td style="text-align: left">order-date-limit-error</td>
+<td style="text-align: left">查询时间不能超过系统限制</td>
 </tr>
 <tr>
-<td>order-source-invalid</td>
-<td>订单来源非法</td>
+<td style="text-align: left">order-source-invalid</td>
+<td style="text-align: left">订单来源非法</td>
 </tr>
 <tr>
-<td>order-update-error</td>
-<td>更新数据错误</td>
+<td style="text-align: left">order-update-error</td>
+<td style="text-align: left">更新数据错误</td>
 </tr>
 <tr>
-<td>order-price-greater-than-limit</td>
-<td>下单价格高于开盘前下单限制价格，请重新下单</td>
+<td style="text-align: left">order-user-cancel-forbidden</td>
+<td style="text-align: left">订单类型为IOC或FOK 不允许撤单</td>
 </tr>
 <tr>
-<td>order-price-less-than-limit</td>
-<td>下单价格低于开盘前下单限制价格，请重新下单</td>
+<td style="text-align: left">order-price-greater-than-limit</td>
+<td style="text-align: left">下单价格高于开盘前下单限制价格，请重新下单</td>
 </tr>
 <tr>
-<td>market-orders-not-support-during-limit-price-trading</td>
-<td>限时下单不支持市价单</td>
+<td style="text-align: left">order-price-less-than-limit</td>
+<td style="text-align: left">下单价格低于开盘前下单限制价格，请重新下单</td>
 </tr>
 <tr>
-<td>price-exceeds-the-protective-price-during-limit-price-trading</td>
-<td>限价时间内价格超出保护价</td>
+<td style="text-align: left">market-orders-not-support-during-limit-price-trading</td>
+<td style="text-align: left">限时下单不支持市价单</td>
 </tr>
 <tr>
-<td>invalid-client-order-id</td>
-<td>client order id 在最近的下单或撤单参数中已被使用</td>
+<td style="text-align: left">price-exceeds-the-protective-price-during-limit-price-trading</td>
+<td style="text-align: left">限价时间内价格超出保护价</td>
 </tr>
 <tr>
-<td>invalid-interval</td>
-<td>查询起止窗口设置错误</td>
+<td style="text-align: left">invalid-client-order-id</td>
+<td style="text-align: left">client order id 在最近的下单或撤单参数中已被使用</td>
 </tr>
 <tr>
-<td>invalid-start-date</td>
-<td>查询起始日期含非法取值</td>
+<td style="text-align: left">invalid-interval</td>
+<td style="text-align: left">查询起止窗口设置错误</td>
 </tr>
 <tr>
-<td>invalid-end-date</td>
-<td>查询起始日期含非法取值</td>
+<td style="text-align: left">invalid-start-date</td>
+<td style="text-align: left">查询起始日期含非法取值</td>
 </tr>
 <tr>
-<td>invalid-start-time</td>
-<td>查询起始时间含非法取值</td>
+<td style="text-align: left">invalid-end-date</td>
+<td style="text-align: left">查询起始日期含非法取值</td>
 </tr>
 <tr>
-<td>invalid-end-time</td>
-<td>查询起始时间含非法取值</td>
+<td style="text-align: left">invalid-start-time</td>
+<td style="text-align: left">查询起始时间含非法取值</td>
 </tr>
 <tr>
-<td>validation-constraints-required</td>
-<td>指定的必填参数缺失</td>
+<td style="text-align: left">invalid-end-time</td>
+<td style="text-align: left">查询起始时间含非法取值</td>
 </tr>
 <tr>
-<td>not-found</td>
-<td>撤单时订单不存在</td>
+<td style="text-align: left">validation-constraints-required</td>
+<td style="text-align: left">指定的必填参数缺失</td>
 </tr>
 <tr>
-<td>base-not-found</td>
-<td>未找到记录</td>
+<td style="text-align: left">symbol-not-support</td>
+<td style="text-align: left">交易对不支持，全仓杠杆或c2c</td>
 </tr>
 <tr>
-<td>base_record_invalid</td>
-<td>订单不存在 （传错订单ID）</td>
+<td style="text-align: left">not-found</td>
+<td style="text-align: left">撤单时订单不存在</td>
 </tr>
 <tr>
-<td>dw_cancel_withdraw_failed</td>
-<td>取消失败，订单状态错误</td>
+<td style="text-align: left">base-not-found</td>
+<td style="text-align: left">未找到记录</td>
 </tr>
 <tr>
-<td>base_update_error</td>
-<td>内部系统错误</td>
+<td style="text-align: left">base_record_invalid</td>
+<td style="text-align: left">订单不存在 （传错订单ID）</td>
+</tr>
+<tr>
+<td style="text-align: left">dw_cancel_withdraw_failed</td>
+<td style="text-align: left">取消失败，订单状态错误</td>
+</tr>
+<tr>
+<td style="text-align: left">base_update_error</td>
+<td style="text-align: left">内部系统错误</td>
 </tr>
 </tbody></table>
 <h2 id='0adb1147b3'>常见问题</h2><h3 id='q1-client-order-id'>Q1：client-order-id是什么？</h3>
@@ -5624,8 +5547,6 @@ Response:</p>
 <td>成交额, 即 sum(每一笔成交价 * 该笔的成交量)</td>
 </tr>
 </tbody></table>
-
-<aside class="notice">当symbol被设为“hb10”或“huobi10”时，amount，count，vol均为零值。</aside>
 <h3 id='212e038c24'>数据请求</h3>
 <p>用请求方式一次性获取K线数据需要额外提供以下参数：
 （每次最多返回300条）</p>
@@ -5886,8 +5807,6 @@ Response:</p>
 <td>新加坡时间的时间戳，单位毫秒</td>
 </tr>
 </tbody></table>
-
-<aside class="notice">当symbol被设为"hb10"时，amount, count, vol均为零值 </aside>
 <h3 id='212e038c24-2'>数据请求</h3>
 <p>支持数据请求方式一次性获取市场深度数据：</p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  </span><span class="s2">"req"</span><span class="p">:</span><span class="w"> </span><span class="s2">"market.ethbtc.depth.step0"</span><span class="p">,</span><span class="w">  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id10"</span><span class="p">}</span><span class="w">
@@ -7234,45 +7153,7 @@ Response:</p>
 <blockquote>
 <p>Update example</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="err">accounts.update#</span><span class="mi">0</span><span class="err">：</span><span class="w">
-</span><span class="p">{</span><span class="w">
-    </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"push"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accounts.update#0"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">123456</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23.111"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"changeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfer"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"accountType"</span><span class="p">:</span><span class="s2">"trade"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"changeTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1568601800000</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span><span class="err">accounts.update#</span><span class="mi">1</span><span class="err">：</span><span class="w">
-</span><span class="p">{</span><span class="w">
-    </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"push"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accounts.update#1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">33385</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2028.699426619837209087"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"changeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order.match"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"accountType"</span><span class="p">:</span><span class="s2">"trade"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"changeTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1574393385167</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span><span class="p">{</span><span class="w">
-    </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"push"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accounts.update#1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">33385</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2065.100267619837209301"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"changeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order.match"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"accountType"</span><span class="p">:</span><span class="s2">"trade"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"changeTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1574393385122</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="err">accounts.update#</span><span class="mi">0</span><span class="err">：</span><span class="p">{</span><span class="w">   </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"push"</span><span class="p">,</span><span class="w">   </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accounts.update#0"</span><span class="p">,</span><span class="w">  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">       </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">      </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">123456</span><span class="p">,</span><span class="w">        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23.111"</span><span class="p">,</span><span class="w">        </span><span class="s2">"changeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfer"</span><span class="p">,</span><span class="w">               </span><span class="s2">"accountType"</span><span class="p">:</span><span class="s2">"trade"</span><span class="p">,</span><span class="w">      </span><span class="s2">"changeTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1568601800000</span><span class="w"> </span><span class="p">}}</span><span class="err">accounts.update#</span><span class="mi">1</span><span class="err">：</span><span class="p">{</span><span class="w"> </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"push"</span><span class="p">,</span><span class="w">   </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accounts.update#1"</span><span class="p">,</span><span class="w">  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">       </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">      </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">33385</span><span class="p">,</span><span class="w">     </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2028.699426619837209087"</span><span class="p">,</span><span class="w">     </span><span class="s2">"changeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order.match"</span><span class="p">,</span><span class="w">                </span><span class="s2">"accountType"</span><span class="p">:</span><span class="s2">"trade"</span><span class="p">,</span><span class="w">      </span><span class="s2">"changeTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1574393385167</span><span class="w"> </span><span class="p">}}{</span><span class="w"> </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"push"</span><span class="p">,</span><span class="w">   </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accounts.update#1"</span><span class="p">,</span><span class="w">  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">       </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">      </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">33385</span><span class="p">,</span><span class="w">     </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2065.100267619837209301"</span><span class="p">,</span><span class="w">       </span><span class="s2">"changeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order.match"</span><span class="p">,</span><span class="w">            </span><span class="s2">"accountType"</span><span class="p">:</span><span class="s2">"trade"</span><span class="p">,</span><span class="w">      </span><span class="s2">"changeTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1574393385122</span><span class="w"> </span><span class="p">}}</span><span class="w">
 </span></code></pre><h3 id='7bf990a9a9-9'>数据更新字段列表</h3>
 <table><thead>
 <tr>
