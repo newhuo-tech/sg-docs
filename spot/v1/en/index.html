@@ -361,12 +361,6 @@
                     <a href="#get-account-balance-of-a-specific-account" class="toc-h2 toc-link" data-title="Get Account Balance of a Specific Account">Get Account Balance of a Specific Account</a>
                   </li>
                   <li>
-                    <a href="#get-asset-valuation" class="toc-h2 toc-link" data-title="Get Asset Valuation">Get Asset Valuation</a>
-                  </li>
-                  <li>
-                    <a href="#get-asset-valuation-2" class="toc-h2 toc-link" data-title="Get Asset Valuation">Get Asset Valuation</a>
-                  </li>
-                  <li>
                     <a href="#asset-transfer" class="toc-h2 toc-link" data-title="Asset Transfer">Asset Transfer</a>
                   </li>
                   <li>
@@ -410,7 +404,10 @@
                     <a href="#submit-cancel-for-an-order-based-on-client-order-id" class="toc-h2 toc-link" data-title="Submit Cancel for an Order (based on client order ID)">Submit Cancel for an Order (based on client order ID)</a>
                   </li>
                   <li>
-                    <a href="#75a79bcd48" class="toc-h2 toc-link" data-title="自动撤销订单">自动撤销订单</a>
+                    <a href="#automated-cancel-order" class="toc-h2 toc-link" data-title="Automated Cancel Order">Automated Cancel Order</a>
+                  </li>
+                  <li>
+                    <a href="#93ac894688" class="toc-h2 toc-link" data-title="##">##</a>
                   </li>
                   <li>
                     <a href="#get-all-open-orders" class="toc-h2 toc-link" data-title="Get All Open Orders">Get All Open Orders</a>
@@ -1975,169 +1972,15 @@ Rate Limit (NEW): 100times/2s</p>
 <td>NA</td>
 </tr>
 </tbody></table>
-<h2 id='get-asset-valuation'>Get Asset Valuation</h2>
-<p>API Key Permission：Read</p>
-
-<p>Rate Limit (NEW): 100times/2s</p>
-
-<p>This endpoint returns the valuation of the total assets of the account in btc or fiat currency.</p>
-<h3 id='http-request-10'>HTTP Request</h3>
-<ul>
-<li>GET <code>/v2/account/valuation</code></li>
-</ul>
-<h3 id='request-parameters-9'>Request Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Required</th>
-<th>Data Type</th>
-<th>Description</th>
-<th>Default Value</th>
-<th>Value Range</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>accountType</td>
-<td>true</td>
-<td>string</td>
-<td>The type of this account</td>
-<td>NA</td>
-<td></td>
-</tr>
-<tr>
-<td>valuationCurrency</td>
-<td>false</td>
-<td>string</td>
-<td>The valuation according to the certain fiat currency</td>
-<td>BTC</td>
-<td>BTC (case sensitive)</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p>Responds:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">    </span><span class="s2">"code"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">    </span><span class="s2">"data"</span><span class="p">:</span><span class="s2">"{        "</span><span class="err">todayProfit</span><span class="s2">": null,        "</span><span class="err">updated</span><span class="s2">": null,        "</span><span class="err">totalBalance</span><span class="s2">": "</span><span class="mf">68232.925885978428351309</span><span class="s2">",        "</span><span class="err">todayProfitRate</span><span class="s2">": null,        "</span><span class="err">profitAccountBalanceList</span><span class="s2">": [            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">1</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": true,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mf">68232.925885978428351309</span><span class="s2">"            },            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">2</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": true,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"            },            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">3</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": true,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"            },            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">4</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": true,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"            },            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">5</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": true,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"            },            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">6</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": true,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"            },            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">7</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": true,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"            },            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">8</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": true,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"            },            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">9</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": true,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"            },            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">10</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": true,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"            },            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">11</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": true,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"            },            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">12</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": true,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"            },            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">13</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": true,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"            },            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">14</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": true,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"            },            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">15</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": true,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"            },            {                "</span><span class="err">distributionType</span><span class="s2">": "</span><span class="mi">16</span><span class="s2">",                "</span><span class="err">success</span><span class="s2">": false,                "</span><span class="err">accountBalance</span><span class="s2">": "</span><span class="mi">0</span><span class="s2">"            }        ]        }"</span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='response-content-10'>Response Content</h3>
-<table><thead>
-<tr>
-<th>todayProfit</th>
-<th>String</th>
-<th>描述</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>accountList</td>
-<td>List<AccountBalance></td>
-<td>账户资产列表</td>
-</tr>
-<tr>
-<td>{accountType</td>
-<td>String</td>
-<td>账户类型</td>
-</tr>
-<tr>
-<td>accountBalance</td>
-<td>String</td>
-<td>账户资产</td>
-</tr>
-<tr>
-<td>success}</td>
-<td>Boolean</td>
-<td>账户资产是否成功获取,为false时accountBalance返回0</td>
-</tr>
-<tr>
-<td>timestamp</td>
-<td>long</td>
-<td>数据返回时间，为unix time in millisecond</td>
-</tr>
-</tbody></table>
-<h3 id='714e47be75'>账户类型数据字典</h3>
-<table><thead>
-<tr>
-<th>code</th>
-<th>说明</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>1</td>
-<td>币币账户</td>
-</tr>
-</tbody></table>
-<h2 id='get-asset-valuation-2'>Get Asset Valuation</h2>
-<p>API Key Permission：Read</p>
-
-<p>Rate Limit (NEW): 100times/2s</p>
-
-<p>This endpoint returns the valuation of the total assets of the account in btc or fiat currency.</p>
-<h3 id='http-request-11'>HTTP Request</h3>
-<ul>
-<li>GET <code>/v2/account/asset-valuation</code></li>
-</ul>
-<h3 id='request-parameters-10'>Request Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Required</th>
-<th>Data Type</th>
-<th>Description</th>
-<th>Default Value</th>
-<th>Value Range</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>accountType</td>
-<td>true</td>
-<td>string</td>
-<td>The type of this account</td>
-<td>NA</td>
-<td>spot</td>
-</tr>
-<tr>
-<td>valuationCurrency</td>
-<td>false</td>
-<td>string</td>
-<td>The valuation according to the certain fiat currency</td>
-<td>BTC</td>
-<td>USD,SGD (case sensitive)</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"34.75"</span><span class="p">,</span><span class="w">        </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1594901254363</span><span class="w">    </span><span class="p">},</span><span class="w">    </span><span class="s2">"ok"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='response-content-11'>Response Content</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Required</th>
-<th>Data Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>balance</td>
-<td>true</td>
-<td>string</td>
-<td>The valuation according to the certain fiat currency</td>
-</tr>
-<tr>
-<td>timestamp</td>
-<td>true</td>
-<td>long</td>
-<td>Return time</td>
-</tr>
-</tbody></table>
 <h2 id='asset-transfer'>Asset Transfer</h2>
 <p>API Key Permission：Trade<br></p>
 
 <p>其他划转功能将逐步上线，敬请期待。<br></p>
-<h3 id='http-request-12'>HTTP Request</h3>
+<h3 id='http-request-10'>HTTP Request</h3>
 <ul>
 <li>POST <code>/v1/account/transfer</code></li>
 </ul>
-<h3 id='request-parameters-11'>Request Parameters</h3>
+<h3 id='request-parameters-9'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2181,7 +2024,7 @@ Rate Limit (NEW): 100times/2s</p>
 <p>Response:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">        </span><span class="s2">"transact-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">220521190</span><span class="p">,</span><span class="w">        </span><span class="s2">"transact-time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1590662591832</span><span class="w">    </span><span class="p">}}</span><span class="w">
-</span></code></pre><h3 id='response-content-12'>Response Content</h3>
+</span></code></pre><h3 id='response-content-10'>Response Content</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -2225,9 +2068,9 @@ Rate Limit (NEW): 100times/2s</p>
 Rate Limit (NEW): 5times/2s</p>
 
 <p>This endpoint returns the amount changes of a specified user&#39;s account.</p>
-<h3 id='http-request-13'>HTTP Request</h3>
+<h3 id='http-request-11'>HTTP Request</h3>
 <p>GET <code>/v1/account/history</code></p>
-<h3 id='request-parameters-12'>Request Parameters</h3>
+<h3 id='request-parameters-10'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2308,7 +2151,7 @@ Rate Limit (NEW): 5times/2s</p>
 <p>Response:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">        </span><span class="p">{</span><span class="w">            </span><span class="s2">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5260185</span><span class="p">,</span><span class="w">            </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">            </span><span class="s2">"transact-amt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.002393000000000000"</span><span class="p">,</span><span class="w">            </span><span class="s2">"transact-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfer"</span><span class="p">,</span><span class="w">            </span><span class="s2">"record-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">89373333576</span><span class="p">,</span><span class="w">            </span><span class="s2">"avail-balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.002393000000000000"</span><span class="p">,</span><span class="w">            </span><span class="s2">"acct-balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.002393000000000000"</span><span class="p">,</span><span class="w">            </span><span class="s2">"transact-time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1571393524526</span><span class="w">        </span><span class="p">},</span><span class="w">        </span><span class="p">{</span><span class="w">            </span><span class="s2">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5260185</span><span class="p">,</span><span class="w">            </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">            </span><span class="s2">"transact-amt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-0.002393000000000000"</span><span class="p">,</span><span class="w">            </span><span class="s2">"transact-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfer"</span><span class="p">,</span><span class="w">            </span><span class="s2">"record-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">89373382631</span><span class="p">,</span><span class="w">            </span><span class="s2">"avail-balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0E-18"</span><span class="p">,</span><span class="w">            </span><span class="s2">"acct-balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0E-18"</span><span class="p">,</span><span class="w">            </span><span class="s2">"transact-time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1571393578496</span><span class="w">        </span><span class="p">}</span><span class="w">    </span><span class="p">]}</span><span class="w">
-</span></code></pre><h3 id='response-content-13'>Response Content</h3>
+</span></code></pre><h3 id='response-content-11'>Response Content</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -2445,9 +2288,9 @@ Only when the number of items within the query window (between “start-time” 
 
 <p>The maximum query window size set by “startTime” &amp; “endTime” is 10-day, which mean a maximum of 10-day records are queriable per request.
 The query window can be within the last 180 days, which means, by adjusting “startTime” &amp; “endTime” accordingly, the records in last 180 days are queriable.<br></p>
-<h3 id='http-request-14'>HTTP Request</h3>
+<h3 id='http-request-12'>HTTP Request</h3>
 <p>GET <code>/v2/account/ledger</code></p>
-<h3 id='request-parameters-13'>Request Parameters</h3>
+<h3 id='request-parameters-11'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th>Field Name</th>
@@ -2518,7 +2361,7 @@ endTime default value: current time</p>
 <p>Response:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">    </span><span class="p">{</span><span class="w">        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">5260185</span><span class="p">,</span><span class="w">        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">        </span><span class="s2">"transactAmt"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.000000000000000000</span><span class="p">,</span><span class="w">        </span><span class="s2">"transactType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfer"</span><span class="p">,</span><span class="w">        </span><span class="s2">"transferType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"margin-transfer-out"</span><span class="p">,</span><span class="w">        </span><span class="s2">"transactId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">        </span><span class="s2">"transactTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1585573286913</span><span class="p">,</span><span class="w">        </span><span class="s2">"transferer"</span><span class="p">:</span><span class="w"> </span><span class="mi">5463409</span><span class="p">,</span><span class="w">        </span><span class="s2">"transferee"</span><span class="p">:</span><span class="w"> </span><span class="mi">5260185</span><span class="w">    </span><span class="p">},</span><span class="w">    </span><span class="p">{</span><span class="w">        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">5260185</span><span class="p">,</span><span class="w">        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">        </span><span class="s2">"transactAmt"</span><span class="p">:</span><span class="w"> </span><span class="mf">-1.000000000000000000</span><span class="p">,</span><span class="w">        </span><span class="s2">"transactType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfer"</span><span class="p">,</span><span class="w">        </span><span class="s2">"transferType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"margin-transfer-in"</span><span class="p">,</span><span class="w">        </span><span class="s2">"transactId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">        </span><span class="s2">"transactTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1585573281160</span><span class="p">,</span><span class="w">        </span><span class="s2">"transferer"</span><span class="p">:</span><span class="w"> </span><span class="mi">5260185</span><span class="p">,</span><span class="w">        </span><span class="s2">"transferee"</span><span class="p">:</span><span class="w"> </span><span class="mi">5463409</span><span class="w">    </span><span class="p">}]}</span><span class="w">
-</span></code></pre><h3 id='response-content-14'>Response Content</h3>
+</span></code></pre><h3 id='response-content-12'>Response Content</h3>
 <table><thead>
 <tr>
 <th>Field Name</th>
@@ -2636,9 +2479,9 @@ Only when the number of items within the query window (between “startTime” a
 
 <p>API Key Permission：Read<br>
 Rate Limit (NEW): 20times/2s</p>
-<h3 id='http-request-15'>HTTP Request</h3>
+<h3 id='http-request-13'>HTTP Request</h3>
 <p>GET <code>/v1/query/deposit-withdraw</code></p>
-<h3 id='request-parameters-14'>Request Parameters</h3>
+<h3 id='request-parameters-12'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th>参数名称</th>
@@ -2695,7 +2538,7 @@ Rate Limit (NEW): 20times/2s</p>
 <p>Response:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  </span><span class="s2">"data"</span><span class="p">:</span><span class="w">    </span><span class="p">[</span><span class="w">      </span><span class="p">{</span><span class="w">        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1171</span><span class="p">,</span><span class="w">        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deposit"</span><span class="p">,</span><span class="w">        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xrp"</span><span class="p">,</span><span class="w">        </span><span class="s2">"tx-hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ed03094b84eafbe4bc16e7ef766ee959885ee5bcb265872baaa9c64e1cf86c2b"</span><span class="p">,</span><span class="w">        </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">7.457467</span><span class="p">,</span><span class="w">        </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rae93V8d2mdoUQHwBDBdM4NHCMehRJAsbm"</span><span class="p">,</span><span class="w">        </span><span class="s2">"address-tag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100040"</span><span class="p">,</span><span class="w">        </span><span class="s2">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">        </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"safe"</span><span class="p">,</span><span class="w">        </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1510912472199</span><span class="p">,</span><span class="w">        </span><span class="s2">"updated-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1511145876575</span><span class="w">      </span><span class="p">},</span><span class="w">      </span><span class="err">...</span><span class="w">    </span><span class="p">]}</span><span class="w">
-</span></code></pre><h3 id='response-content-15'>Response Content</h3>
+</span></code></pre><h3 id='response-content-13'>Response Content</h3>
 <table><thead>
 <tr>
 <th>参数名称</th>
@@ -2993,12 +2836,12 @@ Rate Limit (NEW): 20times/2s</p>
 Rate Limit (NEW): 100times/2s</p>
 
 <p>This endpoint places a new order and sends to the exchange to be matched.</p>
-<h3 id='http-request-16'>HTTP Request</h3>
+<h3 id='http-request-14'>HTTP Request</h3>
 <p>POST <code>/v1/order/orders/place</code></p>
 
 <p>Request:</p>
 <pre class="highlight shell tab-shell"><code><span class="o">{</span>  <span class="s2">"account-id"</span>: <span class="s2">"100009"</span>,  <span class="s2">"amount"</span>: <span class="s2">"10.1"</span>,  <span class="s2">"price"</span>: <span class="s2">"100.1"</span>,  <span class="s2">"source"</span>: <span class="s2">"api"</span>,  <span class="s2">"symbol"</span>: <span class="s2">"ethbtc"</span>,  <span class="s2">"type"</span>: <span class="s2">"buy-limit"</span>,  <span class="s2">"client-order-id"</span>: <span class="s2">"a0001"</span><span class="o">}</span>
-</code></pre><h3 id='request-parameters-15'>Request Parameters</h3>
+</code></pre><h3 id='request-parameters-13'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3083,7 +2926,7 @@ Rate Limit (NEW): 100times/2s</p>
 <p>Response:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59378"</span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='response-content-16'>Response Content</h3>
+</span></code></pre><h3 id='response-content-14'>Response Content</h3>
 <aside class="notice">The returned data object is a single string which represents the order id</aside>
 
 <p>If client order ID duplicates with a previous order (within 8 hours), the endpoint reverts error message <code>invalid.client.order.id</code>.</p>
@@ -3092,12 +2935,12 @@ Rate Limit (NEW): 100times/2s</p>
 Rate Limit (NEW): 50times/2s</p>
 
 <p>A batch contains at most 10 orders.</p>
-<h3 id='http-request-17'>HTTP Request</h3>
+<h3 id='http-request-15'>HTTP Request</h3>
 <ul>
 <li>POST <code>/v1/order/batch-orders</code></li>
 </ul>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">   </span><span class="p">{</span><span class="w">    </span><span class="s2">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456"</span><span class="p">,</span><span class="w">    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7801"</span><span class="p">,</span><span class="w">    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.001"</span><span class="p">,</span><span class="w">    </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethbtc"</span><span class="p">,</span><span class="w">    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell-limit"</span><span class="p">,</span><span class="w">    </span><span class="s2">"client-order-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c1"</span><span class="w">   </span><span class="p">},</span><span class="w">  </span><span class="p">{</span><span class="w">    </span><span class="s2">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456"</span><span class="p">,</span><span class="w">    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7802"</span><span class="p">,</span><span class="w">    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.001"</span><span class="p">,</span><span class="w">    </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethbtc"</span><span class="p">,</span><span class="w">    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell-limit"</span><span class="p">,</span><span class="w">    </span><span class="s2">"client-order-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d2"</span><span class="w">   </span><span class="p">}]</span><span class="w">
-</span></code></pre><h3 id='request-parameters-16'>Request Parameters</h3>
+</span></code></pre><h3 id='request-parameters-14'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3174,7 +3017,7 @@ Rate Limit (NEW): 50times/2s</p>
 <p>Response:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">        </span><span class="p">{</span><span class="w">            </span><span class="s2">"order-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">61713400772</span><span class="p">,</span><span class="w">            </span><span class="s2">"client-order-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c1"</span><span class="w">        </span><span class="p">},</span><span class="w">        </span><span class="p">{</span><span class="w">            </span><span class="s2">"order-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">61713400940</span><span class="p">,</span><span class="w">            </span><span class="s2">"client-order-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d2"</span><span class="w">        </span><span class="p">}</span><span class="w">    </span><span class="p">]}</span><span class="w">
-</span></code></pre><h3 id='response-content-17'>Response Content</h3>
+</span></code></pre><h3 id='response-content-15'>Response Content</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -3212,9 +3055,9 @@ Rate Limit (NEW): 100times/2s</p>
 <p>This endpoint submits a request to cancel an order.</p>
 
 <aside class="warning">The actual result of the cancellation request needs to be checked by order status or match result endpoints after submitting the request.</aside>
-<h3 id='http-request-18'>HTTP Request</h3>
+<h3 id='http-request-16'>HTTP Request</h3>
 <p>POST <code>/v1/order/orders/{order-id}/submitcancel</code></p>
-<h3 id='request-parameters-17'>Request Parameters</h3>
+<h3 id='request-parameters-15'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3244,7 +3087,7 @@ Rate Limit (NEW): 100times/2s</p>
 <p>Success response:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59378"</span><span class="w">
-</span></code></pre><h3 id='response-content-18'>Response Content</h3>
+</span></code></pre><h3 id='response-content-16'>Response Content</h3>
 <aside class="notice">The returned data object is a single string which represents the order id</aside>
 <h3 id='error-code-3'>Error Code</h3>
 <blockquote>
@@ -3302,7 +3145,7 @@ Rate Limit (NEW): 100times/2s</p>
 <aside class="notice">It is suggested to use /v1/order/orders/{order-id}/submitcancel to cancel a single order, which is faster and more stable</aside>
 
 <aside class="warning">This only submits the cancel request, the actual result of the canel request needs to be checked by order status or match result endpoints</aside>
-<h3 id='http-request-19'>HTTP Request</h3>
+<h3 id='http-request-17'>HTTP Request</h3>
 <ul>
 <li>POST <code>/v1/order/orders/submitCancelClientOrder</code></li>
 </ul>
@@ -3311,7 +3154,7 @@ Rate Limit (NEW): 100times/2s</p>
 <p>Request:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  </span><span class="s2">"client-order-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a0001"</span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='request-parameters-18'>Request Parameters</h3>
+</span></code></pre><h3 id='request-parameters-16'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3334,7 +3177,7 @@ Rate Limit (NEW): 100times/2s</p>
 <p>Response:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">{</span><span class="w">    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='response-content-19'>Response Content</h3>
+</span></code></pre><h3 id='response-content-17'>Response Content</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -3392,11 +3235,11 @@ Rate Limit (NEW): 100times/2s</p>
 <td>cancelling</td>
 </tr>
 </tbody></table>
-<h2 id='75a79bcd48'>自动撤销订单</h2>
-<p>API Key 权限：交易<br></p>
+<h2 id='automated-cancel-order'>Automated Cancel Order</h2>
+<p>API Key Permission：Trade<br></p>
 
-<p>为了防止API用户在发生网络故障或用户端系统故障与火币新加坡系统失去联系时，给用户造成意外损失，火币新加坡新增自动撤单接口，当用户与火币新加坡发生意外断连时，能自动帮用户取消全部委托单，以避免损失，即提供Dead man&#39;s switch功能。若开启，在设定的时间数完前，接口没有被再次调用，则用户所有现货委托单将被取消（最大支持撤500单）。</p>
-<h3 id='http'>HTTP 请求</h3>
+<p>In order to protect API users from unexpected losses resulting from lost network connection due to system failure on the part of the client or the Huobi Singapore system, Huobi Singapore has added an automatic order withdrawal interface. When users accidentally disconnect from Huobi Singapore, the system automatically cancels all orders for users to avoid loss, that is, provide Dead man&#39;s switch function. When enabled, if the interface is not called again before the set time expires, all the user&#39;s spot orders will be cancelled (maximum support for cancellation of 500 orders).</p>
+<h3 id='http-request-18'>HTTP Request</h3>
 <ul>
 <li>POST <code>/v2/algo-orders/cancel-all-after</code></li>
 </ul>
@@ -3405,24 +3248,24 @@ Rate Limit (NEW): 100times/2s</p>
 <p>Request:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  </span><span class="s2">"timeout"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='1f9ac54b15'>请求参数</h3>
+</span></code></pre><h3 id='request-parameter'>Request Parameter</h3>
 <table><thead>
 <tr>
-<th>参数名称</th>
-<th>是否必须</th>
-<th>类型</th>
-<th>描述</th>
-<th>默认值</th>
-<th>取值范围</th>
+<th>Parameter</th>
+<th>Mandatory</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default Value</th>
+<th>Value Range</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>timeout</td>
 <td>true</td>
 <td>int</td>
-<td>超时时间（单位：秒），设置建议见附注</td>
+<td>timeout value (in seconds), refer to notes for proposed setup</td>
 <td>NA</td>
-<td>0或者大于等于5秒</td>
+<td>0 or greater or equal to 5 seconds</td>
 </tr>
 </tbody></table>
 
@@ -3443,26 +3286,26 @@ Response:</p>
 Response:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">2003</span><span class="p">,</span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"missing mandatory field"</span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='2213f4c32f'>响应数据</h3>
+</span></code></pre><h3 id='response-content-18'>Response Content</h3>
 <table><thead>
 <tr>
-<th><strong>参数名称</strong></th>
-<th><strong>是否必须</strong></th>
-<th><strong>数据类型</strong></th>
-<th><strong>描述</strong></th>
+<th>Parameter</th>
+<th><strong>Mandatory</strong></th>
+<th><strong>Data Type</strong></th>
+<th><strong>Description</strong></th>
 </tr>
 </thead><tbody>
 <tr>
 <td>code</td>
 <td>true</td>
 <td>int</td>
-<td>状态码</td>
+<td>Status code</td>
 </tr>
 <tr>
 <td>message</td>
 <td>false</td>
 <td>string</td>
-<td>错误描述（如有）</td>
+<td>Error description (if any)</td>
 </tr>
 <tr>
 <td>data</td>
@@ -3474,21 +3317,21 @@ Response:</p>
 <td>{ currentTime</td>
 <td>true</td>
 <td>long</td>
-<td>当前时间</td>
+<td>Current time</td>
 </tr>
 <tr>
 <td>triggerTime }</td>
 <td>true</td>
 <td>long</td>
-<td>触发时间</td>
+<td>Trigger time</td>
 </tr>
 </tbody></table>
-<h2 id='get-all-open-orders'>Get All Open Orders</h2>
+<h2 id='93ac894688'>##</h2><h2 id='get-all-open-orders'>Get All Open Orders</h2>
 <p>API Key Permission：Read<br>
 Rate Limit (NEW): 50times/2s</p>
 
 <p>This endpoint returns all open orders which have not been filled completely.</p>
-<h3 id='http-request-20'>HTTP Request</h3>
+<h3 id='http-request-19'>HTTP Request</h3>
 <ul>
 <li>GET <code>/v1/order/openOrders</code></li>
 </ul>
@@ -3497,7 +3340,7 @@ Rate Limit (NEW): 50times/2s</p>
 <p>Request:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">   </span><span class="s2">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100009"</span><span class="p">,</span><span class="w">   </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethbtc"</span><span class="p">,</span><span class="w">   </span><span class="s2">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='request-parameters-19'>Request Parameters</h3>
+</span></code></pre><h3 id='request-parameters-17'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3562,7 +3405,7 @@ Rate Limit (NEW): 50times/2s</p>
 <p>Response:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">    </span><span class="p">{</span><span class="w">      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5454937</span><span class="p">,</span><span class="w">      </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethbtc"</span><span class="p">,</span><span class="w">      </span><span class="s2">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">30925</span><span class="p">,</span><span class="w">      </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.000000000000000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.453000000000000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1530604762277</span><span class="p">,</span><span class="w">      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell-limit"</span><span class="p">,</span><span class="w">      </span><span class="s2">"filled-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">      </span><span class="s2">"filled-cash-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">      </span><span class="s2">"filled-fees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">      </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"web"</span><span class="p">,</span><span class="w">      </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"submitted"</span><span class="w">    </span><span class="p">}</span><span class="w">  </span><span class="p">]}</span><span class="w">
-</span></code></pre><h3 id='response-content-20'>Response Content</h3>
+</span></code></pre><h3 id='response-content-19'>Response Content</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -3634,7 +3477,7 @@ Rate Limit (NEW): 50times/2s</p>
 
 <p>This endpoint only submit the cancellation request, the actual cancellation result will need to be confirmed by other endpoints 
 like order status, matchresult, etc.</p>
-<h3 id='http-request-21'>HTTP Request</h3>
+<h3 id='http-request-20'>HTTP Request</h3>
 <p>POST <code>/v1/order/orders/batchCancelOpenOrders</code></p>
 
 <table><thead>
@@ -3693,7 +3536,7 @@ like order status, matchresult, etc.</p>
 <p>Response:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">    </span><span class="s2">"success-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">    </span><span class="s2">"failed-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">    </span><span class="s2">"next-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5454600</span><span class="w">  </span><span class="p">}}</span><span class="w">
-</span></code></pre><h3 id='response-content-21'>Response Content</h3>
+</span></code></pre><h3 id='response-content-20'>Response Content</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -3727,7 +3570,7 @@ Rate Limit (NEW): 50times/2s</p>
 
 <p>This endpoint submit cancellation for multiple orders at once with given ids. It is suggested to use order-ids instead of 
 client-order-ids, so that the cancellation is faster, more accurate and more stable. </p>
-<h3 id='http-request-22'>HTTP Request</h3>
+<h3 id='http-request-21'>HTTP Request</h3>
 <ul>
 <li>POST <code>/v1/order/orders/batchcancel</code></li>
 </ul>
@@ -3736,7 +3579,7 @@ client-order-ids, so that the cancellation is faster, more accurate and more sta
 <p>Request:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  </span><span class="s2">"client-order-ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">   </span><span class="s2">"5983466"</span><span class="p">,</span><span class="w"> </span><span class="s2">"5722939"</span><span class="p">,</span><span class="w"> </span><span class="s2">"5721027"</span><span class="p">,</span><span class="w"> </span><span class="s2">"5719487"</span><span class="w">  </span><span class="p">]}</span><span class="w">
-</span></code></pre><h3 id='request-parameters-20'>Request Parameters</h3>
+</span></code></pre><h3 id='request-parameters-18'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3766,7 +3609,7 @@ client-order-ids, so that the cancellation is faster, more accurate and more sta
 <p>Response:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">        </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">            </span><span class="s2">"5983466"</span><span class="w">                    </span><span class="p">],</span><span class="w">        </span><span class="s2">"failed"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">            </span><span class="p">{</span><span class="w">              </span><span class="s2">"err-msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Incorrect order state"</span><span class="p">,</span><span class="w">              </span><span class="s2">"order-state"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">              </span><span class="s2">"order-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">              </span><span class="s2">"err-code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order-orderstate-error"</span><span class="p">,</span><span class="w">              </span><span class="s2">"client-order-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"first"</span><span class="w">            </span><span class="p">},</span><span class="w">            </span><span class="p">{</span><span class="w">              </span><span class="s2">"err-msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Incorrect order state"</span><span class="p">,</span><span class="w">              </span><span class="s2">"order-state"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">              </span><span class="s2">"order-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">              </span><span class="s2">"err-code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order-orderstate-error"</span><span class="p">,</span><span class="w">              </span><span class="s2">"client-order-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"second"</span><span class="w">            </span><span class="p">},</span><span class="w">            </span><span class="p">{</span><span class="w">              </span><span class="s2">"err-msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The record is not found."</span><span class="p">,</span><span class="w">              </span><span class="s2">"order-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">              </span><span class="s2">"err-code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"base-not-found"</span><span class="p">,</span><span class="w">              </span><span class="s2">"client-order-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"third"</span><span class="w">            </span><span class="p">}</span><span class="w">          </span><span class="p">]</span><span class="w">    </span><span class="p">}}</span><span class="w">
-</span></code></pre><h3 id='response-content-22'>Response Content</h3>
+</span></code></pre><h3 id='response-content-21'>Response Content</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -3868,9 +3711,9 @@ client-order-ids, so that the cancellation is faster, more accurate and more sta
 Rate Limit (NEW): 50times/2s</p>
 
 <p>This endpoint returns the detail of a specific order. If an order is created via API, then it&#39;s no longer queryable after being cancelled for 2 hours.</p>
-<h3 id='http-request-23'>HTTP Request</h3>
+<h3 id='http-request-22'>HTTP Request</h3>
 <p><code>GET /v1/order/orders/{order-id}</code></p>
-<h3 id='request-parameters-21'>Request Parameters</h3>
+<h3 id='request-parameters-19'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th><strong>Name</strong></th>
@@ -3895,7 +3738,7 @@ Rate Limit (NEW): 50times/2s</p>
 <p>Response:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">    </span><span class="s2">"data"</span><span class="p">:</span><span class="w">   </span><span class="p">{</span><span class="w">    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59378</span><span class="p">,</span><span class="w">    </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethbtc"</span><span class="p">,</span><span class="w">    </span><span class="s2">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100009</span><span class="p">,</span><span class="w">    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.1000000000"</span><span class="p">,</span><span class="w">    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.1000000000"</span><span class="p">,</span><span class="w">    </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1494901162595</span><span class="p">,</span><span class="w">    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-limit"</span><span class="p">,</span><span class="w">    </span><span class="s2">"field-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.1000000000"</span><span class="p">,</span><span class="w">    </span><span class="s2">"field-cash-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1011.0100000000"</span><span class="p">,</span><span class="w">    </span><span class="s2">"field-fees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0202000000"</span><span class="p">,</span><span class="w">    </span><span class="s2">"finished-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1494901400468</span><span class="p">,</span><span class="w">    </span><span class="s2">"user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">    </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api"</span><span class="p">,</span><span class="w">    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"filled"</span><span class="p">,</span><span class="w">    </span><span class="s2">"canceled-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">  </span><span class="p">}}</span><span class="w">
-</span></code></pre><h3 id='response-content-23'>Response Content</h3>
+</span></code></pre><h3 id='response-content-22'>Response Content</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -3984,9 +3827,9 @@ Rate Limit (NEW): 50times/2s</p>
 Rate Limit (NEW):50times/2s</p>
 
 <p>This endpoint returns the detail of one order by specified client order id (within 8 hours). The order created via API will no longer be queryable after being cancelled for more than 2 hours. It is suggested to cancel orders via <code>GET /v1/order/orders/{order-id}</code>, which is faster and more stable.</p>
-<h3 id='http-request-24'>HTTP Request</h3>
+<h3 id='http-request-23'>HTTP Request</h3>
 <p><code>GET /v1/order/orders/getClientOrder</code></p>
-<h3 id='request-parameters-22'>Request Parameters</h3>
+<h3 id='request-parameters-20'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4009,7 +3852,7 @@ Rate Limit (NEW):50times/2s</p>
 <p>Response:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59378</span><span class="p">,</span><span class="w">    </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethbtc"</span><span class="p">,</span><span class="w">    </span><span class="s2">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100009</span><span class="p">,</span><span class="w">    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.1000000000"</span><span class="p">,</span><span class="w">    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.1000000000"</span><span class="p">,</span><span class="w">    </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1494901162595</span><span class="p">,</span><span class="w">    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-limit"</span><span class="p">,</span><span class="w">    </span><span class="s2">"field-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.1000000000"</span><span class="p">,</span><span class="w">    </span><span class="s2">"field-cash-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1011.0100000000"</span><span class="p">,</span><span class="w">    </span><span class="s2">"field-fees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0202000000"</span><span class="p">,</span><span class="w">    </span><span class="s2">"finished-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1494901400468</span><span class="p">,</span><span class="w">    </span><span class="s2">"user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">    </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api"</span><span class="p">,</span><span class="w">    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"filled"</span><span class="p">,</span><span class="w">    </span><span class="s2">"canceled-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">  </span><span class="p">}}</span><span class="w">
-</span></code></pre><h3 id='response-content-24'>Response Content</h3>
+</span></code></pre><h3 id='response-content-23'>Response Content</h3>
 <table><thead>
 <tr>
 <th>client-order-id</th>
@@ -4106,9 +3949,9 @@ Rate Limit (NEW):50times/2s</p>
 Rate Limit (NEW): 50times/2s</p>
 
 <p>This endpoint returns the match result of an order.</p>
-<h3 id='http-request-25'>HTTP Request</h3>
+<h3 id='http-request-24'>HTTP Request</h3>
 <p><code>GET /v1/order/orders/{order-id}/matchresults</code></p>
-<h3 id='request-parameters-23'>Request Parameters</h3>
+<h3 id='request-parameters-21'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4131,7 +3974,7 @@ Rate Limit (NEW): 50times/2s</p>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">{</span><span class="w">    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">    </span><span class="p">{</span><span class="w">      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">29553</span><span class="p">,</span><span class="w">      </span><span class="s2">"order-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59378</span><span class="p">,</span><span class="w">      </span><span class="s2">"match-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59335</span><span class="p">,</span><span class="w">      </span><span class="s2">"trade-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100282808529</span><span class="p">,</span><span class="w">      </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethbtc"</span><span class="p">,</span><span class="w">      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-limit"</span><span class="p">,</span><span class="w">      </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api"</span><span class="p">,</span><span class="w">      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.1000000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"filled-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9.1155000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"filled-fees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0182310000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1494901400435</span><span class="p">,</span><span class="w">      </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"maker"</span><span class="p">,</span><span class="w">      </span><span class="s2">"filled-points"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">      </span><span class="err">“fee-deduct-state”</span><span class="p">:</span><span class="s2">"done"</span><span class="p">,</span><span class="w">      </span><span class="s2">"fee-deduct-currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">    </span><span class="p">}</span><span class="w">    </span><span class="err">...</span><span class="w">  </span><span class="p">]}</span><span class="w">
-</span></code></pre><h3 id='response-content-25'>Response Content</h3>
+</span></code></pre><h3 id='response-content-24'>Response Content</h3>
 <aside class="notice">The return data contains a list and each item in the list represents a match result</aside>
 
 <table><thead>
@@ -4236,14 +4079,14 @@ Rate Limit (NEW): 50times/2s</p>
 </ul>
 
 <p>Huobi Global suggests API users to search historical orders based on “time” filter instead of “date”. In the near future, Huobi Global would remove “start-date”/”end-date” fields from the endpoint, through another notification.</p>
-<h3 id='http-request-26'>HTTP Request</h3>
+<h3 id='http-request-25'>HTTP Request</h3>
 <p><code>GET /v1/order/orders</code></p>
 
 <blockquote>
 <p>Request</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">   </span><span class="s2">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100009"</span><span class="p">,</span><span class="w">   </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.1"</span><span class="p">,</span><span class="w">   </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.1"</span><span class="p">,</span><span class="w">   </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api"</span><span class="p">,</span><span class="w">   </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethbtc"</span><span class="p">,</span><span class="w">   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-limit"</span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='request-parameters-24'>Request Parameters</h3>
+</span></code></pre><h3 id='request-parameters-22'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4324,7 +4167,7 @@ Rate Limit (NEW): 50times/2s</p>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">    </span><span class="p">{</span><span class="w">      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59378</span><span class="p">,</span><span class="w">      </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethbtc"</span><span class="p">,</span><span class="w">      </span><span class="s2">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100009</span><span class="p">,</span><span class="w">      </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.1000000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.1000000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1494901162595</span><span class="p">,</span><span class="w">      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-limit"</span><span class="p">,</span><span class="w">      </span><span class="s2">"field-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.1000000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"field-cash-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1011.0100000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"field-fees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0202000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"finished-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1494901400468</span><span class="p">,</span><span class="w">      </span><span class="s2">"user-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">      </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api"</span><span class="p">,</span><span class="w">      </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"filled"</span><span class="p">,</span><span class="w">      </span><span class="s2">"canceled-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">    </span><span class="p">}</span><span class="w">  </span><span class="p">]</span><span class="w">
-</span></code></pre><h3 id='response-content-26'>Response Content</h3>
+</span></code></pre><h3 id='response-content-25'>Response Content</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -4459,14 +4302,14 @@ Rate Limit (NEW): 20times/2s</p>
 
 <p>This endpoint returns orders based on a specific searching criteria.
 The orders created via API will no longer be queryable after being cancelled for more than 2 hours. </p>
-<h3 id='http-request-27'>HTTP Request</h3>
+<h3 id='http-request-26'>HTTP Request</h3>
 <p><code>GET /v1/order/history</code></p>
 
 <blockquote>
 <p>Request</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">   </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethbtc"</span><span class="p">,</span><span class="w">   </span><span class="s2">"start-time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1556417645419"</span><span class="p">,</span><span class="w">   </span><span class="s2">"end-time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1556533539282"</span><span class="p">,</span><span class="w">   </span><span class="s2">"direct"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prev"</span><span class="p">,</span><span class="w">   </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='request-parameters-25'>Request Parameters</h3>
+</span></code></pre><h3 id='request-parameters-23'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4523,7 +4366,7 @@ The orders created via API will no longer be queryable after being cancelled for
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">        </span><span class="p">{</span><span class="w">            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">31215214553</span><span class="p">,</span><span class="w">            </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethbtc"</span><span class="p">,</span><span class="w">            </span><span class="s2">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4717043</span><span class="p">,</span><span class="w">            </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.000000000000000000"</span><span class="p">,</span><span class="w">            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.000000000000000000"</span><span class="p">,</span><span class="w">            </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1556533539282</span><span class="p">,</span><span class="w">            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-limit"</span><span class="p">,</span><span class="w">            </span><span class="s2">"field-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">            </span><span class="s2">"field-cash-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">            </span><span class="s2">"field-fees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">            </span><span class="s2">"finished-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1556533568953</span><span class="p">,</span><span class="w">            </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"web"</span><span class="p">,</span><span class="w">            </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"canceled"</span><span class="p">,</span><span class="w">            </span><span class="s2">"canceled-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1556533568911</span><span class="w">        </span><span class="p">}</span><span class="w">    </span><span class="p">]}</span><span class="w">
-</span></code></pre><h3 id='response-content-27'>Response Content</h3>
+</span></code></pre><h3 id='response-content-26'>Response Content</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -4627,9 +4470,9 @@ The orders created via API will no longer be queryable after being cancelled for
 Rate Limit (NEW): 20times/2s</p>
 
 <p>This endpoint returns the match results of past and current filled, or partially filled orders based on specific search criteria.</p>
-<h3 id='http-request-28'>HTTP Request</h3>
+<h3 id='http-request-27'>HTTP Request</h3>
 <p>GET <code>/v1/order/matchresults</code></p>
-<h3 id='request-parameters-26'>Request Parameters</h3>
+<h3 id='request-parameters-24'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4702,7 +4545,7 @@ Rate Limit (NEW): 20times/2s</p>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">    </span><span class="p">{</span><span class="w">      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">29553</span><span class="p">,</span><span class="w">      </span><span class="s2">"order-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59378</span><span class="p">,</span><span class="w">      </span><span class="s2">"match-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59335</span><span class="p">,</span><span class="w">      </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethbtc"</span><span class="p">,</span><span class="w">      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-limit"</span><span class="p">,</span><span class="w">      </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api"</span><span class="p">,</span><span class="w">      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.1000000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"filled-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9.1155000000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"filled-fees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0182310000"</span><span class="p">,</span><span class="w">      </span><span class="s2">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1494901400435</span><span class="p">,</span><span class="w">      </span><span class="s2">"trade-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100282808529</span><span class="p">,</span><span class="w">      </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"taker"</span><span class="p">,</span><span class="w">      </span><span class="s2">"filled-points"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">      </span><span class="s2">"fee-deduct-currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">      </span><span class="s2">"fee-deduct-state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"done"</span><span class="w">    </span><span class="p">}</span><span class="w">  </span><span class="p">]</span><span class="w">
-</span></code></pre><h3 id='response-content-28'>Response Content</h3>
+</span></code></pre><h3 id='response-content-27'>Response Content</h3>
 <aside class="notice">The return data contains a list and each item in the list represents a match result</aside>
 
 <table><thead>
@@ -4819,9 +4662,9 @@ Rate Limit (NEW): 20times/2s</p>
 
 <p>API Key Permission：Read</p>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.sg/v2/reference/transact-fee-rate?symbols=,ethbtc,ltcbtc"</span>
-</code></pre><h3 id='http-request-29'>HTTP Request</h3>
+</code></pre><h3 id='http-request-28'>HTTP Request</h3>
 <p><code>GET /v2/reference/transact-fee-rate</code></p>
-<h3 id='request-parameters-27'>Request Parameters</h3>
+<h3 id='request-parameters-25'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4846,7 +4689,7 @@ Rate Limit (NEW): 20times/2s</p>
 <p>Response:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200"</span><span class="p">,</span><span class="w">  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">     </span><span class="p">{</span><span class="w">        </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethbtc"</span><span class="p">,</span><span class="w">        </span><span class="s2">"makerFeeRate"</span><span class="p">:</span><span class="s2">"0.002"</span><span class="p">,</span><span class="w">        </span><span class="s2">"takerFeeRate"</span><span class="p">:</span><span class="s2">"0.002"</span><span class="p">,</span><span class="w">        </span><span class="s2">"actualMakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.002"</span><span class="p">,</span><span class="w">        </span><span class="s2">"actualTakerRate"</span><span class="p">:</span><span class="s2">"0.002     },     {        "</span><span class="err">symbol</span><span class="s2">": "</span><span class="err">ethbtc</span><span class="s2">",        "</span><span class="err">makerFeeRate</span><span class="s2">":"</span><span class="mf">0.002</span><span class="s2">",        "</span><span class="err">takerFeeRate</span><span class="s2">":"</span><span class="mf">0.002</span><span class="s2">",        "</span><span class="err">actualMakerRate</span><span class="s2">": "</span><span class="mf">0.002</span><span class="s2">",        "</span><span class="err">actualTakerRate</span><span class="s2">":"</span><span class="mf">0.002</span><span class="w">    </span><span class="p">},</span><span class="w">     </span><span class="p">{</span><span class="w">        </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ltcbtc"</span><span class="p">,</span><span class="w">        </span><span class="s2">"makerFeeRate"</span><span class="p">:</span><span class="s2">"0.002"</span><span class="p">,</span><span class="w">        </span><span class="s2">"takerFeeRate"</span><span class="p">:</span><span class="s2">"0.002"</span><span class="p">,</span><span class="w">        </span><span class="s2">"actualMakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.002"</span><span class="p">,</span><span class="w">        </span><span class="s2">"actualTakerRate"</span><span class="p">:</span><span class="s2">"0.002    }  ]}
-</span></code></pre><h3 id='response-content-29'>Response Content</h3>
+</span></code></pre><h3 id='response-content-28'>Response Content</h3>
 <table><thead>
 <tr>
 <th></th>
@@ -5358,7 +5201,7 @@ or
 <p>Subscribe request</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  </span><span class="s2">"sub"</span><span class="p">:</span><span class="w"> </span><span class="s2">"market.ethbtc.ticker"</span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='request-parameters-28'>Request Parameters</h3>
+</span></code></pre><h3 id='request-parameters-26'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5383,7 +5226,7 @@ or
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"market.ethbtc.ticker"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1628587397308</span><span class="p">,</span><span class="w"> </span><span class="s2">"tick"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">44718.5</span><span class="p">,</span><span class="w"> </span><span class="s2">"high"</span><span class="p">:</span><span class="w"> </span><span class="mi">46711</span><span class="p">,</span><span class="w"> </span><span class="s2">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">44480.81</span><span class="p">,</span><span class="w"> </span><span class="s2">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">45868.99</span><span class="p">,</span><span class="w"> </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">22527.427922989766</span><span class="p">,</span><span class="w"> </span><span class="s2">"vol"</span><span class="p">:</span><span class="w"> </span><span class="mf">1030630905.0136755</span><span class="p">,</span><span class="w"> </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">676424</span><span class="p">,</span><span class="w"> </span><span class="s2">"bid"</span><span class="p">:</span><span class="w"> </span><span class="mf">45868.98</span><span class="p">,</span><span class="w"> </span><span class="s2">"bidSize"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.016782</span><span class="p">,</span><span class="w"> </span><span class="s2">"ask"</span><span class="p">:</span><span class="w"> </span><span class="mf">45868.99</span><span class="p">,</span><span class="w"> </span><span class="s2">"askSize"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.1279664455029423</span><span class="p">,</span><span class="w"> </span><span class="s2">"lastPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">45868.99</span><span class="p">,</span><span class="w"> </span><span class="s2">"lastSize"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.007444</span><span class="p">}}</span><span class="w">
-</span></code></pre><h3 id='response-content-30'>Response Content</h3>
+</span></code></pre><h3 id='response-content-29'>Response Content</h3>
 <table><thead>
 <tr>
 <th>Field</th>
