@@ -1022,84 +1022,6 @@ GET `/v1/account/accounts/{account-id}/balance`
 | type     | string    | The balance type                      | trade, frozen , lock |
 | balance  | string    | The balance in the main currency unit | NA                   |
 
-## Get Asset Valuation
-
-API Key Permission：Read
-
-Rate Limit (NEW): 100times/2s
-
-This endpoint returns the valuation of the total assets of the account in btc or fiat currency.
-
-### HTTP Request
-
-- GET `/v2/account/valuation`
-
-### Request Parameters
-
-| Parameter         | Required | Data Type | Description                                          | Default Value | Value Range          |
-| ----------------- | -------- | --------- | ---------------------------------------------------- | ------------- | -------------------- |
-| accountType       | true     | string    | The type of this account                             | NA            |                      |
-| valuationCurrency | false    | string    | The valuation according to the certain fiat currency | BTC           | BTC (case sensitive) |
-
-
-> Responds:
-
-```json
-{    "message": null,    "success": true,    "code":200,    "data":"{        "todayProfit": null,        "updated": null,        "totalBalance": "68232.925885978428351309",        "todayProfitRate": null,        "profitAccountBalanceList": [            {                "distributionType": "1",                "success": true,                "accountBalance": "68232.925885978428351309"            },            {                "distributionType": "2",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "3",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "4",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "5",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "6",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "7",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "8",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "9",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "10",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "11",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "12",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "13",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "14",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "15",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "16",                "success": false,                "accountBalance": "0"            }        ]        }"}
-```
-
-### Response Content
-
-| todayProfit    | String               | 描述                                              |
-| -------------- | -------------------- | ------------------------------------------------- |
-| accountList    | List<AccountBalance> | 账户资产列表                                      |
-| {accountType   | String               | 账户类型                                          |
-| accountBalance | String               | 账户资产                                          |
-| success}       | Boolean              | 账户资产是否成功获取,为false时accountBalance返回0 |
-| timestamp      | long                 | 数据返回时间，为unix time in millisecond          |
-
-### 账户类型数据字典
-
-| code | 说明     |
-| ---- | -------- |
-| 1    | 币币账户 |
-
-## Get Asset Valuation
-
-API Key Permission：Read
-
-Rate Limit (NEW): 100times/2s
-
-This endpoint returns the valuation of the total assets of the account in btc or fiat currency.
-
-### HTTP Request
-
-- GET `/v2/account/asset-valuation`
-
-### Request Parameters
-
-| Parameter         | Required | Data Type | Description                                          | Default Value | Value Range              |
-| ----------------- | -------- | --------- | ---------------------------------------------------- | ------------- | ------------------------ |
-| accountType       | true     | string    | The type of this account                             | NA            | spot                     |
-| valuationCurrency | false    | string    | The valuation according to the certain fiat currency | BTC           | USD,SGD (case sensitive) |
-
-
-> The above command returns JSON structured like this:
-
-```json
-{    "code": 200,    "data": {        "balance": "34.75",        "timestamp": 1594901254363    },    "ok": true}
-```
-
-### Response Content
-
-| Parameter | Required | Data Type | Description                                          |
-| --------- | -------- | --------- | ---------------------------------------------------- |
-| balance   | true     | string    | The valuation according to the certain fiat currency |
-| timestamp | true     | long      | Return time                                          |
-
-
-## 
-
 ## Asset Transfer
 
 API Key Permission：Trade<br>
@@ -1651,13 +1573,13 @@ This endpoint submit a request to cancel an order based on client-order-id .
 | 7           | cancelled                                                    |
 | 10          | cancelling                                                   |
 
-## 自动撤销订单
+## Automated Cancel Order
 
-API Key 权限：交易<br>
+API Key Permission：Trade<br>
 
-为了防止API用户在发生网络故障或用户端系统故障与火币新加坡系统失去联系时，给用户造成意外损失，火币新加坡新增自动撤单接口，当用户与火币新加坡发生意外断连时，能自动帮用户取消全部委托单，以避免损失，即提供Dead man's switch功能。若开启，在设定的时间数完前，接口没有被再次调用，则用户所有现货委托单将被取消（最大支持撤500单）。
+In order to protect API users from unexpected losses resulting from lost network connection due to system failure on the part of the client or the Huobi Singapore system, Huobi Singapore has added an automatic order withdrawal interface. When users accidentally disconnect from Huobi Singapore, the system automatically cancels all orders for users to avoid loss, that is, provide Dead man's switch function. When enabled, if the interface is not called again before the set time expires, all the user's spot orders will be cancelled (maximum support for cancellation of 500 orders).
 
-### HTTP 请求
+### HTTP Request
 
 - POST `/v2/algo-orders/cancel-all-after`
 
@@ -1667,11 +1589,11 @@ API Key 权限：交易<br>
 {  "timeout": "10"}
 ```
 
-### 请求参数
+### Request Parameter
 
-| 参数名称 | 是否必须 | 类型 | 描述                                 | 默认值 | 取值范围         |
-| -------- | -------- | ---- | ------------------------------------ | ------ | ---------------- |
-| timeout  | true     | int  | 超时时间（单位：秒），设置建议见附注 | NA     | 0或者大于等于5秒 |
+| Parameter | Mandatory | Type | Description                                                  | Default Value | Value Range                        |
+| --------- | --------- | ---- | ------------------------------------------------------------ | ------------- | ---------------------------------- |
+| timeout   | true      | int  | timeout value (in seconds), refer to notes for proposed setup | NA            | 0 or greater or equal to 5 seconds |
 
 
 > 响应示例-开启成功 
@@ -1697,17 +1619,20 @@ API Key 权限：交易<br>
 {"code": 2003,"message": "missing mandatory field"}
 ```
 
-### 响应数据
+### Response Content
 
-| **参数名称**  | **是否必须** | **数据类型** | **描述**         |
-| ------------- | ------------ | ------------ | ---------------- |
-| code          | true         | int          | 状态码           |
-| message       | false        | string       | 错误描述（如有） |
-| data          | true         | object       |                  |
-| { currentTime | true         | long         | 当前时间         |
-| triggerTime } | true         | long         | 触发时间         |
+| Parameter     | **Mandatory** | **Data Type** | **Description**            |
+| ------------- | ------------- | ------------- | -------------------------- |
+| code          | true          | int           | Status code                |
+| message       | false         | string        | Error description (if any) |
+| data          | true          | object        |                            |
+| { currentTime | true          | long          | Current time               |
+| triggerTime } | true          | long          | Trigger time               |
 
 
+
+
+## ## 
 
 
 ## Get All Open Orders
