@@ -3331,3 +3331,4 @@ accounts.update#0：{	"action": "push",	"ch": "accounts.update#0",	"data": {		"c
 | 4000   | too.many.request         | 客户端上行请求限频（单个实例50次/秒）                        |
 | 4000   | too.many.connection      | 同一个API Key的建联数量超过服务器单个实例限制（单个实例最多连接10个） |
 
+
