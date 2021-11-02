@@ -97,7 +97,7 @@ The API Key can bind maximum 20 IP addresses (either host IP or network IP), we 
 
 **SDK (Suggested)**
 
-[Java](https://github.com/huobi-sg/huobi_Java) | [Python3](https://github.com/HuobiRDCenter/huobi_Python) | [C++](https://github.com/HuobiRDCenter/huobi_Cpp) | [C#](https://github.com/HuobiRDCenter/huobi_CSharp) | [Go](https://github.com/huobirdcenter/huobi_golang)
+[Java](https://github.com/huobi-sg/huobi_Java) | [Python3](https://github.com/huobi-sg/huobi_Python) | [C++](https://github.com/HuobiRDCenter/huobi_Cpp) | [C#](https://github.com/HuobiRDCenter/huobi_CSharp) | [Go](https://github.com/huobirdcenter/huobi_golang)
 
 **Other Demos**
 
