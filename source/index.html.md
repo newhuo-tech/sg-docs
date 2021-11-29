@@ -2,7 +2,7 @@
 
 ---
 
-title: 火币新加坡 API 文档
+title: Huobi Singapore API Doc
 
 language_tabs: # must be one of https://git.io/vQNgJ
 
@@ -10,7 +10,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 toc_footers:
 
-  - <a href='https://www.huobi.sg/zh-cn/login/?backUrl=%2Fzh-cn%2Fapikey%2F'>创建 API Key </a>
+  - <a href='https://www.huobi.sg/en-us/login/?backUrl=%2Fen-us%2Fapikey%2F'>Create API Key </a>
     includes:
 
 search: true
@@ -28,10 +28,11 @@ table th {
 }
 </style>
 
-| 生效时间<br>(UTC +8) | 接口                    | 变化 | 摘要                       |
-| -------------------- | ----------------------- | ---- | -------------------------- |
-| 2021.8.24            | `market.$symbol.ticker` | 新增 | 增加聚合行情（Ticker）数据 |
-|                      |                         |      |                            |
+
+| Release Date<br>(UTC +8) | API                     | Update | Description              |
+| ------------------------ | ----------------------- | ------ | ------------------------ |
+| 2021.8.24                | `market.$symbol.ticker` | New    | Add Market（Ticker) data |
+|                          |                         |        |                          |
 
 # 
 
@@ -93,11 +94,12 @@ The API Key can bind maximum 20 IP addresses (either host IP or network IP), we 
 
 
 
+
 ## SDK and Demo
 
 **SDK (Suggested)**
 
-[Java](https://github.com/huobi-sg/huobi_Java) | [Python3](https://github.com/huobi-sg/huobi_Python) | [C++](https://github.com/huobi-sg/huobi_Cpp) | [C#](https://github.com/huobi-sg/huobi_CSharp) | [Go](https://github.com/huobi-sg/huobi_golang)
+[Java](https://github.com/HuobiRDCenter/huobi_Java) | [Python3](https://github.com/HuobiRDCenter/huobi_Python) | [C++](https://github.com/HuobiRDCenter/huobi_Cpp) | [C#](https://github.com/HuobiRDCenter/huobi_CSharp) | [Go](https://github.com/huobirdcenter/huobi_golang)
 
 **Other Demos**
 
@@ -165,6 +167,7 @@ It is recommended to access Huobi Singapore API from AWS Japan for better stabil
 </aside> 
 
 
+
 ## Authentication
 
 ### Overview
@@ -175,7 +178,7 @@ Each API Key has permission property, please check the API permission, and make 
 
 A valid request consists of below parts:
 
-- API Path: 即访问服务器地址 api.huobi.sg，for example <u>api.huobi.sg/v1/order/orders</u>
+- API Path: Server Access address api.huobi.sg，for example <u>api.huobi.sg/v1/order/orders</u>
 - API Access Key: The 'Access Key' in your API Key
 - Signature Method: The Hash method that is used to sign, it uses **HmacSHA256**
 - Signature Version: The version for the signature protocol, it uses **2**
@@ -248,6 +251,7 @@ Use UTF-8 encoding and URL encoded, the hex must be upper case. For example, The
 <aside class="notice">
 The 'timestamp' should be formated as 'YYYY-MM-DDThh:mm:ss' and URL encoded. The value is valid within 5 minutes.
 </aside>
+
 
 
 Then above parameter should be ordered like below:
@@ -330,9 +334,9 @@ For example:
 
 The trading symbols are consist of base currency and quote currency. Take the symbol `ETH/BTC` as an example, `ETH` is the base currency, and `BTC` is the quote currency.  
 
-基础币种对应字段为 base-currency 。  
+The **base-currency** refers to the denominator token.
 
-报价币种对应字段为 quote-currency 。 
+The **quote-currency** refers to the numerator token being priced.   
 
 ### Account
 
@@ -386,7 +390,7 @@ The API is restful and there are two method: GET and POST.
 
 ## Response Format
 
-**v1接口返回格式**：The response is JSON format.There are four fields in the top level: `status`, `ch`, `ts` and `data`. The first three fields indicate the general status, the business data is is under `data` field.
+**v1Response Format**：The response is JSON format.There are four fields in the top level: `status`, `ch`, `ts` and `data`. The first three fields indicate the general status, the business data is is under `data` field.
 
 Below is an example of response:
 
@@ -406,9 +410,9 @@ Below is an example of response:
 | ts     | int       | The UTC timestamp when API respond, the unit is millisecond  |
 | data   | object    | The body data in response                                    |
 
-**v2接口返回格式**：最上层有三个字段：`code`, `message` 和 `data`。前两个字段表示返回码和错误消息，实际的业务数据在`data`字段里。
+**v2Response Format**：There are three fields at the top layer: `code`, `message` and `data`. The first two fields represent the return code and error message. The actual business data is in the `data` field.
 
-以下是一个返回格式的样例：
+The following is a sample of the return response：
 
 ```json
 {
@@ -418,11 +422,11 @@ Below is an example of response:
 }
 ```
 
-| 参数名称 | 数据类型 | 描述               |
-| -------- | -------- | ------------------ |
-| code     | int      | API接口返回码      |
-| message  | string   | 错误消息（如果有） |
-| data     | object   | 接口返回数据主体   |
+| Parameter Name | Data type | Description            |
+| -------------- | --------- | ---------------------- |
+| code           | int       | API return code        |
+| message        | string    | error message (if any) |
+| data           | object    | returns data subject   |
 
 ## 
 
@@ -434,8 +438,8 @@ The JSON data type described in this document is defined as below:
 - `int`: a 32-bit integer, mainly used for status code, size and count
 - `long`: a 64-bit integer, mainly used for Id and timestamp
 - `float`: a fraction represented in decimal format, mainly used for volume and price, recommend to use high precision decimal data types in program
-- `object`: 对象，包含一个子对象{}
-- `array`: 数组，包含多个对象
+- `object`: object, contains a child object{}
+- `array`: array containing multiple objects
 
 ## Best Practice
 
@@ -479,9 +483,9 @@ The JSON data type described in this document is defined as below:
 - It is suggested to subscribe WebSocket topic `market.$symbol.mbp.$level` if you need multiple bid and offer with lower latency
 - It is suggested to use `version` field to de-duplicate and discard the smaller data if you use Rest interface `/market/depth` and WebSocket topic `market.$symbol.depth.$type`. It is suggest to use `seqNum` to de-duplicate and discard the smaller data if yo subscribe WebSocket topic `market.$symbol.mbp.$levels`.
 
-**最新成交的获取**
+**Get the latest transaction**
 
-- 建议订阅WebSocket成交明细（`market.$symbol.trade.detail`）主题时，可根据tradeId字段对数据进行去重。
+- It is recommended that when subscribing to WebSocket transaction details (`market.$symbol.trade.detail`), to eliminate duplicate data as per the tradeId field. 
 
 ###Order
 
@@ -514,7 +518,7 @@ The JSON data type described in this document is defined as below:
 
 It is very welcome for market maker who has good market making strategy and large trading volume. If your Huobi Spot account or Contract account has at least 10 BTC, you can send your email to:
 
-- customersupport@huobi.sg （现货 ）做市商申请；
+- Contact customer support from Help Center or send email to [customersupport@huobi.sg](mailto:customersupport@huobi.sg).
 
 And provide below details:
 
@@ -525,6 +529,7 @@ And provide below details:
 <aside class="notice">
 Market makers will not be able to use point cards, VIP rate, rebate or any other fee promotion.
 </aside>
+
 
 
 ## Technical Support
@@ -571,10 +576,10 @@ The market data is updated **once per second**.
 
 ## Get Klines(Candles)
 
-此接口返回历史K线数据。K线周期以新加坡时间为基准开始计算，例如日K线的起始周期为新加坡时间0时至新加坡时间次日0时。
+This interface returns historical K-line data. The K-line cycle is calculated based on SGT time. For example, the starting cycle of the daily K-line is 0:00 SGT time to 0:00 SGT the next day.
 
-<aside class="notice">当前 REST API 不支持自定义时间区间，如需要历史固定时间范围的数据，请参考 Websocket API 中的 K 线接口。</aside>
-<aside class="notice">获取 hb10 净值时， symbol 请填写 “hb10”。</aside>
+<aside class="notice">The current REST API does not support custom time intervals. If you need historical data in a fixed time range, please refer to the K-line interface in the Websocket API.</aside>
+<aside class="notice">To obtain the net value of btc, please fill in the token symbol "btc".</aside>
 
 ```shell
 curl "https://api.huobi.sg/market/history/kline?period=1day&size=200&symbol=ethbtc"
@@ -891,9 +896,9 @@ curl "https://api.huobi.sg/market/detail?symbol=ethbtc"
 
 ### Request Parameters
 
-| Parameter | Data Type | Required | Default Value | 描述                                                  |
+| Parameter | Data Type | Required | Default Value | Description                                           |
 | --------- | --------- | -------- | ------------- | ----------------------------------------------------- |
-| symbol    | string    | true     | NA            | ltcbtc, ethbtc...（取值参考`GET /v1/common/symbols`） |
+| symbol    | string    | true     | NA            | ltcbtc, ethbtc...（Refer to`GET /v1/common/symbols`） |
 
 > Response:Response:
 
@@ -985,9 +990,9 @@ GET `/v1/account/accounts`
 API Key Permission：Read<br>
 Rate Limit (NEW): 100times/2s
 
-查询指定账户的余额，支持以下账户：
+Query account balance of a specified account. Supports the following account types:
 
-spot：现货账户
+spot：spot account
 
 ### HTTP Request
 
@@ -995,9 +1000,11 @@ GET `/v1/account/accounts/{account-id}/balance`
 
 ### Request Parameters
 
-| 参数名称   | 是否必须 | 类型   | 描述                                                         | 默认值 | 取值范围 |
-| ---------- | -------- | ------ | ------------------------------------------------------------ | ------ | -------- |
-| account-id | true     | string | account-id，填在 path 中，取值参考 `GET /v1/account/accounts` |        |          |
+| Field      | Required | Type   | Description                                                  | Default Value | Range |
+| ---------- | -------- | ------ | ------------------------------------------------------------ | ------------- | ----- |
+| account-id | true     | string | account-id, obtain value reference during path input  `GET /v1/account/accounts` |               |       |
+
+> 
 
 > Response:
 
@@ -1022,11 +1029,88 @@ GET `/v1/account/accounts/{account-id}/balance`
 | type     | string    | The balance type                      | trade, frozen , lock |
 | balance  | string    | The balance in the main currency unit | NA                   |
 
+## Get Asset Valuation
+
+API Key Permission：Read
+
+Rate Limit (NEW): 100times/2s
+
+This endpoint returns the valuation of the total assets of the account in btc or fiat currency.
+
+### HTTP Request
+
+- GET `/v2/account/valuation`
+
+### Request Parameters
+
+| Parameter         | Required | Data Type | Description                                          | Default Value | Value Range          |
+| ----------------- | -------- | --------- | ---------------------------------------------------- | ------------- | -------------------- |
+| accountType       | true     | string    | The type of this account                             | NA            |                      |
+| valuationCurrency | false    | string    | The valuation according to the certain fiat currency | BTC           | BTC (case sensitive) |
+
+
+> Responds:
+
+```json
+{    "message": null,    "success": true,    "code":200,    "data":"{        "todayProfit": null,        "updated": null,        "totalBalance": "68232.925885978428351309",        "todayProfitRate": null,        "profitAccountBalanceList": [            {                "distributionType": "1",                "success": true,                "accountBalance": "68232.925885978428351309"            },            {                "distributionType": "2",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "3",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "4",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "5",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "6",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "7",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "8",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "9",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "10",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "11",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "12",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "13",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "14",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "15",                "success": true,                "accountBalance": "0"            },            {                "distributionType": "16",                "success": false,                "accountBalance": "0"            }        ]        }"}
+```
+
+### Response Content
+
+| todayProfit    | String               | Description                                         |
+| -------------- | -------------------- | --------------------------------------------------- |
+| accountList    | List<AccountBalance> | Account asset list                                  |
+| {accountType   | String               | Account type                                        |
+| accountBalance | String               | Account asset balance                               |
+| success}       | Boolean              | Account asset retrieval status. Returns 0 if false. |
+| timestamp      | long                 | Response time - unix time in millisecond            |
+
+### Account Type Data Definition
+
+| code | detail       |
+| ---- | ------------ |
+| 1    | spot account |
+
+## Get Asset Valuation
+
+API Key Permission：Read
+
+Rate Limit (NEW): 100times/2s
+
+This endpoint returns the valuation of the total assets of the account in btc or fiat currency.
+
+### HTTP Request
+
+- GET `/v2/account/asset-valuation`
+
+### Request Parameters
+
+| Parameter         | Required | Data Type | Description                                          | Default Value | Value Range              |
+| ----------------- | -------- | --------- | ---------------------------------------------------- | ------------- | ------------------------ |
+| accountType       | true     | string    | The type of this account                             | NA            | spot                     |
+| valuationCurrency | false    | string    | The valuation according to the certain fiat currency | BTC           | USD,SGD (case sensitive) |
+
+
+> The above command returns JSON structured like this:
+
+```json
+{    "code": 200,    "data": {        "balance": "34.75",        "timestamp": 1594901254363    },    "ok": true}
+```
+
+### Response Content
+
+| Parameter | Required | Data Type | Description                                          |
+| --------- | -------- | --------- | ---------------------------------------------------- |
+| balance   | true     | string    | The valuation according to the certain fiat currency |
+| timestamp | true     | long      | Return time                                          |
+
+## 
+
 ## Asset Transfer
 
 API Key Permission：Trade<br>
 
-其他划转功能将逐步上线，敬请期待。<br>
+Other transfer features will be added in due time.<br>
 
 ### HTTP Request
 
@@ -1034,12 +1118,12 @@ API Key Permission：Trade<br>
 
 ### Request Parameters
 
-| Parameter    | Required | Data Type | Description                         | Values                           |
-| ------------ | -------- | --------- | ----------------------------------- | -------------------------------- |
-| from-account | true     | long      | 转出账户id                          |                                  |
-| to-account   | true     | long      | 转入账户id                          |                                  |
-| currency     | true     | string    | 币种，即btc, ltc, bch, eth, etc ... | 取值参考GET /v1/common/currencys |
-| amount       | true     | string    | 划转金额                            |                                  |
+| Parameter    | Required | Data Type | Description                                    | Values                            |
+| ------------ | -------- | --------- | ---------------------------------------------- | --------------------------------- |
+| from-account | true     | long      | transfer out account ID                        |                                   |
+| to-account   | true     | long      | transfer in account ID                         |                                   |
+| currency     | true     | string    | token symbol，e.g. btc, ltc, bch, eth, etc ... | Refer to GET /v1/common/currencys |
+| amount       | true     | string    | transfer amount                                |                                   |
 
 
 > Response:
@@ -1090,19 +1174,19 @@ GET `/v1/account/history`
 
 ### Response Content
 
-| Field         | Data Type | Description                                                  | Value Range |
-| ------------- | --------- | ------------------------------------------------------------ | ----------- |
-| status        | string    | Status code                                                  |             |
-| data          | object    |                                                              |             |
-| { account-id  | long      | Account ID                                                   |             |
-| currency      | string    | Currency                                                     |             |
-| transact-amt  | string    | Amount change (positive value if income, negative value if outcome) |             |
-| transact-type | string    | Amount change types                                          |             |
-| avail-balance | string    | Available balance                                            |             |
-| acct-balance  | string    | Account balance                                              |             |
-| transact-time | long      | Transaction time (database time)                             |             |
-| record-id }   | long      | Unique record ID in the database                             |             |
-| next-id       | long      | First record ID in next page (only valid if exceeded page size, see Note 2) |             |
+| Field         | Data Type | Description                                                  | Value Range  |
+| ------------- | --------- | ------------------------------------------------------------ | ------------ |
+| status        | string    | Status code                                                  | "ok","error" |
+| data          | object    |                                                              |              |
+| { account-id  | long      | Account ID                                                   |              |
+| currency      | string    | Currency                                                     |              |
+| transact-amt  | string    | Amount change (positive value if income, negative value if outcome) |              |
+| transact-type | string    | Amount change types                                          |              |
+| avail-balance | string    | Available balance                                            |              |
+| acct-balance  | string    | Account balance                                              |              |
+| transact-time | long      | Transaction time (database time)                             |              |
+| record-id }   | long      | Unique record ID in the database                             |              |
+| next-id       | long      | First record ID in next page (only valid if exceeded page size, see Note 2) |              |
 
 Note 1:<br>
 
@@ -1120,14 +1204,13 @@ Note 3:<br>
 
 Change type contains a detailed list of account types：
 
-| 变动类型             | 动账类型                      | 描述                  |
-| -------------------- | ----------------------------- | --------------------- |
-| trade                | match-income                  | 撮合成交收入          |
-| transfer             | spot-generic-transfer-in      | 币币账户 通用划转划入 |
-| transfer{ account-id | spot-generic-transfer-outlong | 币币账户 通用划转转出 |
-| deposit              | user-account-deposit          | 用户账户充值转账      |
-| withdraw             | user-account-withdraw         | 用户账户提现转账      |
-
+| trade                | match-income                  | Matched Trade In                  |
+| -------------------- | ----------------------------- | --------------------------------- |
+| trade                | match-income                  | Matched Trade In                  |
+| transfer             | spot-generic-transfer-in      | Spot Account General Transfer In  |
+| transfer{ account-id | spot-generic-transfer-outlong | Spot Account General Transfer Out |
+| deposit              | user-account-deposit          | User Account Deposit Transfer     |
+| withdraw             | user-account-withdraw         | User Account Withdrawal Transfer  |
 
 ## 
 
@@ -1225,13 +1308,13 @@ GET `/v1/query/deposit-withdraw`
 
 ### Request Parameters
 
-| 参数名称 | 是否必须 | 类型   | 描述             | 默认值                                                       | 取值范围                                                     |
-| -------- | -------- | ------ | ---------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| currency | false    | string | 币种             |                                                              | btc, ltc, bch, eth, etc ...(取值参考`GET /v1/common/currencys`) |
-| type     | true     | string | 充值或提币       |                                                              | deposit 或 withdraw,子用户仅可用deposit                      |
-| from     | false    | string | 查询起始 ID      | 缺省时，默认值direct相关。当direct为‘prev’时，from 为1 ，从旧到新升序返回；当direct为’next‘时，from为最新的一条记录的ID，从新到旧降序返回 |                                                              |
-| size     | false    | string | 查询记录大小     | 100                                                          | 1-500                                                        |
-| direct   | false    | string | 返回记录排序方向 | 缺省时，默认为“prev” （升序）                                | “prev” （升序）or “next” （降序）                            |
+| Parameter | Required | Type   | Description                  | Default Vault                                                | Value Range                                                  |
+| --------- | -------- | ------ | ---------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| currency  | false    | string | Token Symbol                 |                                                              | btc, ltc, bch, eth, etc ...(Refer to GET /v1/common/currencys`) |
+| type      | true     | string | Deposit or Withdrawal        |                                                              | Deposit or Withdraw, child account can only use deposit      |
+| from      | false    | string | Query start ID               | By default, the default value is direct. When direct is ‘prev’, from is 1, and returns from old to new in ascending order; when direct is ‘next’, from is the ID of the latest record, and returns from new to old in descending order |                                                              |
+| size      | false    | string | Query record size            | 100                                                          | 1-500                                                        |
+| direct    | false    | string | Return record sort direction | By default, the default is "prev" (ascending order)          | "Prev" (ascending order) or "next" (descending order)        |
 
 
 
@@ -1245,22 +1328,22 @@ GET `/v1/query/deposit-withdraw`
 
 ### Response Content
 
-| 参数名称    | 是否必须 | 数据类型 | 描述                                                         | 取值范围                                 |
-| ----------- | -------- | -------- | ------------------------------------------------------------ | ---------------------------------------- |
-| id          | true     | long     | 充币或者提币订单id，翻页查询时from参数取自此值               |                                          |
-| type        | true     | string   | 类型                                                         | 'deposit', 'withdraw', 子用户仅有deposit |
-| currency    | true     | string   | 币种                                                         |                                          |
-| tx-hash     | true     | string   | 交易哈希。                                                   |                                          |
-| chain       | true     | string   | 链名称                                                       |                                          |
-| amount      | true     | float    | 个数                                                         |                                          |
-| address     | true     | string   | 目的地址                                                     |                                          |
-| address-tag | true     | string   | 地址标签                                                     |                                          |
-| fee         | true     | float    | 手续费                                                       |                                          |
-| state       | true     | string   | 状态                                                         | 状态参见下表                             |
-| error-code  | false    | string   | 提币失败错误码，仅type为”withdraw“，且state为”reject“、”wallet-reject“和”failed“时有。 |                                          |
-| error-msg   | false    | string   | 提币失败错误描述，仅type为”withdraw“，且state为”reject“、”wallet-reject“和”failed“时有。 |                                          |
-| created-at  | true     | long     | 发起时间                                                     |                                          |
-| updated-at  | true     | long     | 最后更新时间                                                 |                                          |
+| Parameter   | Required | Data Type | Description                                                  | Value Range                                               |
+| ----------- | -------- | --------- | ------------------------------------------------------------ | --------------------------------------------------------- |
+| id          | true     | long      | Deposit or withdrawal order ID, the from parameter is taken from this value when performing page query |                                                           |
+| type        | true     | string    | data Type                                                    | 'deposit', 'withdraw', child account can only use deposit |
+| currency    | true     | string    | token symbol                                                 |                                                           |
+| tx-hash     | true     | string    | transaction hash                                             |                                                           |
+| chain       | true     | string    | blockchain name                                              |                                                           |
+| amount      | true     | float     | quantity                                                     |                                                           |
+| address     | true     | string    | destination address                                          |                                                           |
+| address-tag | true     | string    | address tag                                                  |                                                           |
+| fee         | true     | float     | fee                                                          |                                                           |
+| state       | true     | string    | state                                                        | refer to table below for applicable states                |
+| error-code  | false    | string    | Error code for withdrawal failure, only when the type is "withdraw" and the state is "reject", "wallet-reject" and "failed". |                                                           |
+| error-msg   | false    | string    | Error message for withdrawal failure, only when the type is "withdraw" and the state is "reject", "wallet-reject" and "failed". |                                                           |
+| created-at  | true     | long      | initiation start time                                        |                                                           |
+| updated-at  | true     | long      | last update time                                             |                                                           |
 
 
 
@@ -1943,7 +2026,7 @@ This endpoint returns the match result of an order.
 | fee-currency  | string    | Currency of transaction fee or transaction fee rebate (transaction fee of buy order is based on base currency, transaction fee of sell order is based on quote currency; transaction fee rebate of buy order is based on quote currency, transaction fee rebate of sell order is based on base currency) |
 | source        | string    | All possible order source (refer to introduction in this section) |
 | role          | string    | the role in the transaction: taker or maker                  |
-| status        | string    | 状态                                                         |
+| status        | string    | state                                                        |
 | <data>        | object    |                                                              |
 
 
@@ -1967,7 +2050,7 @@ This endpoint returns orders based on a specific searching criteria. The order c
 
 - If user does not define any of “start-time”/”end-time”/”start-date”/”end-date”, by default Huobi server will treat current time as “end-time”, and then return historical orders within recent 48 hours.
 
-Huobi Global suggests API users to search historical orders based on “time” filter instead of “date”. In the near future, Huobi Global would remove “start-date”/”end-date” fields from the endpoint, through another notification.
+Huobi Singapore suggests API users to search historical orders based on “time” filter instead of “date”. In the near future, Huobi Singapore would remove “start-date”/”end-date” fields from the endpoint, through another notification.
 
 
 ### HTTP Request
@@ -2143,7 +2226,7 @@ GET `/v1/order/matchresults`
 | fee-currency  | string    | Currency of transaction fee or transaction fee rebate (transaction fee of buy order is based on base currency, transaction fee of sell order is based on quote currency; transaction fee rebate of buy order is based on quote currency, transaction fee rebate of sell order is based on base currency) |
 | source        | string    | All possible order source (refer to introduction in this section) |
 | role          | string    | The role in the transaction: taker or maker.                 |
-| status        | string    | 状态                                                         |
+| status        | string    | state                                                        |
 | <data>        | object    |                                                              |
 
 Notes:<br>
@@ -2606,7 +2689,7 @@ Suggested downstream data processing:<br>
 7)	Once received a “size=0” at existing price level from incremental message, that price level should be removed from MBP book;<br>
 8)	If one incremental message includes updates of multiple price levels, all of those levels should be updated simultaneously in MBP book.<br>
 
-Currently Huobi Global only supports 5-level/20-level MBP incremental channel and 150-level incremental channel, the differences between them are -<br>
+Currently Huobi Singapore only supports 5-level/20-level MBP incremental channel and 150-level incremental channel, the differences between them are -<br>
 
 1) Different depth of market.<br>
 2) 5-level/20-level incremental MBP is a tick by tick feed, which means whenever there is an order book change at that level, it pushes an update; 150 levels incremental MBP feed is based on the gap between two snapshots at 100ms interval.<br>
@@ -2622,7 +2705,7 @@ But the incremental message from 150 levels MBP feed contains not only that side
 {    "ch":"market.ethbtc.mbp.150",    "ts":1573199608679,    "tick":{        "seqNum":100020146795,        "prevSeqNum":100020146794,        "bids":[ ],        "asks":[            [645.14,26.75597395914065]        ]    }}
 ```
 
-In the near future, Huobi Global will align the update behavior of 150-level incremental channel with 5-level/20-level, which means while single side order book changed (either bid or ask), the update message will be no longer including a blank object for another side.<br>
+In the near future, Huobi Singapore will align the update behavior of 150-level incremental channel with 5-level/20-level, which means while single side order book changed (either bid or ask), the update message will be no longer including a blank object for another side.<br>
 
 4) While there is nothing change between two snapshots in past 100ms, the 150 levels incremental MBP feed still sends out a message which contains two blank objects – bids & asks. <br>
 
@@ -2631,7 +2714,7 @@ In the near future, Huobi Global will align the update behavior of 150-level inc
 ```
 
 But 5-level/20-level incremental channel won’t disseminate any update in such a case.<br>
-In the future, Huobi Global will align the update behavior of 150-level incremental channel with 5-level/20-level, which means while there is no order book change at all, the channel will be no longer disseminating messages of blank object any more.<br>
+In the future, Huobi Singapore will align the update behavior of 150-level incremental channel with 5-level/20-level, which means while there is no order book change at all, the channel will be no longer disseminating messages of blank object any more.<br>
 
 5) 5-level/20-level incremental channel only supports the following symbols at this stage - ethbtc,ltcbtc,bchbtc, while 150-level incremental channel supports all symbols.<br>
 
@@ -2719,7 +2802,7 @@ User could subscribe to this channel to receive refresh update of Market By Pric
 > Response
 
 ```json
-{"ch": "market.ethbtc.mbp.refresh.20","ts": 1573199608679, //system update time"tick": {		"seqNum": 100020142010,		"bids": [			[618.37, 71.594], // [price, size]			[423.33, 77.726],			[223.18, 47.997],			[219.34, 24.82],			[210.34, 94.463], ... // 省略余下15档   		],		"asks": [			[650.59, 14.909733438479636],			[650.63, 97.996],			[650.77, 97.465],			[651.23, 83.973],			[651.42, 34.465], ... // 省略余下15档		]}}
+{"ch": "market.btcusdt.mbp.refresh.20","ts": 1573199608679, //system update time"tick": {		"seqNum": 100020142010,		"bids": [			[618.37, 71.594], // [price, size]			[423.33, 77.726],			[223.18, 47.997],			[219.34, 24.82],			[210.34, 94.463], ... // rest levels omitted   		],		"asks": [			[650.59, 14.909733438479636],			[650.63, 97.996],			[650.77, 97.465],			[651.23, 83.973],			[651.42, 34.465], ... // rest levels omitted		]}}
 ```
 
 ### Update Content
