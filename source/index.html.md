@@ -2,7 +2,7 @@
 
 ---
 
-title: Huobi Singapore API Doc
+title: New Huo Singapore API Doc
 
 language_tabs: # must be one of https://git.io/vQNgJ
 
@@ -38,9 +38,9 @@ table th {
 
 # Introduction
 
-Welcome to Huobi Singapore API！  
+Welcome to New Huo Singapore API！  
 
-This is the official Huobi Singapore API document, and will be continue updating. Huobi will also publish API announcement in advance for any API change. Please subscribe to our announcements so that you can get the latest updates.
+This is the official New Huo Singapore API document, and will be continue updating. New Huo will also publish API announcement in advance for any API change. Please subscribe to our announcements so that you can get the latest updates.
 
 You can click <a href='https://huobisg.zendesk.com/hc/en-us/sections/4407023586585-API-Announcements'>Here</a> to view the announcements. If you want to subscribe, please click "Follow" button in the top right of the page. After login and click "Follow" again, then choose the type you want to follow. After you subscribe, the button will be changed to "Following". If you don't have any account, you need to register first in the login dialog.
 
@@ -53,7 +53,7 @@ Below is the content for Spot API document
 
 The first part is the overview:
 
-- **Quick Start**: It introduces the overall knowledge of Huobi Singapore API, and suitability for new Huobi Singapore API user
+- **Quick Start**: It introduces the overall knowledge of New Huo Singapore API, and suitability for new New Huo Singapore API user
 - **API Explorer**: It introduces the API Explorer online tool, which is convenient for user to invoke and observe the API
 - **FAQ**: It lists the frequently asked questions regardless the specific API
 - **Contact Us**: It introduces how to contact us according to different subjects
@@ -69,7 +69,7 @@ The second part is detail for each API. Each API category is listed in one secti
 
 ## Preparation
 
-Before you use API, you need to login the website to create API Key with proper permissions. The API key is shared for all instruments in Huobi including spot, futures, swap, options.
+Before you use API, you need to login the website to create API Key with proper permissions. The API key is shared for all instruments in New Huo including spot, futures, swap, options.
 
 You can manage your API Keys <a href='https://www.huobi.sg/en-us/login/?backUrl=%2Fzh-cn%2Fapikey%2F'>here</a>.
 
@@ -89,7 +89,7 @@ Please remember below information after creation:
 The API Key can bind maximum 20 IP addresses (either host IP or network IP), we strongly suggest you bind IP address for security purpose. The API Key without IP binding will be expired after 90 days.
 </aside>
 <aside class="warning">
-<red><b>Warning</b></red>: These two keys are important to your account safety, please don't share <b>both</b> of them together to anyone else (including any product or person from Huobi). If you find your API Key is disposed, please remove it immediately.
+<red><b>Warning</b></red>: These two keys are important to your account safety, please don't share <b>both</b> of them together to anyone else (including any product or person from New Huo). If you find your API Key is disposed, please remove it immediately.
 </aside> 
 
 
@@ -99,7 +99,7 @@ The API Key can bind maximum 20 IP addresses (either host IP or network IP), we 
 
 **SDK (Suggested)**
 
-[Java](https://github.com/HuobiRDCenter/huobi_Java) | [Python3](https://github.com/HuobiRDCenter/huobi_Python) | [C++](https://github.com/HuobiRDCenter/huobi_Cpp) | [C#](https://github.com/HuobiRDCenter/huobi_CSharp) | [Go](https://github.com/huobirdcenter/huobi_golang)
+[Java](https://github.com/New HuoRDCenter/huobi_Java) | [Python3](https://github.com/New HuoRDCenter/huobi_Python) | [C++](https://github.com/New HuoRDCenter/huobi_Cpp) | [C#](https://github.com/New HuoRDCenter/huobi_CSharp) | [Go](https://github.com/huobirdcenter/huobi_golang)
 
 **Other Demos**
 
@@ -160,10 +160,10 @@ In general, the domain <u>api-aws.huobi.sg</u> is optimized for AWS client, the 
 Please initiate API calls with non-China IP.
 </aside>
 <aside class="notice">
-It is not recommended to use proxy to access Huobi Singapore API because it will introduce high latency and low stability.
+It is not recommended to use proxy to access New Huo Singapore API because it will introduce high latency and low stability.
 </aside>
 <aside class="notice">
-It is recommended to access Huobi Singapore API from AWS Japan for better stability. If your server is in China mainland, it may be not stable.
+It is recommended to access New Huo Singapore API from AWS Japan for better stability. If your server is in China mainland, it may be not stable.
 </aside> 
 
 
@@ -516,7 +516,7 @@ The JSON data type described in this document is defined as below:
 
 ## Market Maker Program
 
-It is very welcome for market maker who has good market making strategy and large trading volume. If your Huobi Spot account or Contract account has at least 10 BTC, you can send your email to:
+It is very welcome for market maker who has good market making strategy and large trading volume. If your New Huo Spot account or Contract account has at least 10 BTC, you can send your email to:
 
 - Contact customer support from Help Center or send email to [customersupport@huobi.sg](mailto:customersupport@huobi.sg).
 
@@ -1194,10 +1194,10 @@ Note 1:<br>
 - A paid maker rebate could possibly include rebate from multiple trades.<br>
 
 Note 2:<br>
-Only when the number of items within the query window (between “start-time” and ”end-time”) exceeded the page limitation (defined by “size”), Huobi server returns “next-id”. Once received “next-id”, API user should –<br>
+Only when the number of items within the query window (between “start-time” and ”end-time”) exceeded the page limitation (defined by “size”), New Huo server returns “next-id”. Once received “next-id”, API user should –<br>
 
 1) Be aware of that, some items within the query window were not returned due to the page size limitation.<br>
-2) In order to get these items from Huobi server, adopt the “next-id” as “from-id” and submit another request, with other request parameters no change.<br>
+2) In order to get these items from New Huo server, adopt the “next-id” as “from-id” and submit another request, with other request parameters no change.<br>
 3) As database record ID, “next-id” and “from-id” are for recurring query purpose and the ID itself does not have any business implication.<br>
 
 Note 3:<br>
@@ -1277,10 +1277,10 @@ endTime default value: current time
 | nextId       | integer   | FALSE     | First record ID in next page (only valid if exceeded page size. please refer to note 3.) |            |
 
 Note 3:<br>
-Only when the number of items within the query window (between “startTime” and ”endTime”) exceeded the page limitation (defined by “limit”), Huobi server returns “nextId”. Once received “nextId”, API user should –<br>
+Only when the number of items within the query window (between “startTime” and ”endTime”) exceeded the page limitation (defined by “limit”), New Huo server returns “nextId”. Once received “nextId”, API user should –<br>
 
 1)	Be aware of that, some items within the query window were not returned due to the page size limitation.<br>
-2)	In order to get these items from Huobi server, adopt the “nextId” as “fromId” and submit another request, with other request parameters no change.<br>
+2)	In order to get these items from New Huo server, adopt the “nextId” as “fromId” and submit another request, with other request parameters no change.<br>
 3)	As database record ID, “nextId” and “fromId” are for recurring query purpose and the ID itself does not have any business implication.<br>
 
 
@@ -1660,7 +1660,7 @@ This endpoint submit a request to cancel an order based on client-order-id .
 
 API Key Permission：Trade<br>
 
-In order to protect API users from unexpected losses resulting from lost network connection due to system failure on the part of the client or the Huobi Singapore system, Huobi Singapore has added an automatic order withdrawal interface. When users accidentally disconnect from Huobi Singapore, the system automatically cancels all orders for users to avoid loss, that is, provide Dead man's switch function. When enabled, if the interface is not called again before the set time expires, all the user's spot orders will be cancelled (maximum support for cancellation of 500 orders).
+In order to protect API users from unexpected losses resulting from lost network connection due to system failure on the part of the client or the New Huo Singapore system, New Huo Singapore has added an automatic order withdrawal interface. When users accidentally disconnect from New Huo Singapore, the system automatically cancels all orders for users to avoid loss, that is, provide Dead man's switch function. When enabled, if the interface is not called again before the set time expires, all the user's spot orders will be cancelled (maximum support for cancellation of 500 orders).
 
 ### HTTP Request
 
@@ -2044,13 +2044,13 @@ Rate Limit (NEW): 50times/2s
 This endpoint returns orders based on a specific searching criteria. The order created via API will no longer be queryable after being cancelled for more than 2 hours.
 
 
-- Upon user defined “start-time” AND/OR “end-time”, Huobi server will return historical orders whose order creation time falling into the period. The maximum query window between “start-time” and “end-time” is 48-hour. Oldest order searchable should be within recent 180 days. If either “start-time” or “end-time” is defined, Huobi server will ignore “start-date” and “end-date” regardless they were filled or not.
+- Upon user defined “start-time” AND/OR “end-time”, New Huo server will return historical orders whose order creation time falling into the period. The maximum query window between “start-time” and “end-time” is 48-hour. Oldest order searchable should be within recent 180 days. If either “start-time” or “end-time” is defined, New Huo server will ignore “start-date” and “end-date” regardless they were filled or not.
 
 - If user does neither define “start-time” nor “end-time”, but “start-date”/”end-date”, the order searching will be based on defined “date range”, as usual. The maximum query window is 2 days, and oldest order searchable should be within recent 180 days.
 
-- If user does not define any of “start-time”/”end-time”/”start-date”/”end-date”, by default Huobi server will treat current time as “end-time”, and then return historical orders within recent 48 hours.
+- If user does not define any of “start-time”/”end-time”/”start-date”/”end-date”, by default New Huo server will treat current time as “end-time”, and then return historical orders within recent 48 hours.
 
-Huobi Singapore suggests API users to search historical orders based on “time” filter instead of “date”. In the near future, Huobi Singapore would remove “start-date”/”end-date” fields from the endpoint, through another notification.
+New Huo Singapore suggests API users to search historical orders based on “time” filter instead of “date”. In the near future, New Huo Singapore would remove “start-date”/”end-date” fields from the endpoint, through another notification.
 
 
 ### HTTP Request
@@ -2415,7 +2415,7 @@ All return data of websocket Market APIs are compressed with GZIP so they need t
 {"ping": 1492420473027} 
 ```
 
-After connected to Huobi's Websocket server, the server will send heartbeat periodically (currently at 5s interval). The heartbeat message will have an integer in it, e.g.
+After connected to New Huo's Websocket server, the server will send heartbeat periodically (currently at 5s interval). The heartbeat message will have an integer in it, e.g.
 
 ```json
 {"pong": 1492420473027} 
@@ -2689,7 +2689,7 @@ Suggested downstream data processing:<br>
 7)	Once received a “size=0” at existing price level from incremental message, that price level should be removed from MBP book;<br>
 8)	If one incremental message includes updates of multiple price levels, all of those levels should be updated simultaneously in MBP book.<br>
 
-Currently Huobi Singapore only supports 5-level/20-level MBP incremental channel and 150-level incremental channel, the differences between them are -<br>
+Currently New Huo Singapore only supports 5-level/20-level MBP incremental channel and 150-level incremental channel, the differences between them are -<br>
 
 1) Different depth of market.<br>
 2) 5-level/20-level incremental MBP is a tick by tick feed, which means whenever there is an order book change at that level, it pushes an update; 150 levels incremental MBP feed is based on the gap between two snapshots at 100ms interval.<br>
@@ -2705,7 +2705,7 @@ But the incremental message from 150 levels MBP feed contains not only that side
 {    "ch":"market.ethbtc.mbp.150",    "ts":1573199608679,    "tick":{        "seqNum":100020146795,        "prevSeqNum":100020146794,        "bids":[ ],        "asks":[            [645.14,26.75597395914065]        ]    }}
 ```
 
-In the near future, Huobi Singapore will align the update behavior of 150-level incremental channel with 5-level/20-level, which means while single side order book changed (either bid or ask), the update message will be no longer including a blank object for another side.<br>
+In the near future, New Huo Singapore will align the update behavior of 150-level incremental channel with 5-level/20-level, which means while single side order book changed (either bid or ask), the update message will be no longer including a blank object for another side.<br>
 
 4) While there is nothing change between two snapshots in past 100ms, the 150 levels incremental MBP feed still sends out a message which contains two blank objects – bids & asks. <br>
 
@@ -2714,7 +2714,7 @@ In the near future, Huobi Singapore will align the update behavior of 150-level 
 ```
 
 But 5-level/20-level incremental channel won’t disseminate any update in such a case.<br>
-In the future, Huobi Singapore will align the update behavior of 150-level incremental channel with 5-level/20-level, which means while there is no order book change at all, the channel will be no longer disseminating messages of blank object any more.<br>
+In the future, New Huo Singapore will align the update behavior of 150-level incremental channel with 5-level/20-level, which means while there is no order book change at all, the channel will be no longer disseminating messages of blank object any more.<br>
 
 5) 5-level/20-level incremental channel only supports the following symbols at this stage - ethbtc,ltcbtc,bchbtc, while 150-level incremental channel supports all symbols.<br>
 
@@ -2987,7 +2987,7 @@ Unlike Market WebSocket, the return data of Account and Order Websocket are not 
 {	"action": "ping",	"data": {		"ts": 1575537778295	}}
 ```
 
-Once the Websocket connection is established, Huobi server will periodically send "ping" message at 20s interval, with an integer inside.
+Once the Websocket connection is established, New Huo server will periodically send "ping" message at 20s interval, with an integer inside.
 
 ```json
 {    "action": "pong",    "data": {          "ts": 1575537778295 // the same with "ping" message    }}
@@ -3002,7 +3002,7 @@ Once client receives "ping", it should respond "pong" message back with the same
 | sub          | Subscribe                                   |
 | req          | Request                                     |
 | ping,pong    | Heartbeat                                   |
-| push         | Push (from Huobi server to client's server) |
+| push         | Push (from New Huo server to client's server) |
 
 ### Rate Limit
 
