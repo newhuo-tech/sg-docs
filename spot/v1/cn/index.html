@@ -518,7 +518,7 @@
 <p>toc_footers:</p>
 
 <ul>
-<li><a href='https://www.huobi.sg/zh-cn/login/?backUrl=%2Fzh-cn%2Fapikey%2F'>创建 API Key </a>
+<li><a href='https://www.nhex.sg/zh-cn/login/?backUrl=%2Fzh-cn%2Fapikey%2F'>创建 API Key </a>
 includes:</li>
 </ul>
 
@@ -588,7 +588,7 @@ table th {
 <h1 id='25e54147de'>快速入门</h1><h2 id='c1ae0a8486'>接入准备</h2>
 <p>如需使用API ，请先登录网页端，完成API key的申请和权限配置，再据此文档详情进行开发和交易。  </p>
 
-<p>您可以点击 <a href='https://www.huobi.sg/zh-cn/login/?backUrl=%2Fzh-cn%2Fapikey%2F'>这里 </a> 创建 API Key。</p>
+<p>您可以点击 <a href='https://www.nhex.sg/zh-cn/login/?backUrl=%2Fzh-cn%2Fapikey%2F'>这里 </a> 创建 API Key。</p>
 
 <p>每个母用户可创建20组Api Key，每个Api Key可对应设置读取、交易、提币三种权限。  </p>
 
@@ -645,21 +645,21 @@ table th {
 
 <p>私有接口可用于交易管理和账户管理。每个私有请求必须使用您的API Key进行签名验证。</p>
 <h2 id='urls'>接入URLs</h2>
-<p>您可以自行比较使用api.huobi.sg和api-aws.huobi.sg两个域名的延迟情况，选择延迟低的进行使用。</p>
+<p>您可以自行比较使用api.nhex.sg和api-aws.nhex.sg两个域名的延迟情况，选择延迟低的进行使用。</p>
 
-<p>其中，api-aws.huobi.sg域名对使用aws云服务的用户做了一定的链路延迟优化。   （永庆确认是否删除）</p>
+<p>其中，api-aws.nhex.sg域名对使用aws云服务的用户做了一定的链路延迟优化。   （永庆确认是否删除）</p>
 
 <p><strong>REST API</strong></p>
 
-<p>https://api.huobi.sg</p>
+<p>https://api.nhex.sg</p>
 
 <p>Websocket Feed（行情，不包含MBP增量行情）</p>
 
-<p>wss://api.huobi.sg/ws</p>
+<p>wss://api.nhex.sg/ws</p>
 
 <p>Websocket Feed（资产和订单）</p>
 
-<p>wss://api.huobi.sg/ws/v  </p>
+<p>wss://api.nhex.sg/ws/v  </p>
 
 <aside class="notice">
 请使用中国大陆以外的 IP 访问新火新加坡 API。
@@ -679,7 +679,7 @@ table th {
 <p>一个合法的请求由以下几部分组成：</p>
 
 <ul>
-<li>方法请求地址：即访问服务器地址 api.huobi.sg，比如 api.huobi.sg/v1/order/orders。</li>
+<li>方法请求地址：即访问服务器地址 api.nhex.sg，比如 api.nhex.sg/v1/order/orders。</li>
 <li>API 访问Id（AccessKeyId）：您申请的 API Key 中的 Access Key。</li>
 <li>签名方法（SignatureMethod）：用户计算签名的基于哈希的协议，此处使用 HmacSHA256。</li>
 <li>签名版本（SignatureVersion）：签名协议的版本，此处使用2。</li>
@@ -697,7 +697,7 @@ table th {
 
 <p>查询某订单详情时完整的请求URL</p>
 
-<p><code>https://api.huobi.sg/v1/order/orders?</code></p>
+<p><code>https://api.nhex.sg/v1/order/orders?</code></p>
 
 <p><code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx</code></p>
 
@@ -718,7 +718,7 @@ table th {
 
 <p>例如：
 <code>
-api.huobi.sg\n
+api.nhex.sg\n
 </code></p>
 
 <p><strong>3. 访问方法的路径，后面添加换行符 “\n”</strong></p>
@@ -775,7 +775,7 @@ api.huobi.sg\n
 
 <p><code>GET\n</code></p>
 
-<p><code>api.huobi.sg\n</code></p>
+<p><code>api.nhex.sg\n</code></p>
 
 <p><code>/v1/order/orders\n</code></p>
 
@@ -801,7 +801,7 @@ api.huobi.sg\n
 
 <p>最终，发送到服务器的 API 请求应该为</p>
 
-<p><code>https://api.huobi.sg/v1/order/orders?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;order-id=1234567890&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=2&amp;Timestamp=2017-05-11T15%3A19%3A30&amp;Signature=4F65x5A2bLyMWVQj3Aqp%2BB4w%2BivaA7n5Oi2SuYtCJ9o%3D</code></p>
+<p><code>https://api.nhex.sg/v1/order/orders?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;order-id=1234567890&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=2&amp;Timestamp=2017-05-11T15%3A19%3A30&amp;Signature=4F65x5A2bLyMWVQj3Aqp%2BB4w%2BivaA7n5Oi2SuYtCJ9o%3D</code></p>
 
 <p>对于WebSocket接口：</p>
 
@@ -996,7 +996,7 @@ api.huobi.sg\n
 <ul>
 <li>不建议在中国大陆境内使用临时域名以及代理的方式访问Huobi API，此类方式访问API连接的稳定性很难保证。</li>
 <li>建议使用日本AWS云服务器进行访问。</li>
-<li>官方域名api.huobi.sg, api-aws.huobi.sg，若您使用了AWS云服务，建议使用api-aws.huobi.sg域名，该域名为AWS用户做了链路上的优化，链路延迟相对更低。</li>
+<li>官方域名api.nhex.sg, api-aws.nhex.sg，若您使用了AWS云服务，建议使用api-aws.nhex.sg域名，该域名为AWS用户做了链路上的优化，链路延迟相对更低。</li>
 </ul>
 
 <p><strong>新限频规则</strong></p>
@@ -1065,7 +1065,7 @@ api.huobi.sg\n
 <p>欢迎有优秀 maker 策略且交易量大的用户参与长期做市商项目。如果您的新火新加坡现货账户有折合大于10BTC资产，请提供以下信息发送邮件至：</p>
 
 <ul>
-<li>customersupport@huobi.sg （现货 ）做市商申请；</li>
+<li>customersupport@nhex.sg （现货 ）做市商申请；</li>
 </ul>
 
 <ol>
@@ -1083,7 +1083,7 @@ api.huobi.sg\n
 <p>使用过程中如有问题或者建议，您可选择以下任一方式联系我们：</p>
 
 <ul>
-<li>通过官网的“帮助中心”或者发送邮件至customersupport@huobi.sg联系客服。</li>
+<li>通过官网的“帮助中心”或者发送邮件至customersupport@nhex.sg联系客服。</li>
 </ul>
 
 <p>如您遇到API错误，请按照如下模板向我们反馈问题。</p>
@@ -1100,17 +1100,17 @@ api.huobi.sg\n
 
 <p><code>1. 问题简要说明：签名错误</code><br>
 <code>2. UID：123456</code><br>
-<code>3. 完整的URL请求：GET https://api.huobi.sg/v1/account/accounts?&amp;SignatureVersion=2&amp;SignatureMethod=HmacSHA256&amp;Timestamp=2019-11-06T03%3A25%3A39&amp;AccessKeyId=rfhxxxxx-950000847-boooooo3-432c0&amp;Signature=HhJwApXKpaLPewiYLczwfLkoTPnFPHgyF61iq0iTFF8%3D</code><br>
+<code>3. 完整的URL请求：GET https://api.nhex.sg/v1/account/accounts?&amp;SignatureVersion=2&amp;SignatureMethod=HmacSHA256&amp;Timestamp=2019-11-06T03%3A25%3A39&amp;AccessKeyId=rfhxxxxx-950000847-boooooo3-432c0&amp;Signature=HhJwApXKpaLPewiYLczwfLkoTPnFPHgyF61iq0iTFF8%3D</code><br>
 <code>4. 完整的JSON格式的参数：无</code><br>
 <code>5. 完整的JSON格式的返回：{&quot;status&quot;:&quot;error&quot;,&quot;err-code&quot;:&quot;api-signature-not-valid&quot;,&quot;err-msg&quot;:&quot;Signature not valid: Incorrect Access key [Access key错误]&quot;,&quot;data&quot;:null}</code><br>
 <code>6. 问题出现频率：每次都会出现</code><br>
 <code>7. 签名前字符串</code><br>
 <code>GET\n</code><br>
-<code>api.huobi.sg\n</code><br>
+<code>api.nhex.sg\n</code><br>
 <code>/v1/account/accounts\n</code><br>
 <code>AccessKeyId=rfhxxxxx-950000847-boooooo3-432c0&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=2&amp;Timestamp=2019-11-06T03%3A26%3A13</code>   </p>
 
-<p>注意：Access Key仅能证明您的身份，不会影响您账户的安全。切记<strong>不</strong>要将Secret Key信息分享给任何人，若您不小心将Secret Key暴露，请尽快<a href="https://www.huobi.sg/zh-cn/login/?backUrl=%2Fzh-cn%2Fapikey%2F">删除</a>其对应的API Key，以免造成您的账户损失。</p>
+<p>注意：Access Key仅能证明您的身份，不会影响您账户的安全。切记<strong>不</strong>要将Secret Key信息分享给任何人，若您不小心将Secret Key暴露，请尽快<a href="https://www.nhex.sg/zh-cn/login/?backUrl=%2Fzh-cn%2Fapikey%2F">删除</a>其对应的API Key，以免造成您的账户损失。</p>
 <h1 id='d9d514d202'>行情数据</h1><h2 id='5ea2e0cde2-2'>简介</h2>
 <p>行情数据接口提供了多种K线、深度以及最新成交记录等行情数据。</p>
 
@@ -1121,7 +1121,7 @@ api.huobi.sg\n
 <aside class="notice">当前 REST API 不支持自定义时间区间，如需要历史固定时间范围的数据，请参考 Websocket API 中的 K 线接口。</aside>
 
 <aside class="notice">获取 btc 净值时， symbol 请填写 “btc”。</aside>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.sg/market/history/kline?period=1day&amp;size=200&amp;symbol=ethbtc"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.nhex.sg/market/history/kline?period=1day&amp;size=200&amp;symbol=ethbtc"</span>
 </code></pre><h3 id='http'>HTTP 请求</h3>
 <ul>
 <li>GET <code>/market/history/kline</code></li>
@@ -1218,7 +1218,7 @@ api.huobi.sg\n
 </tbody></table>
 <h2 id='ticker'>聚合行情（Ticker）</h2>
 <p>此接口获取ticker信息同时提供最近24小时的交易聚合信息。</p>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.sg/market/detail/merged?symbol=ethbtc"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.nhex.sg/market/detail/merged?symbol=ethbtc"</span>
 </code></pre><h3 id='http-2'>HTTP 请求</h3>
 <ul>
 <li>GET <code>/market/detail/merged</code></li>
@@ -1309,7 +1309,7 @@ api.huobi.sg\n
 </tbody></table>
 <h2 id='tickers'>所有交易对的最新 Tickers</h2>
 <p>获得所有交易对的 tickers。</p>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.sg/market/tickers"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.nhex.sg/market/tickers"</span>
 </code></pre>
 <aside class="notice">此接口返回所有交易对的 ticker，因此数据量较大。</aside>
 <h3 id='http-3'>HTTP 请求</h3>
@@ -1396,7 +1396,7 @@ api.huobi.sg\n
 </tbody></table>
 <h2 id='0f7bd4961a'>市场深度数据</h2>
 <p>此接口返回指定交易对的当前市场深度数据。</p>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.sg/market/depth?symbol=ethbtc&amp;type=step2"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.nhex.sg/market/depth?symbol=ethbtc&amp;type=step2"</span>
 </code></pre><h3 id='http-4'>HTTP 请求</h3>
 <ul>
 <li>GET <code>/market/depth</code></li>
@@ -1515,7 +1515,7 @@ api.huobi.sg\n
 </tbody></table>
 <h2 id='a7fb7754d7'>最近市场成交记录</h2>
 <p>此接口返回指定交易对最新的一个交易记录。</p>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.sg/market/trade?symbol=ethbtc"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.nhex.sg/market/trade?symbol=ethbtc"</span>
 </code></pre><h3 id='http-5'>HTTP 请求</h3>
 <ul>
 <li>GET <code>/market/trade</code></li>
@@ -1586,7 +1586,7 @@ api.huobi.sg\n
 </tbody></table>
 <h2 id='5583b4ac64'>获得近期交易记录</h2>
 <p>此接口返回指定交易对近期的所有交易记录。</p>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.sg/market/history/trade?symbol=ethbtc&amp;size=2"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.nhex.sg/market/history/trade?symbol=ethbtc&amp;size=2"</span>
 </code></pre><h3 id='http-6'>HTTP 请求</h3>
 <ul>
 <li>GET <code>/market/history/trade</code></li>
@@ -1666,7 +1666,7 @@ api.huobi.sg\n
 <p>此接口返回最近24小时的行情数据汇总。</p>
 
 <aside class="notice">此接口返回的成交量、成交金额为24小时滚动数据（平移窗口大小24小时），有可能会出现后一个窗口内的累计成交量、累计成交额小于前一窗口的情况。</aside>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.sg/market/detail?symbol=ethbtc"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.nhex.sg/market/detail?symbol=ethbtc"</span>
 </code></pre><h3 id='http-7'>HTTP 请求</h3>
 <ul>
 <li>GET <code>/market/detail</code></li>
@@ -5031,7 +5031,7 @@ Response:</p>
 <p>Api用户查询交易对费率，一次限制最多查10个交易对，子用户的费率和母用户保持一致</p>
 
 <p>API Key 权限：读取</p>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.huobi.sg/v2/reference/transact-fee-rate?symbols=,ethbtc,ltcbtc"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.nhex.sg/v2/reference/transact-fee-rate?symbols=,ethbtc,ltcbtc"</span>
 </code></pre><h3 id='http-29'>HTTP 请求</h3>
 <ul>
 <li>GET <code>/v2/reference/transact-fee-rate</code></li>
@@ -5380,15 +5380,15 @@ Response:</p>
 <h1 id='websocket'>Websocket行情数据</h1><h2 id='5ea2e0cde2-6'>简介</h2><h3 id='url'>接入URL</h3>
 <p><strong>Global站行情请求地址（除MBP增量推送及MBP全量REQ以外Websocket行情频道）</strong></p>
 
-<p><strong><code>wss://api.huobi.sg/ws</code></strong>  </p>
+<p><strong><code>wss://api.nhex.sg/ws</code></strong>  </p>
 
-<p><strong><code>wss://api-aws.huobi.sg/ws</code></strong>  </p>
+<p><strong><code>wss://api-aws.nhex.sg/ws</code></strong>  </p>
 
 <p><strong>MBP增量推送及MBP全量REQ请求地址</strong></p>
 
-<p><strong><code>wss://api.huobi.sg/feed</code></strong>  </p>
+<p><strong><code>wss://api.nhex.sg/feed</code></strong>  </p>
 
-<p><strong><code>wss://api-aws.huobi.sg/feed</code></strong> </p>
+<p><strong><code>wss://api-aws.nhex.sg/feed</code></strong> </p>
 <h3 id='7ee1785123'>数据压缩</h3>
 <p>WebSocket 行情接口返回的所有数据都进行了 GZIP 压缩，需要 client 在收到数据之后解压。</p>
 <h3 id='1853724646'>心跳消息</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"ping"</span><span class="p">:</span><span class="w"> </span><span class="mi">1492420473027</span><span class="p">}</span><span class="w"> 
@@ -5815,9 +5815,9 @@ Response:</p>
 
 <p><strong>MBP增量推送及MBP全量REQ请求地址</strong></p>
 
-<p><strong><code>wss://api.huobi.sg/feed</code></strong>  </p>
+<p><strong><code>wss://api.nhex.sg/feed</code></strong>  </p>
 
-<p><strong><code>wss://api-aws.huobi.sg/feed</code></strong> </p>
+<p><strong><code>wss://api-aws.nhex.sg/feed</code></strong> </p>
 
 <p>建议下游数据处理方式：<br>
 1）    订阅增量数据并开始缓存；<br>
@@ -6262,11 +6262,11 @@ Response:</p>
 </span></code></pre><h1 id='websocket-2'>Websocket资产及订单</h1><h2 id='5ea2e0cde2-7'>简介</h2><h3 id='url-2'>接入URL</h3>
 <p><strong>Websocket资产及订单</strong></p>
 
-<p><strong><code>wss://api.huobi.sg/ws/v2</code></strong>  </p>
+<p><strong><code>wss://api.nhex.sg/ws/v2</code></strong>  </p>
 
-<p><strong><code>wss://api-aws.huobi.sg/ws/v2</code></strong>   </p>
+<p><strong><code>wss://api-aws.nhex.sg/ws/v2</code></strong>   </p>
 
-<p>注：api-aws.huobi.sg域名对使用aws云服务的用户做了一定的链路延迟优化。  </p>
+<p>注：api-aws.nhex.sg域名对使用aws云服务的用户做了一定的链路延迟优化。  </p>
 
 <p>请使用中国大陆以外的服务器访问新火新加坡 API。</p>
 <h3 id='7ee1785123-2'>数据压缩</h3>
@@ -6384,10 +6384,10 @@ Response:</p>
 <li><p>signatureVersion版本升级为2.1</p></li>
 </ol>
 
-<p>Rest接口签名步骤,您可以点击 <a href='https://huobi-sg.github.io/docs/spot/v1/cn/#c64cd15fdc'>这里</a> 获取。</p>
+<p>Rest接口签名步骤,您可以点击 <a href='https://docs.nhex.sg/spot/v1/cn/#c64cd15fdc'>这里</a> 获取。</p>
 
 <p>签名前最后生成的字符串如下：</p>
-<pre class="highlight plaintext"><code>GET\napi.huobi.sg\n/ws/v2\naccessKey=0664b695-rfhfg2mkl3-abbf6c5d-49810&amp;signatureMethod=HmacSHA256&amp;signatureVersion=2.1&amp;timestamp=2019-12-05T11%3A53%3A03
+<pre class="highlight plaintext"><code>GET\napi.nhex.sg\n/ws/v2\naccessKey=0664b695-rfhfg2mkl3-abbf6c5d-49810&amp;signatureMethod=HmacSHA256&amp;signatureVersion=2.1&amp;timestamp=2019-12-05T11%3A53%3A03
 </code></pre>
 <p>注：JSON请求中的数据不需要URL编码。</p>
 <h3 id='65cd7614bc-2'>订阅主题</h3>
