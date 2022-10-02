@@ -10,7 +10,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 toc_footers:
 
-  - <a href='https://www.huobi.sg/en-us/login/?backUrl=%2Fen-us%2Fapikey%2F'>Create API Key </a>
+  - <a href='https://www.nhex.sg/en-us/login/?backUrl=%2Fen-us%2Fapikey%2F'>Create API Key </a>
     includes:
 
 search: true
@@ -71,7 +71,7 @@ The second part is detail for each API. Each API category is listed in one secti
 
 Before you use API, you need to login the website to create API Key with proper permissions. The API key is shared for all instruments in New Huo including spot, futures, swap, options.
 
-You can manage your API Keys <a href='https://www.huobi.sg/en-us/login/?backUrl=%2Fzh-cn%2Fapikey%2F'>here</a>.
+You can manage your API Keys <a href='https://www.nhex.sg/en-us/login/?backUrl=%2Fzh-cn%2Fapikey%2F'>here</a>.
 
 Every user can create at most 20 API Keys, each can be applied with either permission below:
 
@@ -137,23 +137,23 @@ Private API: It is for account related operation like trading and account manage
 
 ## Access URLs
 
-You can compare the network latency between two domain <u>api.huobi.sg</u> and <u>api-aws.huobi.sg</u>, and then choose the better one for you.
+You can compare the network latency between two domain <u>api.nhex.sg</u> and <u>api-aws.nhex.sg</u>, and then choose the better one for you.
 
-In general, the domain <u>api-aws.huobi.sg</u> is optimized for AWS client, the latency will be lower.
+In general, the domain <u>api-aws.nhex.sg</u> is optimized for AWS client, the latency will be lower.
 
 **REST API**
 
-**`https://api.huobi.sg`**  
+**`https://api.nhex.sg`**  
 
 **Websocket Feed (market data except MBP incremental)**
 
-**`wss://api.huobi.sg/ws`**  
+**`wss://api.nhex.sg/ws`**  
 
 
 
 **Websocket Feed (account and order)**
 
-**`wss://api.huobi.sg/ws/v`**  
+**`wss://api.nhex.sg/ws/v`**  
 
 
 <aside class="notice">
@@ -178,7 +178,7 @@ Each API Key has permission property, please check the API permission, and make 
 
 A valid request consists of below parts:
 
-- API Path: Server Access address api.huobi.sg，for example <u>api.huobi.sg/v1/order/orders</u>
+- API Path: Server Access address api.nhex.sg，for example <u>api.nhex.sg/v1/order/orders</u>
 - API Access Key: The 'Access Key' in your API Key
 - Signature Method: The Hash method that is used to sign, it uses **HmacSHA256**
 - Signature Version: The version for the signature protocol, it uses **2**
@@ -194,7 +194,7 @@ The signature may be different if the request text is different, therefore the r
 
 This is a full URL to query one order:
 
-`https://api.huobi.sg/v1/order/orders?`
+`https://api.nhex.sg/v1/order/orders?`
 
 `AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx`
 
@@ -214,7 +214,7 @@ This is a full URL to query one order:
 
 Example:
 `
-api.huobi.sg\n
+api.nhex.sg\n
 `
 
 **3. The path, append line break “\n”**
@@ -276,7 +276,7 @@ Then above parameter should be ordered like below:
 
 `GET\n`
 
-`api.huobi.sg\n`
+`api.nhex.sg\n`
 
 `/v1/order/orders\n`
 
@@ -299,7 +299,7 @@ For Rest interface:
 
 Finally, the request sent to API should be:
 
-`https://api.huobi.sg/v1/order/orders?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&order-id=1234567890&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T15%3A19%3A30&Signature=4F65x5A2bLyMWVQj3Aqp%2BB4w%2BivaA7n5Oi2SuYtCJ9o%3D`
+`https://api.nhex.sg/v1/order/orders?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&order-id=1234567890&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T15%3A19%3A30&Signature=4F65x5A2bLyMWVQj3Aqp%2BB4w%2BivaA7n5Oi2SuYtCJ9o%3D`
 
 
 
@@ -454,7 +454,7 @@ The JSON data type described in this document is defined as below:
 
 - It is suggested not to use temporary domain or proxy, which may be not stable.
 - It is suggested to use AWS Japan to access API for lower latency
-- It is suggested to connect to domain `api.huobi.sg, api-aws.huobi.sg，` if your server is based on AWS, because this domain is optimized for AWS client, the latency will be lower.
+- It is suggested to connect to domain `api.nhex.sg, api-aws.nhex.sg，` if your server is based on AWS, because this domain is optimized for AWS client, the latency will be lower.
 
 **New Version Rate limit Rule**
 
@@ -518,7 +518,7 @@ The JSON data type described in this document is defined as below:
 
 It is very welcome for market maker who has good market making strategy and large trading volume. If your New Huo Spot account or Contract account has at least 10 BTC, you can send your email to:
 
-- Contact customer support from Help Center or send email to [customersupport@huobi.sg](mailto:customersupport@huobi.sg).
+- Contact customer support from Help Center or send email to [customersupport@nhex.sg](mailto:customersupport@nhex.sg).
 
 And provide below details:
 
@@ -536,7 +536,7 @@ Market makers will not be able to use point cards, VIP rate, rebate or any other
 
 If you have any other questions on API, you can contact us by below ways:
 
-- Contact customer support from Help Center or send email to [customersupport@huobi.sg](mailto:customersupport@huobi.sg).
+- Contact customer support from Help Center or send email to [customersupport@nhex.sg](mailto:customersupport@nhex.sg).
 
 If you encounter API errors, please use below template in your feedback:
 
@@ -552,13 +552,13 @@ Below is an example：
 
 `1. Problem description: API authentication error`  
 `2. UID：123456`  
-`3. Raw URL request: https://api.huobi.sg/v1/account/accounts?&SignatureVersion=2&SignatureMethod=HmacSHA256&Timestamp=2019-11-06T03%3A25%3A39&AccessKeyId=rfhxxxxx-950000847-boooooo3-432c0&Signature=HhJwApXKpaLPewiYLczwfLkoTPnFPHgyF61iq0iTFF8%3D`  
+`3. Raw URL request: https://api.nhex.sg/v1/account/accounts?&SignatureVersion=2&SignatureMethod=HmacSHA256&Timestamp=2019-11-06T03%3A25%3A39&AccessKeyId=rfhxxxxx-950000847-boooooo3-432c0&Signature=HhJwApXKpaLPewiYLczwfLkoTPnFPHgyF61iq0iTFF8%3D`  
 `4. Raw JSON request: N/A`  
 `5. Raw JSON response：{"status":"error","err-code":"api-signature-not-valid","err-msg":"Signature not valid: Incorrect Access key [Access key错误]","data":null}`  
 `6. Problem time and frequency: It occurs every time`  
 `7. Pre-signed text:`  
 `GET\n`  
-`api.huobi.sg\n`  
+`api.nhex.sg\n`  
 `/v1/account/accounts\n`    
 `AccessKeyId=rfhxxxxx-950000847-boooooo3-432c0&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2019-11-06T03%3A26%3A13`
 
@@ -582,7 +582,7 @@ This interface returns historical K-line data. The K-line cycle is calculated ba
 <aside class="notice">To obtain the net value of btc, please fill in the token symbol "btc".</aside>
 
 ```shell
-curl "https://api.huobi.sg/market/history/kline?period=1day&size=200&symbol=ethbtc"
+curl "https://api.nhex.sg/market/history/kline?period=1day&size=200&symbol=ethbtc"
 ```
 
 ### 
@@ -636,7 +636,7 @@ Query Parameters
 This endpoint retrieves the latest ticker with some important 24h aggregated market data.
 
 ```shell
-curl "https://api.huobi.sg/market/detail/merged?symbol=ethbtc"
+curl "https://api.nhex.sg/market/detail/merged?symbol=ethbtc"
 ```
 
 
@@ -679,7 +679,7 @@ curl "https://api.huobi.sg/market/detail/merged?symbol=ethbtc"
 This endpoint retrieves the latest tickers for all supported pairs.
 
 ```shell
-curl "https://api.huobi.sg/market/tickers"
+curl "https://api.nhex.sg/market/tickers"
 ```
 
 <aside class="notice">The returned data object can contain large amount of tickers.</aside>
@@ -751,7 +751,7 @@ Response content is an array of object, each object has below fields.
 This endpoint retrieves the current order book of a specific pair.
 
 ```shell
-curl "https://api.huobi.sg/market/depth?symbol=ethbtc&type=step2"
+curl "https://api.nhex.sg/market/depth?symbol=ethbtc&type=step2"
 ```
 
 ### HTTP Reques
@@ -802,7 +802,7 @@ GET `/market/depth`
 This endpoint retrieves the latest trade with its price, volume, and direction.
 
 ```shell
-curl "https://api.huobi.sg/market/trade?symbol=ethbtc"
+curl "https://api.nhex.sg/market/trade?symbol=ethbtc"
 ```
 
 
@@ -841,7 +841,7 @@ curl "https://api.huobi.sg/market/trade?symbol=ethbtc"
 This endpoint retrieves the most recent trades with their price, volume, and direction.
 
 ```shell
-curl "https://api.huobi.sg/market/history/trade?symbol=ethbtc&size=2"
+curl "https://api.nhex.sg/market/history/trade?symbol=ethbtc&size=2"
 ```
 
 
@@ -885,7 +885,7 @@ This endpoint retrieves the summary of trading in the market for the last 24 hou
 <aside class="notice">It is possible that the accumulated volume and the accumulated value counted for current 24h window is smaller than the previous ones.</aside>
 
 ```shell
-curl "https://api.huobi.sg/market/detail?symbol=ethbtc"
+curl "https://api.nhex.sg/market/detail?symbol=ethbtc"
 ```
 
 ### HTTP Request
@@ -2249,7 +2249,7 @@ This endpoint returns the current transaction fee rate applied to the user.
 API Key Permission：Read
 
 ```shell
-curl "https://api.huobi.sg/v2/reference/transact-fee-rate?symbols=,ethbtc,ltcbtc"
+curl "https://api.nhex.sg/v2/reference/transact-fee-rate?symbols=,ethbtc,ltcbtc"
 ```
 
 ### HTTP Request
@@ -2395,15 +2395,15 @@ A: For some extreme illiquid trading symbols, the best quote price at particular
 
 **Websocket Market Feed (excluding MBP incremental channel & its REQ channel)**
 
-**`wss://api.huobi.sg/ws`**
+**`wss://api.nhex.sg/ws`**
 or
-**`wss://api-aws.huobi.sg/ws`**
+**`wss://api-aws.nhex.sg/ws`**
 
 **MBP incremental channel & its REQ channel)**
 
-**`wss://api.huobi.sg/feed`**
+**`wss://api.nhex.sg/feed`**
 or
-**`wss://api-aws.huobi.sg/feed`**
+**`wss://api-aws.nhex.sg/feed`**
 
 ### Data Format
 
@@ -2674,9 +2674,9 @@ User could subscribe to this channel to receive incremental update of Market By 
 
 **MBP incremental channel & its REQ channel)**
 
-**`wss://api.huobi.sg/feed`**
+**`wss://api.nhex.sg/feed`**
 or
-**`wss://api-aws.huobi.sg/feed`**
+**`wss://api-aws.nhex.sg/feed`**
 
 Suggested downstream data processing:<br>
 
@@ -2970,12 +2970,12 @@ Pull request is supported.
 
 **Websocket Asset and Order**
 
-**`wss://api.huobi.sg/ws/v2`**  
+**`wss://api.nhex.sg/ws/v2`**  
 
-**`wss://api-aws.huobi.sg/ws/v2`**   
+**`wss://api-aws.nhex.sg/ws/v2`**   
 
 Note: 
-By comparing to api-aws.huobi.sg, the network latency to api-aws.huobi.sg is lower, for those client's servers locating at AWS.
+By comparing to api-aws.nhex.sg, the network latency to api-aws.nhex.sg is lower, for those client's servers locating at AWS.
 
 ### Message Compression
 
@@ -3047,10 +3047,10 @@ The signature generation method of Account and Order WebSocket is similar with R
 2. The involved field names in signature generation are: accessKey，signatureMethod，signatureVersion，timestamp
 3. The valid value of signatureVersion is 2.1.
 
-Please refer to detailed signature generation steps from: [https://huobi-sg.github.io/docs/spot/v1/cn/#c64cd15fdc]
+Please refer to detailed signature generation steps from: [https://docs.nhex.sg/spot/v1/cn/#c64cd15fdc]
 
 ```
-GET\napi.huobi.sg\n/ws/v2\naccessKey=0664b695-rfhfg2mkl3-abbf6c5d-49810&signatureMethod=HmacSHA256&signatureVersion=2.1&timestamp=2019-12-05T11%3A53%3A03
+GET\napi.nhex.sg\n/ws/v2\naccessKey=0664b695-rfhfg2mkl3-abbf6c5d-49810&signatureMethod=HmacSHA256&signatureVersion=2.1&timestamp=2019-12-05T11%3A53%3A03
 ```
 
 The final string involved in signature generation should be like below:
