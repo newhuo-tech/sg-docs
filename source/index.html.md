@@ -3047,7 +3047,7 @@ The signature generation method of Account and Order WebSocket is similar with R
 2. The involved field names in signature generation are: accessKey，signatureMethod，signatureVersion，timestamp
 3. The valid value of signatureVersion is 2.1.
 
-Please refer to detailed signature generation steps from: [https://docs.nhex.sg/spot/v1/cn/#c64cd15fdc]
+Please refer to detailed signature generation steps from:  <a href='https://docs.nhex.sg/spot/v1/cn/#c64cd15fdc'>https://docs.nhex.sg/spot/v1/cn/#c64cd15fdc</a>
 
 ```
 GET\napi.nhex.sg\n/ws/v2\naccessKey=0664b695-rfhfg2mkl3-abbf6c5d-49810&signatureMethod=HmacSHA256&signatureVersion=2.1&timestamp=2019-12-05T11%3A53%3A03
