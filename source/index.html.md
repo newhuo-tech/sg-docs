@@ -42,7 +42,7 @@ Welcome to New Huo Singapore API！
 
 This is the official New Huo Singapore API document, and will be continue updating. New Huo will also publish API announcement in advance for any API change. Please subscribe to our announcements so that you can get the latest updates.
 
-You can click <a href='https://huobisg.zendesk.com/hc/en-us/sections/4407023586585-API-Announcements'>Here</a> to view the announcements. If you want to subscribe, please click "Follow" button in the top right of the page. After login and click "Follow" again, then choose the type you want to follow. After you subscribe, the button will be changed to "Following". If you don't have any account, you need to register first in the login dialog.
+You can click <a href='https://nhex.sg.zendesk.com/hc/en-us/sections/4407023586585-API-Announcements'>Here</a> to view the announcements. If you want to subscribe, please click "Follow" button in the top right of the page. After login and click "Follow" again, then choose the type you want to follow. After you subscribe, the button will be changed to "Following". If you don't have any account, you need to register first in the login dialog.
 
 **How to read this document**
 
