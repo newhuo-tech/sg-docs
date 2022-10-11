@@ -66,7 +66,7 @@ table th {
 
 如需使用API ，请先登录网页端，完成API key的申请和权限配置，再据此文档详情进行开发和交易。  
 
-您可以点击 <a href='https://www.nhex.sg/zh-cn/login/?backUrl=%2Fzh-cn%2Fapikey%2F'>这里 </a> 创建 API Key。
+您可以点击 <a href='https://www.nhex.sg/zh-cn/user/api/'>这里 </a> 创建 API Key。
 
 每个母用户可创建20组Api Key，每个Api Key可对应设置读取、交易、提币三种权限。  
 
