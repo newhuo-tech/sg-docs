@@ -10,7 +10,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 toc_footers:
 
-  - <a href='https://www.nhex.sg/en-us/login/?backurl=%2Fen-us%2Fuser%2Fapi%2F'>Create API Key </a>
+  - <a href='https://www.nhex.sg/en-us/user/api/'>Create API Key </a>
     includes:
 
 search: true
