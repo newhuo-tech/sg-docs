@@ -6,7 +6,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 toc_footers:
 
-  - <a href='https://www.nhex.sg/zh-cn/login/?backurl=%2Fzh-cn%2Fuser%2Fkyc%2F'>创建 API Key </a>
+  - <a href='https://www.nhex.sg/zh-cn/user/api/'>创建 API Key </a>
     includes:
 
 search: true
