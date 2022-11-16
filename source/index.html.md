@@ -2658,7 +2658,6 @@ While type is set as ‘step1’, ‘step2’, ‘step3’, ‘step4’, or ‘s
 | version | integer   | Internal data                                                |
 | ts      | integer   | The UNIX timestamp in milliseconds adjusted to Singapore time |
 
-<aside class="notice">When symbol is set to "hb10" amount, count, and vol will always have the value of 0</aside>
 
 ### Pull Request
 
