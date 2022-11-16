@@ -96,11 +96,11 @@ table th {
 
 **SDK（推荐）**
 
-[Java](https://github.com/huobi-sg/huobi_Java) | [Python3](https://github.com/huobi-sg/huobi_Python) | [C++](https://github.com/huobi-sg/huobi_Cpp) | [C#](https://github.com/huobi-sg/huobi_CSharp) | [Go](https://github.com/huobi-sg/huobi_golang)
+[Java](https://github.com/newhuo-tech/newhuo_Java) | [Python3](https://github.com/newhuo-tech/newhuo_Python) | [C++](https://github.com/newhuo-tech/newhuo_Cpp) | [C#](https://github.com/newhuo-tech/newhuo_CSharp) | [Go](https://github.com/newhuo-tech/newhuo_Golang)
 
 **其它代码示例**
 
-[https://github.com/huobiapi?tab=repositories](https://github.com/huobiapi?tab=repositories)
+[https://github.com/newhuo-tech?tab=repositories](https://github.com/newhuo-tech?tab=repositories)
 
 ## 测试环境（已停止）
 
